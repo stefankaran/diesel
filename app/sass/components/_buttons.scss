@@ -1,0 +1,104 @@
+.btn {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+}
+.btn--teaser-white {
+    font-family: $fontMediumCond;
+    border: 1px solid $black-color;
+    color: $black-color;
+    background: $white-color;
+    @include border-radius(1px);
+    
+    @include bp(desktop) {
+        //@include btn-responsive(calc-rem(15px), 133px, 14px, 14px);
+        font-size: calc-rem(15px);
+        min-width: 133px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+	}
+}
+.btn--teaser-graphical {
+    font-family: $fontMediumCond;
+    
+    @include bp(desktop) {
+        font-size: calc-rem(16px);
+        min-width: 150px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+	}
+}
+.btn--teaser-magazine {
+    font-family: $fontMediumCond;
+    color: $primary-color;
+    background: $white-color;
+    
+    @include bp(desktop) {
+        font-size: calc-rem(15px);
+        min-width: 138px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+	}
+}
+.btn--slider {
+    font-family: $fontMediumCond;
+    color: $black-color;
+    background: $white-color;
+    @include border-radius(1px);
+    
+    @include bp(desktop) {
+        font-size: calc-rem(16px);
+        min-width: 138px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+	}
+}
+.btn--video {
+    font-family: $fontDemi;
+    
+    @include bp(desktop) {
+        font-size: calc-rem(16px);
+        min-width: 141px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+	}
+}
+.btn--article-quote {
+    font-family: $fontMedium;
+    
+    @include bp(desktop) {
+        font-size: calc-rem(14px);
+        min-width: 80px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+	}
+}
+.btn--load-more {
+    font-family: $fontHeavy;
+    
+    @include bp(desktop) {
+        font-size: calc-rem(16px);
+        min-width: 210px;
+        padding-top: 18px;
+        padding-bottom: 18px;
+	}
+    @include bp(tablet) {
+        font-size: calc-rem(14px);
+        min-width: 190px;
+        padding-top: 17px;
+        padding-bottom: 17px;
+	}
+}
+.btn--gradient {
+    @include btnGradient;
+    color: $white-color;
+}
+.btn--tablet {
+    @include bp(tablet) {
+        font-size: calc-rem(14px);
+        min-width: 113px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+    }
+}

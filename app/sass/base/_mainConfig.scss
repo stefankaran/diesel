@@ -1,0 +1,36 @@
+html {
+    font-size: $basefont-size;
+}
+body {
+    text-transform: uppercase;
+}
+p {
+    text-transform: lowercase;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.clearfix {
+    clear: both;
+}
+.m-wrap {
+    margin: 0 auto;
+    
+    @include bp(desktop) {
+        max-width: 1246px;
+    }
+    @include bp(tablet) {
+        max-width: 964px;
+    }
+}
+.l-wrap {
+    margin: 0 auto;
+    
+    @include bp(desktop) {
+        max-width: 1366px;
+    }
+    @include bp(tablet) {
+        max-width: 1024px;
+    }
+}

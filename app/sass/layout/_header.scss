@@ -1,0 +1,163 @@
+.header {
+    @include bp(desktop) {
+        padding-top: 40px;
+    }
+    @include bp(tablet) {
+        padding-top: 32px;
+    }
+    
+    .header__body {
+        @include bp(ofMobile) {
+            position: relative;
+        }
+    }
+    .header__logo {
+        @include bp(desktop) {
+            padding-top: 58px;
+        }
+        @include bp(tablet) {
+            padding-top: 66px;
+        }
+        @include bp(ofMobile) {
+            text-align: center;
+        }
+    }
+    .header__social {
+        @include bp(desktop) {
+            padding-left: 50px;
+            padding-top: 2px;
+        }
+        @include bp(ofMobile) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .header__social-em {
+        @include bp(tablet) {
+            margin-left: 4px;
+            padding: 0px 18px;
+            font-size: calc-rem(16px);
+            background-size: 15% !important;
+            background-position: 24px !important;
+
+            &:after {
+                font-size: calc-rem(9px);
+                vertical-align: 1px;
+            }
+        }
+        @include bp(ofMobile) {
+            background: #f7f6f7 url("../images/email_gray.png") no-repeat;
+//            background-position: 29px;
+//            padding: 2px 29px;
+//            margin-left: 21px;
+
+            &:after {
+                content: 'EMAIL';
+                font-family: $fontBook;
+                color: #bbbbbb;
+//                font-size: calc-rem(11px);
+                margin-left: 24px;
+            }
+        }
+        @include bp(desktop) {
+            background-position: 29px;
+            padding: 2px 29px;
+            margin-left: 21px;
+
+            &:after {
+                font-size: calc-rem(11px);
+                vertical-align: 3px;
+//                content: 'EMAIL';
+//                font-family: $fontBook;
+//                color: #bbbbbb;
+//                margin-left: 24px;
+//                vertical-align: 3px;
+            }
+        }
+    }
+    .header__heading {
+        @include bp(ofMobile) {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            font-size: calc-rem(50px);
+            font-family: $fontHeavy;
+        }
+
+        @include bp(desktop) {
+            margin: 0 0 0 23px;
+            letter-spacing: 10px;
+        }    
+        @include bp(tablet) {
+            margin: 0 0 0 9px;
+            letter-spacing: 9px;
+        }
+    }
+    .header__fist {
+        @include bp(ofMobile) {
+            margin: 0px 0px -25px 5px;
+        }
+    }
+    .header__heading-line {
+        height: 2px;
+        background: $primary-color;
+        display: inline-block;
+        position: absolute;
+
+        @include bp(desktopp
+        ) {
+            width: 93px;
+            bottom: -4px;
+            right: 20px;
+        }    
+        @include bp(tablet) {
+            width: 91px;
+            bottom: -3px;
+            right: 18px;
+        }
+    }
+    .header__social-link {
+        color: $primary-color;
+
+        @include bp(desktop) {
+            margin-right: 23px;
+            font-size: calc-rem(21px);
+        }    
+        @include bp(tablet) {
+            margin-right: 38px;
+            font-size: calc-rem(23px);
+        }
+    }
+    .header__brand {
+        @include bp(ofMobile) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: table-cell;
+            text-align: right;
+        }
+    }
+    .header__brand img {
+        @include bp(tablet) {
+            width: 50%;
+        }
+        @include bp(ofMobile) {
+            vertical-align: middle;
+            margin-left: 5px;
+            margin-bottom: 5px;
+        }
+    }
+    .empowered {
+        font-family: $fontMedium;
+        text-transform: uppercase;
+    }
+    .header__empowered {
+        @include bp(desktop) {
+            font-size: calc-rem(14px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(11.25px);
+        }
+    }
+}

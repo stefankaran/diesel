@@ -1,0 +1,55 @@
+.teaser--quote {
+    background: url('../images/teaser-quote-bc-gray.png');
+    background-position: 3% 0%;
+    background-repeat: no-repeat;
+//    max-width: 320px;
+    
+    .teaser--quote__body {
+        padding: 45px 0 45px 70px;        
+    }
+
+    .teaser--quote__heading {
+        font-family: $fontHeavy;
+        font-size: calc-rem(50px);
+        color: $primary-color;
+    }
+
+    .teaser--quote__fist {
+        margin-left: 20px;
+    }
+
+    .teaser--quote__person {
+        display: table-cell;
+    }
+
+    .teaser--quote__person-img {
+        overflow:hidden;
+        @include border-radius(100%);
+        border: 3px solid $primary-color;
+        display:inline-block;
+        vertical-align: middle;
+        
+        img {
+            vertical-align:bottom; 
+            position:relative;
+            z-index:-1;
+        }
+    }
+    
+    .teaser--quote__person-details {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    
+    .teaser--quote__person-name {
+        font-family: $fontHeavy;
+        font-size: calc-rem(20px);
+    }
+    
+    .teaser--quote__person-proffesion {
+        font-family: $fontMedium;
+        font-size: calc-rem(14px);
+        color: $primary-color;
+    }
+}

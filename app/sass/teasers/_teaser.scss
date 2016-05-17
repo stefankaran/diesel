@@ -1,0 +1,12 @@
+.teaser {
+    width: 31.3%;
+    float: left;
+    
+    .teaser__tag {
+        font-family: $fontMediumCond;
+        font-size: calc-rem(14px);
+        border-bottom: 1px solid;
+        padding-bottom: 2px;
+        letter-spacing: 2px;
+    }
+}
