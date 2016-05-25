@@ -3,6 +3,16 @@
     padding-left: 5px;
     padding-right: 5px;
     display: inline-block;
+    
+    @include bp(tablet) {
+        @include btn-responsive (calc-rem(14px), 124px, 13px, 13px);  // --- Defined in mixins - font-size, min-width, padding-top, padding-bottom ---
+    }
+    @include bp(mobile) {
+        @include btn-responsive (calc-rem(25px), 196px, 22px, 22px);
+    }
+    @include bp(mobileSmall) {
+        @include btn-responsive (calc-rem(20px), 140px, 15px, 15px);
+    }
 }
 .btn--teaser-white {
     font-family: $fontMediumCond;
@@ -12,21 +22,14 @@
     @include border-radius(1px);
     
     @include bp(desktop) {
-        //@include btn-responsive(calc-rem(15px), 133px, 14px, 14px);
-        font-size: calc-rem(15px);
-        min-width: 133px;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        @include btn-responsive (calc-rem(15px), 133px, 14px, 14px);
 	}
 }
 .btn--teaser-graphical {
     font-family: $fontMediumCond;
     
     @include bp(desktop) {
-        font-size: calc-rem(16px);
-        min-width: 150px;
-        padding-top: 17px;
-        padding-bottom: 17px;
+        @include btn-responsive (calc-rem(16px), 162px, 17px, 17px);
 	}
 }
 .btn--teaser-magazine {
@@ -35,10 +38,7 @@
     background: $white-color;
     
     @include bp(desktop) {
-        font-size: calc-rem(15px);
-        min-width: 138px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        @include btn-responsive (calc-rem(15px), 160px, 14px, 14px);
 	}
 }
 .btn--slider {
@@ -48,57 +48,45 @@
     @include border-radius(1px);
     
     @include bp(desktop) {
-        font-size: calc-rem(16px);
-        min-width: 138px;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        @include btn-responsive (calc-rem(16px), 138px, 16px, 16px);
 	}
 }
 .btn--video {
     font-family: $fontDemi;
     
     @include bp(desktop) {
-        font-size: calc-rem(16px);
-        min-width: 141px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        @include btn-responsive (calc-rem(16px), 149px, 15px, 14px);
+	}
+    @include bp(mobile) {
+        @include btn-responsive (calc-rem(25px), 237px, 24px, 24px);
 	}
 }
 .btn--article-quote {
     font-family: $fontMedium;
     
     @include bp(desktop) {
-        font-size: calc-rem(14px);
-        min-width: 80px;
-        padding-top: 8px;
-        padding-bottom: 8px;
+        @include btn-responsive (calc-rem(14px), 80px, 8px, 8px);
 	}
 }
 .btn--load-more {
     font-family: $fontHeavy;
     
     @include bp(desktop) {
-        font-size: calc-rem(16px);
-        min-width: 210px;
-        padding-top: 18px;
-        padding-bottom: 18px;
+        @include btn-responsive (calc-rem(16px), 210px, 18px, 18px);
 	}
     @include bp(tablet) {
-        font-size: calc-rem(14px);
-        min-width: 190px;
-        padding-top: 17px;
-        padding-bottom: 17px;
+        @include btn-responsive (calc-rem(14px), 190px, 17px, 17px);
 	}
 }
 .btn--gradient {
     @include btnGradient;
     color: $white-color;
 }
-.btn--tablet {
-    @include bp(tablet) {
-        font-size: calc-rem(14px);
-        min-width: 113px;
-        padding-top: 13px;
-        padding-bottom: 13px;
-    }
-}
+//.btn--tablet {
+//    @include bp(tablet) {
+//        @include btn-responsive (calc-rem(14px), 113px, 13px, 13px);
+//    }
+//    @include bp(mobile) {
+//        @include btn-responsive (calc-rem(25px), 189px, 21px, 21px);
+//    }
+//}

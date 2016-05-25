@@ -1,31 +1,120 @@
 .header {
+    width: 100%;
+    
     @include bp(desktop) {
         padding-top: 40px;
     }
     @include bp(tablet) {
         padding-top: 32px;
     }
+    @include bp(mobile) {
+//        position: relative;
+    }
     
     .header__body {
+        position: relative;
+        margin: 0 auto;
+        
+        @include bp(desktop) {
+            max-width: 1246px;
+        }
+        
         @include bp(ofMobile) {
-            position: relative;
+//            position: relative;
+        }
+        @include bp(mobile) {
+//            position: absolute;
+            width: 100%;
+            max-width: 662px;
+            background: $white-color;
+//            text-align: center;
+            z-index: 999;
+            top: 0;
+            padding-top: 80px;
+        }
+        @include bp(mobileSmall) {
+            padding-top: 20px;
         }
     }
     .header__logo {
+        text-align: center;
+        
         @include bp(desktop) {
-            padding-top: 58px;
+            padding-top: 60px;
         }
         @include bp(tablet) {
             padding-top: 66px;
         }
-        @include bp(ofMobile) {
-            text-align: center;
+        @include bp(mobile) {
+            margin: 37px 0 65px;
+        }
+        @include bp(mobileSmall) {
+            margin: 17px 0 35px;
+        }
+    }
+    .header__heading {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            font-size: calc-rem(50px);
+            font-family: $fontHeavy;
+
+        @include bp(desktop) {
+            margin: 0 0 0 19px;
+            letter-spacing: 10px;
+        }    
+        @include bp(tablet) {
+            margin: 0 0 0 9px;
+        }
+        @include bp(toDesktop) {
+            letter-spacing: 9px;
+            margin-left: 0px;
+            margin-top: -2px;
+        }
+        @include bp(mobileSmall) {
+            letter-spacing: 3px;
+        }
+    }
+    .header__fist {
+        margin: 0px 0px -25px 5px;
+        background: url("../../assets/images/header_fist_blue.png") center center no-repeat;
+        display: inline-block;
+        width: 67px;
+        height: 59px;
+        
+        @include bp(mobileSmall) {
+            max-width: 50px;
+            background-size: 50px;
+        }
+    }
+    .header__heading-line {
+        height: 2px;
+        background: $primary-color;
+        display: inline-block;
+        position: absolute;
+
+        @include bp(desktop) {
+            width: 93px;
+            bottom: -4px;
+            right: 20px;
+        }
+        @include bp(toDesktop) {
+            width: 91px;
+            bottom: -3px;
+            right: 18px;
+        }
+        @include bp(mobileSmall) {
+            width: 62px;
+            right: 9px;
         }
     }
     .header__social {
         @include bp(desktop) {
-            padding-left: 50px;
-            padding-top: 2px;
+            padding-left: 44px;
+        }
+        @include bp(tablet) {
+            margin-left: 30px;
+//            padding-left: 15px;
         }
         @include bp(ofMobile) {
             position: absolute;
@@ -34,18 +123,6 @@
         }
     }
     .header__social-em {
-        @include bp(tablet) {
-            margin-left: 4px;
-            padding: 0px 18px;
-            font-size: calc-rem(16px);
-            background-size: 15% !important;
-            background-position: 24px !important;
-
-            &:after {
-                font-size: calc-rem(9px);
-                vertical-align: 1px;
-            }
-        }
         @include bp(ofMobile) {
             background: #f7f6f7 url("../images/email_gray.png") no-repeat;
 //            background-position: 29px;
@@ -56,18 +133,18 @@
                 content: 'EMAIL';
                 font-family: $fontBook;
                 color: #bbbbbb;
-//                font-size: calc-rem(11px);
                 margin-left: 24px;
+                vertical-align: 1px;
+//                font-size: calc-rem(11px);
             }
         }
         @include bp(desktop) {
             background-position: 29px;
-            padding: 2px 29px;
+            padding: 5px 29px;
             margin-left: 21px;
 
             &:after {
                 font-size: calc-rem(11px);
-                vertical-align: 3px;
 //                content: 'EMAIL';
 //                font-family: $fontBook;
 //                color: #bbbbbb;
@@ -75,82 +152,179 @@
 //                vertical-align: 3px;
             }
         }
-    }
-    .header__heading {
-        @include bp(ofMobile) {
-            position: relative;
-            display: inline-block;
-            padding: 0;
-            font-size: calc-rem(50px);
-            font-family: $fontHeavy;
-        }
-
-        @include bp(desktop) {
-            margin: 0 0 0 23px;
-            letter-spacing: 10px;
-        }    
         @include bp(tablet) {
-            margin: 0 0 0 9px;
-            letter-spacing: 9px;
-        }
-    }
-    .header__fist {
-        @include bp(ofMobile) {
-            margin: 0px 0px -25px 5px;
-        }
-    }
-    .header__heading-line {
-        height: 2px;
-        background: $primary-color;
-        display: inline-block;
-        position: absolute;
+            margin-left: 4px;
+            padding: 1px 18px;
+            font-size: calc-rem(16px);
+            background-size: 15% !important;
+            background-position: 24px !important;
 
-        @include bp(desktopp
-        ) {
-            width: 93px;
-            bottom: -4px;
-            right: 20px;
-        }    
-        @include bp(tablet) {
-            width: 91px;
-            bottom: -3px;
-            right: 18px;
+            &:after {
+                font-size: calc-rem(9px);
+//                vertical-align: 1px;
+            }
+        }
+        @include bp(mobile) {
+            background: url("../../assets/images/envelope_blue.png") center center no-repeat;
+            background-size: 62px;
+            width: 60px;
+            height: 60px;
         }
     }
     .header__social-link {
-        color: $primary-color;
+//        color: $primary-color;
+        vertical-align: middle;
+        display: inline-block;
+        
+        &.header__social-fb {
+            background: url("../../assets/images/facebook_blue.png") center center no-repeat;
+            
+            @include bp(desktop) {
+                background-size: 18px;
+                width: 18px;
+                height: 18px;
+            }
+            
+            @include bp(tablet) {
+                background-size: 21px;
+                width: 10px;
+                height: 25px;
+            }
+            
+            @include bp(mobile) {
+                background-size: 50px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        &.header__social-tw {
+            background: url("../../assets/images/twitter_blue.png") center center no-repeat;
+            
+            @include bp(desktop) {
+                background-size: 18px;
+                width: 18px;
+                height: 18px;
+            }
+            
+            @include bp(tablet) {
+                background-size: 21px;
+                width: 20px;
+                height: 25px;
+            }
+            
+            @include bp(mobile) {
+                background-size: 53px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        &.header__social-in {
+            background: url("../../assets/images/instagram_blue.png") center center no-repeat;
+            
+            @include bp(desktop) {
+                background-size: 18px;
+                width: 18px;
+                height: 18px;
+            }
+            
+            @include bp(tablet) {
+                background-size: 21px;
+                width: 23px;
+                height: 25px;
+            }
+            
+            @include bp(mobile) {
+                background-size: 50px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        &.header__social-yt {
+            background: url("../../assets/images/youtube_blue.png") center center no-repeat;
+            
+            @include bp(desktop) {
+                background-size: 18px;
+                width: 18px;
+                height: 18px;
+            }
+            
+            @include bp(tablet) {
+                background-size: 25px;
+                width: 23px;
+                height: 25px;
+            }
+            
+            @include bp(mobile) {
+                background-size: 59px;
+                width: 60px;
+                height: 60px;
+            }
+        }
 
         @include bp(desktop) {
             margin-right: 23px;
-            font-size: calc-rem(21px);
-        }    
+//            font-size: calc-rem(21px);
+        }
         @include bp(tablet) {
-            margin-right: 38px;
-            font-size: calc-rem(23px);
+            margin-right: 35px;
+//            font-size: calc-rem(23px);
+        }
+        @include bp(mobile) {
+            &:not(:last-child) {
+                margin-right: 12%;
+            }
+        }
+        @media (max-width: 630px) {
+            &:not(:last-child) {
+                margin-right: 8%;
+            }
         }
     }
     .header__brand {
+        
+        @include bp(tablet) {
+            margin-right: 30px;
+        }
+        
         @include bp(ofMobile) {
             position: absolute;
+            text-align: right;
             top: 0;
             right: 0;
             display: table-cell;
+        }
+        @include bp(mobile) {
+            position: absolute;
             text-align: right;
+            top: 76px;
+            right: 15px;
+        }
+        @include bp(mobileSmall) {
+            top: 27px;
+        }
+        @media (min-width: 751px) and (max-width: 1260px) {
+//            padding-right: 15px;
         }
     }
-    .header__brand img {
+    .header__brand-logo {
         @include bp(tablet) {
             width: 50%;
         }
         @include bp(ofMobile) {
             vertical-align: middle;
-            margin-left: 5px;
-            margin-bottom: 5px;
+            margin: 0 2px 5px 5px;
+            display: inline-block;
         }
-    }
-    .empowered {
-        font-family: $fontMedium;
-        text-transform: uppercase;
+        @include bp (mobile) {
+            max-width: 83%;
+//            display: block;
+        }
+        @include bp(mobileSmall) {
+            max-width: 62%;
+        }
     }
     .header__empowered {
         @include bp(desktop) {
@@ -159,5 +333,94 @@
         @include bp(tablet) {
             font-size: calc-rem(11.25px);
         }
+        @include bp(mobile) {
+            font-size: calc-rem(17.6px);
+        }
+        @include bp(ofMobile) {
+            display: inline-block;
+        }
+    }
+//    .header__body-mobile {
+//
+//        @include bp(ofMobile) {
+//            display: block !important;
+//        }
+//        @include bp(mobile) {
+//            position: absolute;
+//            width: 100%; 
+//            background: $white-color;
+//            text-align: center;
+//            z-index: 999;
+//            top: 0;
+//        }
+//    }
+    .header__hamburger {
+        background: none;
+        padding: 7px 0 0 16px;
+        color: #000;
+        border: 0;
+        cursor: pointer;
+        outline: none;
+//        z-index: 9999;
+//        position: absolute;
+//        top: 0;
+//        left: 0;
+
+        @include bp(ofMobile) {
+            display: none !important;
+        }
+    }
+    .header__hamburger-line {
+        height: 5px;
+        width: 39px;
+        background: $primary-color;
+        display: block;
+        margin-bottom: 7px;
+    }
+    .header__cross {
+        position: absolute;
+        top: 76px;
+        right: 10px;
+        width: 41px;
+        height: 41px;
+        overflow: hidden;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        
+        &:before, &:after {
+            height: 5px;
+            @include border-radius(1px);
+            content: '';
+            position: absolute;
+            width: 41px;
+            top: 50%;
+            left: 0;
+            background: #000;
+        }
+        
+        &:before {
+            @include transform-rotate(45deg);
+        }
+        &:after {
+            @include transform-rotate(-45deg);
+        }
+
+        @include bp(ofMobile) {
+            display: none !important;
+        }
+        @include bp(mobileSmall) {
+            top: 22px;
+        }
+    }
+}
+
+
+
+
+// Remove
+.header__menu, .header__social {
+    @include bp(mobile) {
+        display: none;
     }
 }

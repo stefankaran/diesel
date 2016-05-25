@@ -1,0 +1,161 @@
+.teaser--graphical {
+    position: relative;
+    
+    .teaser--graphical__top {
+        position: relative;
+        @include btnGradient;
+        padding: 2% 2% 16%;
+        
+        @include bp(desktop) {
+            padding: 2% 2% 16%;
+        }
+        @include bp(toDesktop) {
+            width: 100%;
+            padding: 2% 2% 7%;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+    }
+    .teaser--graphical__topElements {
+        @include bp(toDesktop) {
+            width: 51%;
+        }
+        @include bp(tablet) {
+            padding-top: 3%;
+        }
+        @include bp(toDesktop) {
+            padding-top: 4%;
+        }
+    }
+    .teaser--graphical__tag {
+        color: $white-color;
+        
+        @include bp(desktop) {
+            margin-left: 16px;
+        }
+    }
+    .teaser--graphical__heading {
+        color: $white-color;
+        font-family: $fontDemiCond;
+//        font-weight: 100;
+        padding: 4% 5%;
+        text-align: center;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(49px);
+            line-height: calc-rem(48px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(32.5px);
+            padding: 5% 0%;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(50px);
+            line-height: calc-rem(51px);
+            padding: 7% 0%;
+        }
+    }
+    .teaser--graphical__fist {
+        opacity: 0.3;
+        position: absolute;
+        
+        @include bp(desktop) {
+            max-width: 52%;
+            bottom: -4%;
+            left: 4%;
+        }
+        @include bp(tablet) {
+            max-width: 38%;
+            bottom: -7%;
+            left: 3.5%;
+        }
+        @include bp(mobile) {
+            max-width: 40%;
+            bottom: -5%;
+        }
+        @include bp(toDesktop) {
+            left: 3.5%;
+        }
+    }
+    .teaser--graphical__bottom {
+        position: relative;
+        
+        @include bp(desktop) {
+            margin-top: -32%;
+        }
+        
+        @include bp(toDesktop) {
+            text-align: right;
+        }
+        @include bp(tablet) {
+            width: 100%;
+            margin-top: -49%;
+            position: absolute;
+            bottom: -65%;
+        }
+        @include bp(mobile) {
+            margin-top: -43%;
+        }
+        
+        .btn {
+            position: absolute;
+            
+            @include bp(desktop) {
+                bottom: -14px;
+                left: 31%;
+            }
+            @include bp(tablet) {
+                right: 16%;
+                bottom: 13%;
+            }
+            @include bp(mobile) {
+                left: 13.5%;
+                bottom: 1%;
+            }
+        }
+    }
+    .teaser--graphical__textShare {
+        position: absolute;
+        text-align: center;
+        
+        @include bp(desktop) {
+            width: 36%;
+            top: 28%;
+        }
+        @include bp(tablet) {
+            bottom: 5.5%;
+            left: 4%;
+        }
+        @include bp(mobile) {
+            bottom: 21%;
+            left: 9%;
+        }
+        @include bp(toDesktop) {
+            width: 35%;
+        }
+    }
+    .teaser--graphical__text {
+        font-family: $fontMedium;
+        text-transform: initial;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(20px);
+            line-height: calc-rem(24px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(17.5px);
+            line-height: calc-rem(18px);
+            margin-bottom: 11px;
+        }
+        @include bp(mobile) {
+            display: none;
+        }
+    }
+    .teaser--graphical__image {
+        @include bp(toDesktop) {
+            max-width: 60%;
+        }
+    }
+}

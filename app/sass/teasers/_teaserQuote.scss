@@ -1,55 +1,192 @@
 .teaser--quote {
     background: url('../images/teaser-quote-bc-gray.png');
-    background-position: 3% 0%;
     background-repeat: no-repeat;
 //    max-width: 320px;
-    
+        
+    @include bp(desktop) {
+        background-position: 3% 0%;
+    }        
+    @include bp(tablet) {
+        background-position: 21% 17%;
+        background-size: 33%;
+    }      
+    @include bp(mobile) {
+        background-position: 5% 0%;
+        background-size: 35%;
+    }
     .teaser--quote__body {
-        padding: 45px 0 45px 70px;        
+        @include bp(desktop) {
+            padding: 45px 0 27px 67px;
+        }        
+        @include bp(tablet) {
+            padding: 90px 12px 26px 124px;
+        }
+        @include bp(mobile) {
+            padding: 61px 94px 10px 99px;
+        }
     }
 
     .teaser--quote__heading {
         font-family: $fontHeavy;
-        font-size: calc-rem(50px);
         color: $primary-color;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(50px);
+        }        
+        @include bp(tablet) {
+            font-size: calc-rem(44.5px);
+        }      
+        @include bp(mobile) {
+            font-size: calc-rem(74px);
+            line-height: calc-rem(78px);
+        }
     }
 
     .teaser--quote__fist {
-        margin-left: 20px;
+        @include bp(desktop) {
+            max-width: 49px;
+            margin-left: 24px;
+            margin-bottom: -4px;
+        }
+        @include bp(tablet) {
+            margin-left: 27px;
+            margin-bottom: -5px;
+            max-width: 55px;
+        }
+        @include bp(mobile) {
+            margin-left: 28px;
+            margin-bottom: -14px;
+        }
     }
 
     .teaser--quote__person {
         display: table-cell;
+        
+        @include bp(desktop) {
+            padding: 8px 0 0 7px;
+        }
+        @include bp(tablet) {
+            padding: 23px 0 0;
+        }
+        @include bp(mobile) {
+            padding: 31px 0 0;
+        }
     }
 
     .teaser--quote__person-img {
         overflow:hidden;
         @include border-radius(100%);
-        border: 3px solid $primary-color;
         display:inline-block;
         vertical-align: middle;
+        
+        @include bp(desktop) {
+            border: 3px solid $primary-color;
+        }
+        @include bp(tablet) {
+            border: 5px solid $primary-color;
+        }
+        @include bp(mobile) {
+            border: 6px solid $primary-color;
+        }
         
         img {
             vertical-align:bottom; 
             position:relative;
-            z-index:-1;
+//            z-index:-1;
+        
+            @include bp(desktop) {
+                max-width: 69px;
+            }
+            @include bp(tablet) {
+                max-width: 78px;
+            }
         }
     }
     
     .teaser--quote__person-details {
         display: inline-block;
         vertical-align: middle;
-        margin-left: 10px;
+        margin-left: 7px;
+        
+        @include bp(mobile) {
+            margin-left: 20px;
+            margin-top: -13px;
+        }
     }
     
     .teaser--quote__person-name {
         font-family: $fontHeavy;
-        font-size: calc-rem(20px);
+        letter-spacing: 2px;
+        margin-top: 4px;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(20px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(21.5px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(33px);
+            letter-spacing: 4px;
+            margin-bottom: 7px;
+        }
     }
     
     .teaser--quote__person-proffesion {
         font-family: $fontMedium;
-        font-size: calc-rem(14px);
         color: $primary-color;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(14px);
+        }        
+        @include bp(tablet) {
+            font-size: calc-rem(11.5px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(25px);
+        }
+    }
+    .teaser--quote__social {
+        @include bp(desktop) {
+            visibility: hidden;
+            margin-left: 2px;
+        }
+        @include bp(tablet) {
+            margin-left: 66px;
+        }
+    }
+    .teaser--quote__social-item {
+        display: inline-block;
+        background-size: 19px !important;
+        width: 19px;
+        height: 19px;
+        
+        @include bp(desktop) {
+            margin-right: 19px;
+        }
+        @include bp(tablet) {
+            margin-right: 31px;
+        }
+        @include bp(mobile) {
+            text-align: right;
+            background-size: 50px !important;
+            width: 50px;
+            height: 50px;
+            margin-right: 77px;
+            
+            &:last-child {
+                margin-right: 64px;
+            }
+        }
+        
+        &.teaser--quote-fb {
+            background: url("../../assets/images/facebook_blue.png") center center no-repeat;
+        }
+        &.teaser--quote-tw {
+            background: url("../../assets/images/twitter_blue.png") center center no-repeat;
+        }
+        &.teaser--quote-pt {
+            background: url("../../assets/images/pinterest_blue.png") center center no-repeat;
+        }
     }
 }

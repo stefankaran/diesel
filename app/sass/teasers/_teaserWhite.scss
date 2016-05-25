@@ -1,61 +1,122 @@
 .teaser--white {
     position: relative;
-    min-height: calc-rem(530px);
     overflow: hidden;
     
+    @include bp(desktop) {
+        min-height: calc-rem(530px);        
+    }
+    @include bp(tablet) {
+        min-height: calc-rem(430px);        
+    }
+    @include bp(mobile) {
+        min-height: calc-rem(583px);
+        max-width: 554px;
+        margin: 0 auto;
+    }
+    
     .teaser--white__image {
-        overflow: hidden;
+        margin-right: 1px;
+//        overflow: hidden;
     }
-    
     .teaser--white__image img {
-        -moz-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
+//        -moz-transition: all 0.3s;
+//        -webkit-transition: all 0.3s;
+//        transition: all 0.3s;
         display: block;
+        max-width: 100%
     }
-    
     .teaser--white__body {
         position: absolute;
-        bottom: 0px;
         right: 0;
-        width: 42%;
         background: $white-color;
-        padding: 22px 33px;
-    }
     
+        @include bp(desktop) {
+            width: 56%;
+            padding: 18px 0 37px 28px;
+            bottom: 6px;
+        }
+        @include bp(tablet) {
+            width: 52%;
+            bottom: 3px;
+        }
+        @include bp(mobile) {
+            width: 53%;
+            bottom: 104px;
+        }
+    }
+    .teaser--white__elements {
+    
+        @include bp(desktop) {
+            padding: 0 4px;
+        }
+        @include bp(tablet) {
+            padding: 20px 20px 0;
+        }
+        @include bp(mobile) {
+            padding: 33px 0 0 37px;
+        }
+    }
     .teaser--white__tag {
         color: $primary-color;
+        margin-top: 5px;
     }
-    
     .teaser--white__date {
         font-family: $fontDemiCond;
-        font-size: calc-rem(12px);
         color: #e0dfe0;
-        margin: 15px 0 18px;
-    }
+        margin: 10px 0 11px;
     
+        @include bp(desktop) {
+            font-size: calc-rem(12px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(9px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(16px);
+            margin: 17px 0;
+        }
+    }
     .teaser--white__heading {
         font-family: $fontDemiCond;
-        font-size: calc-rem(29px);
-    }
     
+        @include bp(desktop) {
+            font-size: calc-rem(29px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(26.5px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(36px);
+        }
+    }
     .teaser--white__text {
         font-family: $fontMedium;
-        font-size: calc-rem(20px);
-        margin: 5px 0 47px;
-    }
     
+        @include bp(desktop) {
+            font-size: calc-rem(20px);
+            margin: 2px 0 47px;
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(17.5px);
+            line-height: calc-rem(19px);
+            margin: 20px 0 0;
+        }
+        @include bp(mobile) {
+            display: none;
+        }
+    }
     .teaser--white__share {
-        font-family: $fontMedium;
-        font-size: calc-rem(16px);
-        color: $primary-color;
-        text-transform: uppercase;
-        
-         @include bp(desktop) {
-             display: none;
-         }
-    }
     
+//        @include bp(desktop) {
+//            font-size: calc-rem(16px);
+//        }
+        @include bp(tablet) {
+            margin: 17px 0;
+        }
+        @include bp(mobile) {
+            margin: 18px 0 27px;
+        }
+    }
     //.teaser--white:hover .teaser--white__image img {
     //    transform: scale(1.1);
     //}

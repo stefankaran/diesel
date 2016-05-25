@@ -1,76 +1,114 @@
 .header__menu {
     text-align: center;
     position: relative;
-//    max-width: 1140px;
     
     @include bp(desktop) {
-        margin: 86px 0 17px;
-    }    
+        margin: 86px 0 21px;
+    }
     @include bp(tablet) {
-        margin: 72px 0 40px;
-    }
-}
-//.header__menu-list:not(:last-child):hover {
-//    border-color: red;
-//}
-.header__menu-list {
-    display: inline-block;
-    padding-bottom: 4px;
-    
-    &:hover .header__menu-link {
-        color: $primary-color;
+        margin: 75px 0 47px;
     }
     
-    &:not(:last-child) {
-        border-bottom: 4px solid #fff;
+    .header__menu-row {
+        @include bp(mobile) {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            list-style-image: none;
+        }
     }
-    
-    &:not(:last-child):hover {
-        border-color: $primary-color;
+    .header__menu-list {
+        &:not(:last-child) .header__menu-link {
+            border-bottom: 4px solid #fff;
+        
+            @include bp(ofMobile) {
+                margin-right: -7px;
+            }
+            @include bp(tablet) {
+                border-bottom: 3px solid #fff;
+            }
+        }
+        
+        @include bp(desktop) {
+            &:not(:last-child):hover .header__menu-link {
+                color: $primary-color;
+                border-color: $primary-color;
+            }
+        }
+        @include bp(ofMobile) {
+            display: inline-block;
+        }
+        @include bp(toDesktop) {
+            &:not(:last-child) .header__menu-link.active {
+                border-color: $primary-color;
+                color: $primary-color;
+            }
+        }
     }
-    
-    &:not(:last-child) .header__menu-link {
-        margin-right: -7px;
-    }
-}
-//.header__menu-list:not(:last-child):after {
-    //  content: '';
-    //  display: inline-block;
-    //  width: 4px;
-    //  background: #000;
-    //  height: 1px;
-    //  vertical-align: 5px;
-    //  margin: 0 55px 0 58px; 
-//}
-.header__menu-link {
-    font-family: $fontMediumCond;
-    color: #000;
-    
-    @include bp(desktop) {
+    .header__menu-link {
+        font-family: $fontMediumCond;
+        color: #000;
         letter-spacing: 7px;
-        font-size: calc-rem(18px);
-    }    
-    @include bp(tablet) {
-        letter-spacing: 7px;
-        font-size: calc-rem(17.5px);
+        padding-bottom: 4px;
+        
+        &.header__menu-magnifier {
+            background: url("../../assets/images/magnifier_black.png") center center no-repeat;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+        }
+
+        @include bp(desktop) {
+            font-size: calc-rem(18px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(17.5px);
+        }
+        @include bp(mobile) {
+            position: relative;
+            
+            &.active {
+                
+                &:after {
+                    content: '';
+                    display: inline-block;
+                    background: url(../../assets/images/arrow_up.png) center center no-repeat;
+                    width: 24px;
+                    height: 24px;
+                    background-size: 24px;
+                    position: absolute;
+                    top: 9px;
+                    margin-left: 15px;
+            
+                    @include bp(mobileSmall) {
+                        top: 3px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
     }
-}
-.header__menu-line {
-    display: inline-block;
-    width: 4px;
-    background: #000;
-    height: 2px;
-    vertical-align: 5px;
-//    margin-left: 5%;
-//    margin-right: 5%;
-    
-    @include bp(desktop) {
-        margin: 0 62px 0 55px;
-    }    
-    @include bp(tablet) {
-        margin: 0 34px 0 37px;
-    }
-    @include bp(mobile) {
-        display: none;
+    .header__menu-line {
+        display: inline-block;
+        width: 4px;
+        background: #000;
+        height: 2px;
+        vertical-align: 5px;
+
+        @include bp(desktop) {
+            margin: 0 62px 0 55px;
+        }
+        @include bp(mobile) {
+            display: none;
+        }
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin: 0 17px 0 20px;
+        }
+        @media (min-width: 888px) and (max-width: 1024px) {
+            margin: 0 37px 0 36px;
+        }
+        @media (min-width: 1025px) and (max-width: 1140px) {
+            margin: 0 44px 0 47px;
+        }
     }
 }

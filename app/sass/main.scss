@@ -1,32 +1,35 @@
 //------HELPERS
-@import "helpers/functions";
 @import "helpers/mixins";
+@import "helpers/functions";
 @import "helpers/variables";
 
-//------MAIN CONFIG
+//------BASE
 @import "base/breakpoints";
 @import "base/mainConfig";
+@import "base/grid";
 @import "base/typography";
 @import "base/reset";
-@import "base/grid";
+@import "base/helpers";
 
 //------COMPONENTS
 @import "components/buttons";
 @import "components/dropdownMenu";
 @import "components/heroBlockCategory";
 @import "components/navigation";
+@import "components/openHamburger";
 @import "components/pagination";
 @import "components/search";
 @import "components/slider";
 @import "components/stickyHeader";
-@import "components/videos/videoArticle";
-@import "components/videos/videoMonthly";
+@import "components/video";
 
 //------TEASERS
 @import "teasers/teaser";
 @import "teasers/teaserGraphical";
 @import "teasers/teaserMagazine";
 @import "teasers/teaserMost";
+@import "teasers/teaserMostRead";
+@import "teasers/teaserMostShared";
 @import "teasers/teaserQuote";
 @import "teasers/teaserWhite";
 

@@ -1,21 +1,380 @@
-.header__sticky {
+.header.header__sticky {
     @include bp(ofMobile) {
-        font-size: 24px;
-        background: #efc47D;
-        text-align: left;
+        @include stickyGradient;
         z-index: 99999;
         position: fixed;
-        width: 100%;
+        padding: 0;
+        
+        @media (min-width: 751px) and (max-width: 1365px) {
+            width: 100%;              
+        } 
     }
+//    .m-wrap {
+//        max-width: 1366px;
+//    }     
+    .header__body {
+//        display: table-cell;
+        display: table;
+        vertical-align: middle;
+        max-width: 1366px;
+//        padding: 28px 59px;
+
+        @include bp(tablet) {
+//            padding: 17px 28px;
+        }
+        @media (min-width: 751px) and (max-width: 1366px) {
+            position: initial;
+//            display: table;
+        }
+        @media (min-width: 751px) and (max-width: 887px) {
+            padding: 0px 10px;
+        }
+        @media (min-width: 888px) and (max-width: 1023px) {
+            padding: 0px 15px;
+        }
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            padding: 0px 15px;
+        }
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            padding: 0px 25px;
+        }
+//        @media (min-width: 751px) and (max-width: 887px) {
+//            padding: 17px 10px;
+//        }
+//        @media (min-width: 888px) and (max-width: 1023px) {
+//            padding: 17px 15px;
+//        }
+//        @media (min-width: 1025px) and (max-width: 1195px) {
+//            padding: 28px 15px;
+//        }
+//        @media (min-width: 1196px) and (max-width: 1365px) {
+//            padding: 28px 25px;
+//        }
+    }
+
     .header__logo {
         float: left;
+        margin: 0;
+        padding: 0;
+        
+        @include bp(desktop) {
+            padding: 28px 0 0;
+        }
+        @include bp(tablet) {
+            padding: 17px 0 0;
+        }
     }
+    .header__heading {
+        font-size: calc-rem(23px);
+        color: $white-color;
+        margin: 0;
+        letter-spacing: 5px;
+
+        @include bp(tablet) {
+            font-size: calc-rem(22px);
+        }
+    }
+    .header__heading-line {
+        background: $white-color;
+        width: 43px;
+        bottom: -2px;
+        right: 9px;
+        height: 2px;
+    }
+    .header__fist {
+        background: url("../../assets/images/footer_fist.png") center center no-repeat;
+        background-size: 32px;
+        width: 32px;
+        height: 28px;
+        margin: 0px 0px -12px 0px;
+
+        @include bp(tablet) {
+            background-size: 30px;
+        }
+    }
+
     .header__menu {
         float: left;
+        margin: -3px 0 0 79px;
+        padding: 0;
+        position: initial;
+
+        @include bp(tablet) {
+            margin: 0 0 0 50px;
+        }
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin: 0 0 0 12px;
+        }
+
+        @media (min-width: 888px) and (max-width: 1023px) {
+            margin: 0 0 0 20px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            margin: -3px 0 0 20px;
+        }
+
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            margin: -3px 0 0 40px;
+        }
     }
+    .header__menu-list {
+        &:not(:last-child) .header__menu-link {
+            border-bottom: 2px solid transparent;
+        }
+
+        @include bp (desktop) {
+            padding: 28px 0 25px;
+            
+            &:last-child {
+                margin-left: -19px;
+            }
+            &:not(:last-child):hover .header__menu-link {
+                color: $white-color;
+                border-color: $white-color;
+            }
+        }
+        @include bp(tablet) {
+            padding: 17px 0 18px;
+        }
+
+        @include bp (toDesktop) {
+            &:not(:last-child):hover .header__menu-link.active {
+                color: $white-color;
+                border-color: $white-color;
+            }
+        }
+    }
+
+    .header__menu-link {
+        font-size: calc-rem(16px);
+        color: $white-color;
+        letter-spacing: 6px;
+
+        @include bp(tablet) {
+            letter-spacing: 5px;
+        }
+
+//            &:hover {
+//                color: red;
+//                border-color: $white-color;
+//            }
+
+        &.header__menu-magnifier {
+            background: url("../../assets/images/magnifier_white.png") center center no-repeat;
+            background-position: 3px 8px;
+            height: 22px;
+
+            @include bp(tablet) {
+                background-position: 0px 6px;
+                height: 15px;
+                background-size: 10px;
+            }
+        }
+
+        @include bp(tablet) {
+            font-size: calc-rem(12px);
+        }
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            letter-spacing: 3px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            letter-spacing: 5px;
+        }
+    }
+    .header__menu-line {
+        background: $white-color;
+        height: 1px;
+
+        @media (min-width: 1366px) {
+            margin: 0 35px;                
+        }
+
+        @include bp(tablet) {
+            margin: 0 18px;
+            height: 2px;
+            width: 2px;
+            vertical-align: 2px;
+        }
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin: 0 10px;
+        }
+
+        @media (min-width: 888px) and (max-width: 1023px) {
+            margin: 0 14px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            margin: 0 19px 0 22px;
+        }
+
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            margin: 0 29px 0 32px;
+        }
+//            @media (min-width: 1246px) and (max-width: 1365px) {
+//                margin: 0 30px;                
+//            }
+    }
+    .header__sub {
+        max-width: 1246px;
+        margin: 0 auto;
+        top: 75px;
+        right: 0;
+        left: 0;
+//            display: block;
+
+        @include bp(tablet) {
+            top: 53px;
+        }
+    }
+//        .header__sub-fist {
+//            
+//            @include bp(tablet) {
+//                padding: 28px 0;
+//            }
+//        }
+//        .header__sub-list {
+//            
+//            @include bp(tablet) {
+//                &:not(:last-child) {
+//                    margin-bottom: 15px;
+//                }
+//
+//                &:before, &:after {
+//                    width: 3px;
+//                    height: 2px;
+//                    vertical-align: 3px;
+//                    margin: 0;
+//                }
+//            }
+//        }
+//        .header__sub-link {
+//            
+//            @include bp(tablet) {
+//                font-size: calc-rem(16px);
+//                letter-spacing: 3px;
+//            }
+//        }
+//        .header__sub-middle {
+//            .header__sub-image {
+//                @include bp(tablet) {
+//                    background-position: -8px 0px;
+//                }
+//            }
+//        }
+//        .header__sub-description {
+//            @include bp(tablet) {
+//                padding: 19px 14px;
+//            }
+//        }
+//        .header__sub-tag {
+//            @include bp(tablet) {
+//                font-size: calc-rem(11.5px);
+//                letter-spacing: 1px;
+//            }
+//        }
+//        .header__sub-heading {
+//            @include bp(tablet) {
+//                font-size: calc-rem(19.5px);
+//                margin-top: 5px;
+//            }
+//        }
+//        .header__sub-image {
+//            @include bp(tablet) {
+//                height: 200px;
+//            }
+//        }
     .header__social {
         float: left;
-    position: inherit;
+        position: inherit;
+        margin: 4px 0 0 54px;
+        padding: 0;
+        
+        @include bp(desktop) {
+            padding: 28px 0 0;
+        }
+        @include bp(tablet) {
+            padding: 17px 0 0;
+        }
+
+//            @include bp(tablet) {
+//               margin-left: 10px;
+//            }
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin: 4px 0 0 12px;
+        }
+
+        @media (min-width: 888px) and (max-width: 1023px) {
+            margin: 4px 0 0 12px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            margin: 4px 0 0 19px;
+        }
+
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            margin: 4px 0 0 36px;
+        }
+    }
+    .header__social-link {
+//            color: $white-color;
+        margin-right: 18px;
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin-right: 7px;
+        }
+
+        &.header__social-fb {
+            background: url("../../assets/images/facebook_white.png") center center no-repeat;
+            background-size: 17px;
+            width: 17px;
+            height: 17px;
+
+            @include bp(desktop) {
+                margin-right: 12px;
+            }
+        }
+
+        &.header__social-tw {
+            background: url("../../assets/images/twitter_white.png") center center no-repeat;
+            background-size: 17px;
+            width: 17px;
+            height: 17px;
+        }
+
+        &.header__social-in {
+            background: url("../../assets/images/instagram_white.png") center center no-repeat;
+            background-size: 17px;
+            width: 17px;
+            height: 17px;
+        }
+
+        &.header__social-yt {
+            display: none;
+        }
+    }
+
+    .header__social-em {
+        display: inline-block;
+        background: url("../images/envelope_white.png") no-repeat;
+        background-size: 19px !important;
+        padding: 0;
+        margin: 0 0 0 7px;
+        width: 19px;
+        height: 19px;
+
+        &:after {
+            display: none;
+        }
+
+        @include bp(tablet) {
+            background-position: 0 !important;
+        }
     }
     .header__brand {
         display: none;

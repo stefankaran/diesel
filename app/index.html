@@ -15,21 +15,25 @@
         
     </head>
     <body>
-        <div id="page" class="page l-wrap">  
+        <div id="page" class="page">  
             <header id="header" class="header">
-                <button class="hamburger">---</button>
-                <button class="cross">x</button>
-<!--                <button class="hamburger">&#9776;</button>-->
-<!--                <button class="cross">&#735;</button>-->
-                <div class="header__body header__body-mobile m-wrap">
+                <div class="header__body">
+                    <button class="header__hamburger">
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                        <span class="header__hamburger-line"></span>
+                    </button>
+                    <span class="header__cross"></span>
                     <div class="header__logo">
                         <h1 class="header__heading">Bravely<span class="header__heading-line"></span></h1>
-                        <img src="assets/images/header_fist_blue.png" alt="Bravely" class="header__fist">
+<!--                        <img src="assets/images/header_fist_blue.png" alt="Bravely" class="header__fist">-->
+                       <span class="header__fist"></span>
                     </div>
                     <nav class="header__menu">
                         <ul class="header__menu-row">
-                            <li class="header__menu-list sub__first"><a href="#" class="header__menu-link">Entertainment</a>
-                                <ul class="header__sub">
+                            <li class="header__menu-list sub__first">
+                                <a href="#" class="header__menu-link">Entertainment</a>
+                                <ul class="header__sub header__sub-first">
                                    <li class="header__sub-block header__sub-fist">
                                        <ul class="header__sub-row">
                                            <li class="header__sub-list">
@@ -51,13 +55,18 @@
                                        <div class="header__sub-description">
                                            <a href="#" class="header__sub-tag">music</a>
                                            <a href="#" class="header__sub-heading">the power of words</a>
+                                           <a href="#" class="btn btn--teaser-white">Read more</a>
                                        </div>
                                    </li>
                                    <li class="header__sub-block header__sub-last">
-                                       <div class="header__sub-image"></div>
+                                       <div class="header__sub-image">
+<!--                                           <span class="heading__sub-video">Video</span>-->
+                                       </div>
                                        <div class="header__sub-description">
+                                           <a href="#" class="heading__sub-video"><span class="play"></span>Video</a>
                                            <a href="#" class="header__sub-tag">culture</a>
                                            <a href="#" class="header__sub-heading">Surflying, a dream come true ? </a>
+                                           <a href="#" class="btn btn--teaser-white">Read more</a>
                                        </div>
                                    </li>
                                 </ul>
@@ -80,113 +89,393 @@
                             </li>
                             <span class="header__menu-line"></span>
                             <li class="header__menu-list">
-                                <a href="#" class="header__menu-link header__menu-magnifier">
-                                <img src="assets/images/magnifier.png" alt=""></a>
+                                <a href="#" class="header__menu-link header__menu-magnifier"></a>
                             </li>
                         </ul>
                     </nav>
                     <div class="header__social">
-                        <a href="#" class="header__social-link header__social-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" class="header__social-link header__social-tw"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" class="header__social-link header__social-in"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" class="header__social-link header__social-yt"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="#" class="header__social-link header__social-fb"></a>
+                        <a href="#" class="header__social-link header__social-tw"></a>
+                        <a href="#" class="header__social-link header__social-in"></a>
+                        <a href="#" class="header__social-link header__social-yt"></a>
                         <a href="#" class="header__social-link header__social-em"></a>
                     </div>
                     <div class="header__brand">
-                        <p class="empowered header__empowered">Empowered by <a href="#"><img src="assets/images/header_brand-logo.png" alt="Only the brave" class="header__brand-logo"><a/></p>
-                    </div>                    
+                        <p class="empowered header__empowered">Empowered by</p>
+                        <a href="#"><img src="assets/images/header_brand-logo.png" alt="Only the brave" class="header__brand-logo"><a/>
+                    </div>                      
                 </div>
             </header>
             <main id="homepage" class="homepage">
-                <section class="m-wrap">
             
                 <div class="imgslider" style="text-align:center;"><img src="assets/images/slider_image.png" alt=""></div>
                 <div class="clearfix"></div>
-            
+                
+              <div class="wrap">
+                  <section class="teaser-section teaser-section--first">
+                    
+                    <!--TEASER WHITE - num_1-->
+                    <article class="teaser teaser--white t-left">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser1.jpg" alt="Barack Obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">Top motivation in Music</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- END WHITE TEASER -->
+                                     
+                    <!--TEASER WHITE - num_2-->
+                    <article class="teaser teaser--white d-right t-right">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser2.jpg" alt="Barack Obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">Think out of the box</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- END WHITE TEASER -->
 
+                    <!--TEASER MAGAZINE-->
+                    <article class="teaser teaser--magazine d-middle t-left">
+                        <div class="teaser--magazine__image">
+                            <img src="assets/images/teaser-magazine-1.png" alt="Bravely Magazine" class="teaser--magazine__img"> 
+                            <a href="#" class="teaser--magazine__social">
+                                <img src="assets/images/teaser-magazine-insta.png" alt="">
+                            </a>
+                        </div>
+                        <div class="teaser--magazine__body">
+                            <div class="teaser--magazine__elements">
+                                <div class="teaser--magazine__fist">
+                                    <img src="assets/images/teaser-magazine-fist.png" alt="">
+                                </div>
+                                <div class="teaser--magazine__head">
+                                    <h1 class="teaser--magazine__heading"><a href="#">Bravely Magazine</a></h1>
+                                    <p class="teaser--magazine__share"><span class="teaser--magazine__num">2,550</span> j’aime</p>         
+                                </div>
+                            </div>                                
+                            <div class="clearfix"></div>
+                            <p class="teaser--magazine__text">Eric Thomas’ tips 
+                            <br />(aka ET The Hip Hop Preacher)
+                            <br />How to stay in love ?
+                            <br />#Bravely  #Love  #Motivation 
+                            </p>
+                            <a href="#" class="btn btn--teaser-magazine">s’abonner</a>
+                        </div>
+                    </article> 
+                    <!-- END MAGAZINE TEASER -->
+
+                    <!--TEASER GRAPHICAL-->
+                    <article class="teaser teaser--graphical d-right t-right">
+                       <div class="teaser--graphical__top">
+                           <div class="teaser--graphical__topElements">
+                               <h2><a href="" class="teaser__tag teaser--graphical__tag">Work</a></h2>
+                               <h1 class="teaser--graphical__heading">Renzo Rosso, the essence of unexepected</h1>
+                               <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--graphical__fist">
+                           </div>
+                       </div>
+                       <div class="teaser--graphical__bottom">
+                          <div class="teaser--graphical__textShare">
+                               <p class="teaser--graphical__text">How the fashion designer encourages audacity and creativity</p>
+                               <p class="teaser__share teaser--graphical__share"><b>95</b> share</p>                              
+                          </div>
+                           <a href="#" class="btn btn--gradient btn--teaser-graphical">Read more</a>
+                           <img src="assets/images/teaser_graphical_image1.png" alt="Renzo Rosso, the essence of unexepected" class="teaser--graphical__image">
+                       </div>
+                    </article>
+                    <!-- END GRAPHICAL TEASER -->
+                                     
+                    <!--TEASER WHITE - num_3-->
+                    <article class="teaser teaser--white t-left">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser3.jpg" alt="Barack Obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Laugh</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">Which side are you on ?</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- END WHITE TEASER -->
+                                     
+                    <!--TEASER WHITE - num_4-->
+                    <article class="teaser teaser--white d-middle t-right">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser4.jpg" alt="Barack Obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Entertainment</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">The power of words</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- END WHITE TEASER -->
+                    
+                    <div class="clearfix"></div>
+
+                  </section> <!-- END TEASER SECTION No. 1 -->                  
+                   
+                   <!--VIDEO MONTHLY-->
+                   <article class="video video--monthly clearfix">
+                       <div class="video__body video--monthly__body">
+                           <div class="video__videoBox">
+                               <a href="#">
+                                   <img src="assets/images/monthly_video_image.png" alt="" class="video__image video--monthly__image">
+                                   <img src="assets/images/video_play.png" alt="" class="video__play video--monthly__play">
+                               </a>
+                           </div>
+                           <h1 class="video__bigTittle">Motivational monthly video</h1>
+                           <img src="assets/images/monthly_video_fist.png" alt="" class="video--monthly__fist">
+                           <h2 class="video--monthly__tagHeading"><a href="#" class="video__tag video--monthly__tag">Love</a></h2>
+                       </div>
+                       <div class="video__bottom video--monthly__bottom">
+                           <h1 class="video__heading video--monthly__heading">Collaboration with Eric Thomas: “How to stay in love ?”</h1>
+                           <p class="video__share"><b>111</b> share</p>
+                           <a href="#" class="btn btn--video btn--gradient">Watch more</a>
+                       </div>
+                   </article>
+                   <!--END VIDEO MONTHLY-->
+                                        
                     <!--TEASER QUOTE-->
+<!--
                     <article class="teaser teaser--quote">
                         <div class="teaser--quote__body">
                             <h1 class="teaser--quote__heading">Harder the fight, greater the victory<img src="assets/images/teaser-quote-fist.png" alt="" class="teaser--quote__fist"></h1>                    
                             <div class="teaser--quote__person">
                                <div class="teaser--quote__person-img">
-                                   <img src="assets/images/teaser-quote-person1.png" alt="Mohamed Ali">
+                                   <img src="assets/images/teaser-quote-person11.png" alt="Mohamed Ali">
                                </div>
                                <div class="teaser--quote__person-details">
                                    <h2 class="teaser--quote__person-name">Mohamed Ali</h2>
                                    <span class="teaser--quote__person-proffesion">Boxer</span>
                                </div>
                             </div>
-                            <div class="teaser--quote__social">
-                                <a href="" class="teaser--quote__social-item teaser--quote-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="" class="teaser--quote__social-item teaser--quote-tw"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                <a href="" class="teaser--quote__social-item teaser--quote-pt"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="teaser--quote__social">
+                            <a href="" class="teaser--quote__social-item teaser--quote-fb"></a>
+                            <a href="" class="teaser--quote__social-item teaser--quote-tw"></a>
+                            <a href="" class="teaser--quote__social-item teaser--quote-pt"></a>
+                        </div>
+                    </article> 
+-->
+                    <!-- END QUOTE TEASER --> 
+                                       
+                    <!-- MOST SHARED TEASER -->
+                    <article class="teaser teaser--most teaser--mostShared">
+                        <div class="teaser--most_head">
+                            <h2 class="teaser--most__tittle">Most shared</h2>
+                            <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--most__fist">
+                        </div>
+                        <div class="teaser--most__body">
+                            <div class="teaser--most__item teaser--mostShared__tLeft">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tMiddle teaser--most__mMiddle">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tMiddle">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tRight">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tLeft teaser--most__mMiddle">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tMiddle">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tMiddle">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--mostShared__tRight">
+                                <div class="teaser--most__image mostShared__imageBox">
+                                    <a class="mostShared__imageLink" href="#"><img src="assets/images/most-shared-img.jpg" alt="" class="mostShared__image"></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
                             </div>
                         </div>
-                    </article> 
-                    <!-- END TEASER -->    
-
-                    <!--TEASER WHITE-->
-                    <article class="teaser teaser--white">
-                        <div class="teaser--white__image">
-                            <a href="#"><img src="assets/images/image1.png" alt="Barack Obama is like you"></a>
-                        </div>
-                        <div class="teaser--white__body">
-                            <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
-                            <p class="teaser--white__date">12/02/16</p>
-                            <h1 class="teaser--white__heading">Barack Obama is like you</h1>
-                            <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
-                            <p class="teaser--white__share"><b>250</b> share</p>
-                            <a href="#" class="btn btn--teaser-white btn--tablet">Read more</a>
-                        </div>
-                    </article> 
-                    <!-- END TEASER -->
-
-                    <!--TEASER MAGAZINE-->
-                    <article class="teaser teaser--magazine">
-                        <div class="teaser--magazine__image">
-                            <img src="assets/images/teaser-magazine-1.png" alt="Bravely Magazine">
-                            <a href="#" class="teaser--magazine__social"><img src="assets/images/teaser-magazine-insta.png" alt=""></a>
-                        </div>
-                        <div class="teaser--magazine__body">
-                            <div class="teaser--magazine__fist">
-                                <img src="assets/images/teaser-magazine-fist.png" alt="">
-                            </div>
-                            <div class="teaser--magazine__head">
-                                <h1 class="teaser--magazine__heading"><a href="#">Bravely Magazine</a></h1>
-                                <span class="teaser--magazine__number"><b>2,550</b> j’aime</span>         
-                            </div>
-                            <div class="clearfix"></div>
-                            <p class="teaser--magazine__text">Eric Thomas’ tips 
-                            <br />(aka ET The Hip Hop Preacher) 
-                            <br />How to stay in love ?
-                            <br />#Bravely  #Love  #Motivation 
-                            </p>
-                            <a href="#" class="btn btn--teaser-magazine btn--tablet">s’abonner</a> 
-                        </div>
-                    </article> 
-                    <!-- END TEASER -->
-
-                    <!--TEASER WHITE-->
-                    <article class="teaser teaser--white">
-                        <div class="teaser--white__image">
-                            <a href="#"><img src="assets/images/image1.png" alt="Barack Obama is like you"></a>
-                        </div>
-                        <div class="teaser--white__body">
-                            <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
-                            <p class="teaser--white__date">12/02/16</p>
-                            <h1 class="teaser--white__heading">Barack Obama is like you</h1>
-                            <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
-                            <p class="teaser--white__share"><b>250</b> share</p>
-                            <a href="#" class="btn btn--teaser-white btn--tablet">Read more</a>
-                        </div>
-                    </article> 
-                    <!-- END TEASER -->
+                    </article>
+                    <!-- END MOST SHARED TEASER -->
                     
-                </section> <!-- END WRAP / END TEASER SECTION -->
+                   <!--VIDEO ARTICLE-->                    
+<!--                   <div class="clearfix"></div>-->
+                   <article class="video video--article clearfix">
+                       <div class="video__body video--article__body">
+                           <div class="video__videoBox">
+                               <a href="#">
+                                   <img src="assets/images/article_video_img.png" alt="" class="video__image video--article__image">
+                                   <img src="assets/images/video_play.png" alt="" class="video__play video--article__play">
+                               </a>
+                           </div>
+                           <img src="assets/images/teaser-graphical-fist.png" alt="" class="video--article__fist">
+                           <h2 class="video--article__tagHeading"><a href="#" class="video__tag video--article__tag">Sports</a></h2>                           
+                       </div>
+                       <div class="video__bottom video--article__bottom">
+                           <div class="video--article__content">
+                               <h1 class="video__heading video--article__heading">Talent + Concentration = Success</h1>
+                               <p class="video--article__text">87 000 euros in two seconds for a Lakers fan</p>
+                               <p class="video__share"><b>99</b> share</p>                               
+                           </div>
+                           <a href="#" class="btn btn--video btn--gradient">Play</a>
+                       </div>
+                   </article>
+                   <!--END VIDEO ARTICLE-->
+                    
+                    <!--TEASER MOST READ-->
+<!--
+                    <article class="teaser teaser--most teaser--mostRead">
+                        <div class="teaser--most_head">
+                            <h2 class="teaser--most__tittle">most read</h2>
+                            <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--most__fist">
+                        </div>
+                        <div class="teaser--most__body">
+                            <div class="teaser--most__item teaser--most__tLeft">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--most__mMiddle teaser--most__tMiddle">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--most__tMiddle">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--most__tRight">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item teaser--most__mMiddle">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                            <div class="teaser--most__item">
+                                <div class="teaser--most__image">
+                                    <a href="#"><img src="assets/images/teaser-most.jpg" alt=""></a>
+                                </div>
+                                <div class="teaser--most__content">
+                                    <h2><a class="teaser__tag teaser--most__tag" href="#">work</a></h2>
+                                    <h1 class="teaser--most__heading">Mark Zuckerberg continues to dream</h1>
+                                    <p class="teaser--most__text">And we trust him</p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+-->
+                    <!-- END MOST READ TEASER --> 
+                    
+                </div> <!-- END WRAP -->
             </main>
             <div class="clearfix"></div>
-            <!--                FOOTER-->
+            <!-- FOOTER-->
             <footer id="footer" class="footer">
                 <div class="footer__body">
                     <div class="footer__logo">
@@ -213,7 +502,8 @@
                         </div>                        
                     </div>
                 </div>
-            </footer> <!-- END FOOTER -->
+            </footer> 
+            <!-- END FOOTER -->
         </div>
     </body>
 </html>

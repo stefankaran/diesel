@@ -1,65 +1,191 @@
 .teaser--magazine {
-//    max-width: 388px;
-
+    @include btnGradient;
+    
+    @include bp(toDesktop) {
+        display: table;
+    }
+    
     .teaser--magazine__image {
         position: relative;
         
-        img {
+        @include bp(toDesktop) {
+            display: table-cell;
+            overflow: hidden;
+        }
+        @include bp(tablet) {
+            width: 52%;
+        }
+        @include bp(mobile) {
+            width: 50%;
+        }
+ 
+        .teaser--magazine__img {
             display: block;
+            
+            @include bp(toDesktop) {
+                width: auto;
+                max-width: none;
+                height: auto;
+                margin: auto;
+                position: absolute;
+//                top: -76%;
+                right: -97%;
+                bottom: -100%;
+                left: -100%;
+                
+                @media (min-width: 946px) and (max-width: 1024px) {
+                    top: -84%;
+                }
+                @media (min-width: 751px) and (max-width: 811px) {
+                    top: -100%;
+                }
+                @media (min-width: 812px) and (max-width: 945px) {
+                    top: -95%;
+                }
+            }
+            @include bp(mobile) {
+                top: -90%;
+            }
+        }
+        
+        @include bp(desktop) {
         }
     }
-
+    .teaser--magazine__elements {
+        display: inline-block;
+        text-align: center;
+//        padding-top: 20px;
+    }
     .teaser--magazine__social {
         position: absolute;
-        left: 11px;
-        top: 15px;
         color: #7f7f7f;
-    }
-
-    .teaser--magazine__body {
-        background: #294e79;
-        text-align: center;
-        padding: 25px 70px;
-    }
-
-    .teaser--magazine__fist {
-        background: $white-color;
-        width: 40px;
-        height: 40px;
-        line-height: calc-rem(40px);
-        float: left;
-        margin-left: 13px;
-
-        img {
-            width: 30px;
-            vertical-align: middle;
+        left: 8px;
+        top: 14px;
+        
+        @include bp(desktop) {
+            left: 8px;
+            top: 14px;
+            
+            img {
+                width: 30px;
+            }
+        }        
+        @include bp(tablet) {
+            left: 20px;
+            top: 20px;
+            
+            img {
+                width: 25px;
+            }
+        }       
+        @include bp(mobile) {
+            left: 34px;
+            top: 30px;
         }
     }
-    
+    .teaser--magazine__body {
+//        background: #294e79;
+        text-align: center;
+        padding: 25px 70px;
+        
+        @include bp(tablet) {
+            width: 52%;
+        }
+        @include bp(mobile) {
+            width: 50%;
+        }     
+        @include bp(toDesktop) {
+            display: table-cell;
+            padding: 47px 7px;
+//            height: 313px;
+        }
+        @media (min-width: 1025px) and (max-width: 1140px) {
+            padding: 25px 40px;
+        }
+    }
+    .teaser--magazine__fist {
+        background: $white-color;
+        width: 38px;
+        height: 38px;
+        line-height: calc-rem(40px);
+        float: left;
+//        margin-left: 8px;
+
+        img {
+            vertical-align: middle;
+            
+            @include bp(desktop) {
+                width: 30px;
+            }
+            @include bp(tablet) {
+                width: 28px;
+                margin-bottom: 4px;
+            }
+            @include bp(mobile) {
+                margin-top: 10px;
+            }
+        }
+        
+        @include bp(mobile) {
+            width: 60px;
+            height: 60px;
+        }
+    }
     .teaser--magazine__head {
         float: left;
         text-align: left;
-        margin-left: 7px;
+        margin-left: 5px;
     }
-    
     .teaser--magazine__heading a {
         font-family: $fontMediumCond;
-        font-size: calc-rem(22px);
         color: $white-color;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(22px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(21px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(33px);
+        }
     }
-    
-    .teaser--magazine__number {
-        font-family: $fontMediumCond; 
-        font-size: calc-rem(16px);
-        color: $primary-color;     
+    .teaser--magazine__share {
+        font-family: $fontMedium; 
+        color: $primary-color;
+        text-transform: uppercase;
+        margin: 2px 0 0 4px;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(16px);
+        }        
+        @include bp(tablet) {
+            font-size: calc-rem(15.4px);            
+        }   
+        @include bp(mobile) {
+            font-size: calc-rem(25px);            
+        }
     }
-    
+    .teaser--magazine__num {
+        font-family: $fontHeavy;   
+    }
     .teaser--magazine__text {
         font-family: $fontDemi;
         text-transform: uppercase;
-        font-size: calc-rem(14px);
         line-height: calc-rem(17px);
         color: $white-color;
-        margin: 14px 0 20px;
+        margin: 15px 0 21px;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(14px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(15px);
+            padding: 5px 10px 0;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(22px);
+            line-height: calc-rem(24px);
+        }
     }
 }

@@ -32,16 +32,62 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2b48', endColorstr='#376fa7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+@mixin stickyGradient {
+    background: #192945; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #192945 0%, #234167 26%, #2c5482 47%, #34699e 66%, #376fa7 95%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #192945 0%,#234167 26%,#2c5482 47%,#34699e 66%,#376fa7 95%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #192945 0%,#234167 26%,#2c5482 47%,#34699e 66%,#376fa7 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#192945', endColorstr='#376fa7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
-// @mixin btn-responsiv ($font-size, $min-width, padding-top, padding-bottom) {
-//     font-size: $font-size;
-//     min-width: $min-width;
-//     padding-top: $padding-top;
-//     padding-bottom: $padding-bottom;
-// }
+@mixin videoMonthlyGradient {
+    background: #1b2c49; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #1b2c49 0%, #316194 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #1b2c49 0%,#316194 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #1b2c49 0%,#316194 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b2c49', endColorstr='#316194',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin videoArticleGradient {
+    background: #142a45; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #142a45 0%, #122741 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #142a45 0%,#122741 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #142a45 0%,#122741 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142a45', endColorstr='#122741',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+// Border radius
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// Transform
+@mixin transform-rotate($rotate) {
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+// Transition
+@mixin transition-all($all) {
+    -webkit-transition: ($all);
+    -moz-transition: ($all);
+    -ms-transition: ($all);
+    -o-transition: ($all);
+    transition: ($all);
+}
+
+// Responsive buttons
+ @mixin btn-responsive ($font-size, $min-width, $padding-top, $padding-bottom) {
+     font-size: $font-size;
+     min-width: $min-width;
+     padding-top: $padding-top;
+     padding-bottom: $padding-bottom;
+ }

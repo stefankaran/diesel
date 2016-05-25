@@ -1,8 +1,16 @@
 html {
     font-size: $basefont-size;
+    font-weight: 100;
+    
+    @include bp(mobileSmall) {
+        font-size: $basefont-size-small;
+    }
 }
 body {
     text-transform: uppercase;
+}
+a {
+    @include transition-all(all 0.3s ease-in-out);
 }
 p {
     text-transform: lowercase;
@@ -14,7 +22,7 @@ img {
 .clearfix {
     clear: both;
 }
-.m-wrap {
+.wrap {
     margin: 0 auto;
     
     @include bp(desktop) {
@@ -23,14 +31,14 @@ img {
     @include bp(tablet) {
         max-width: 964px;
     }
-}
-.l-wrap {
-    margin: 0 auto;
-    
-    @include bp(desktop) {
-        max-width: 1366px;
+    @include bp(mobile) {
+        text-align: center;
     }
-    @include bp(tablet) {
-        max-width: 1024px;
+}
+.teaser-section {
+    display: inline-block;
+    
+    @include bp(mobile) {
+        text-align: left;
     }
 }
