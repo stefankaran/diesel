@@ -330,30 +330,21 @@
         }
 
         &.header__social-fb {
-            background: url("../../assets/images/facebook_white.png") center center no-repeat;
-            background-size: 17px;
-            width: 17px;
-            height: 17px;
+            @extend .whiteFacebook;
+            @extend .stickySocialSize;
 
             @include bp(desktop) {
                 margin-right: 12px;
             }
         }
-
         &.header__social-tw {
-            background: url("../../assets/images/twitter_white.png") center center no-repeat;
-            background-size: 17px;
-            width: 17px;
-            height: 17px;
+            @extend .whiteTwitter;
+            @extend .stickySocialSize;
         }
-
         &.header__social-in {
-            background: url("../../assets/images/instagram_white.png") center center no-repeat;
-            background-size: 17px;
-            width: 17px;
-            height: 17px;
+            @extend .whiteInstagram;
+            @extend .stickySocialSize;
         }
-
         &.header__social-yt {
             display: none;
         }

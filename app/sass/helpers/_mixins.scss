@@ -57,6 +57,14 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#142a45', endColorstr='#122741',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
+@mixin sliderGradient {
+    background: #1b2c49; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #1b2c49 0%, #376fa7 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #1b2c49 0%,#376fa7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #1b2c49 0%,#376fa7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1b2c49', endColorstr='#376fa7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 // Border radius
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
@@ -90,4 +98,11 @@
      min-width: $min-width;
      padding-top: $padding-top;
      padding-bottom: $padding-bottom;
+ }
+
+// Social icons size
+ @mixin iconSize ($size) {
+     background-size: $size;
+     width: $size;
+     height: $size;
  }

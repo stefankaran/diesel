@@ -14,3 +14,56 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+@include bp(ofMobile) {
+    .backgroundCropGradient {    
+        @include sliderGradient;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $white-color;
+            width: 100%;
+
+            @include bp(desktop) {
+                height: 5.5%;   
+            }
+            @include bp(tablet) {
+                height: 9.5%;   
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: $white-color;
+            width: 100%;
+
+            @include bp(desktop) {
+                height: 26.5%;   
+            }
+            @include bp(tablet) {
+                height: 26%;   
+            }
+        }
+    }
+}
+.stickySocialSize {
+    background-size: 17px !important;
+    width: 17px;
+    height: 17px;
+}
+.whiteFacebook {
+    background: url("../../assets/images/facebook_white.png") center center no-repeat;
+}
+.whiteTwitter {
+    background: url("../../assets/images/twitter_white.png") center center no-repeat;
+}
+.whiteInstagram {
+    background: url("../../assets/images/instagram_white.png") center center no-repeat;
+}
+.whiteYouTube {
+    background: url("../../assets/images/youtube_white.png") center center no-repeat;
+}

@@ -1,0 +1,223 @@
+.categoryHero {
+    position: relative;
+    text-align: center;
+    
+    @include bp(ofMobile) {
+        @extend .backgroundCropGradient;
+    }
+    .categoryHero__body {
+        position: relative;
+    }
+    .categoryHero__image {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+            
+        @media (min-width: 580px) and (max-width: 750px) {
+            min-height: 490px;
+        }
+        @media (min-width: 480px) and (max-width: 579px) {
+            min-height: 390px;
+        }
+        
+        @include bp(mobile) {
+//            width: 100%;
+//            text-align: center;
+//            overflow: hidden;
+            
+//            width: 90%; /* or whatever is required */
+//            text-align: center; /* ensures the image is always in the h-middle */
+//            overflow: hidden; /* hide the cropped portion */
+        }
+        
+        img {
+            display: block;
+            
+            @media (min-width: 480px) and (max-width: 750px) {
+                position: absolute;
+                bottom: -20%;
+                top: 26%;
+                transform: scale(2);
+            }
+            
+            @include bp(mobile) {
+//                max-width: none;
+//                margin: 0 0 0 -34%;
+//                vertical-align: middle;
+//                max-height: 489px;
+                
+//                position: relative;
+//                left: 0;
+//                margin-left: 0%;
+//                min-height: 489px;
+                
+//                position: relative; /* allows repositioning */
+//                left: 100%; /* move the whole width of the image to the right */
+//                margin-left: -200%; /* magic! */
+            }
+        }
+    }
+    .categoryHero__description {
+        @include btnGradient;
+        color: $white-color;
+        text-align: left;
+        
+        @include bp(ofMobile) {
+            position: absolute;
+            z-index: 2;
+        }        
+        @include bp(desktop) {
+            top: 24%;
+            right: 11.3%;
+            width: 31.5%;
+            /* height: 65%; */
+            padding: 3.4% 4.3%;
+        }
+        @include bp(tablet) {
+            top: 25%;
+            right: 10.5%;
+            width: 32%;
+            /* height: 65%; */
+            padding: 3.7% 4.2%;
+        }
+        @include bp(mobile) {
+            padding: 7% 8%;
+        }
+        @media (min-width: 1025px) and (max-width: 1190px) {
+            top: 8%;
+        }
+        @media (min-width: 751px) and (max-width: 935px) {
+            top: 11%;
+            padding: 3.7% 3.2%;
+        }
+    }
+    .categoryHero__heading {
+        font-family: $fontDemiCond;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(36px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(28px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(39px);
+        }
+    }
+    .categoryHero__text {
+        font-family: $fontMedium;
+        text-transform: initial;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(18px);
+            line-height: calc-rem(25px);
+            margin-top: 9px;
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(15px);
+            line-height: calc-rem(17px);
+            margin-top: 9px;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(27px);
+            line-height: calc-rem(41px);
+            margin-top: 21px;
+        }
+    }
+    .categoryHero__fist {
+        position: absolute;
+        z-index: 3;
+        
+        @include bp(ofMobile) {
+            right: 1.7%;
+            max-width: 11.8%;
+        }
+        @include bp(desktop) {
+            bottom: 13%;
+        }
+        @include bp(tablet) {
+            bottom: 7%;
+        }
+        @include bp(mobile) {
+            bottom: 43%;
+            right: 4.7%;
+            max-width: 22%;
+        }
+        @media (min-width: 480px) and (max-width: 640px) {
+            bottom: 53%;
+        }
+    }
+    .categoryHero__menu {
+        position: relative;
+        z-index: 2;
+        
+        @include bp(ofMobile) {       
+            @include btnGradient;
+        }
+        @include bp(desktop) {
+            padding: 13px 0 11px;
+        }
+        @include bp(tablet) {
+            padding: 7px 0;
+        }
+        @include bp(mobile) {
+            padding: 74px 0;
+            
+            .categoryHero__list:nth-last-child(-n+13), .categoryHero__menu-line:nth-last-child(-n+14) { //----- PROVERITI JOS JEDNOM!
+                display: none;
+            }
+        }
+    }
+    .categoryHero__list {
+        display: inline-block;
+    }
+    .categoryHero__link {
+        font-family: $fontMediumCond;
+        letter-spacing: 1px;
+        
+//        @include bp(desktop) {
+//            font-size: calc-rem(15px);
+//        }
+        @include bp(mobile) {
+            color: $black-color;
+            font-size: calc-rem(30px);
+        }        
+        @include bp(ofMobile) {
+            color: $white-color;
+            font-size: calc-rem(15px);
+            line-height: calc-rem(31px);
+        }
+    }
+    .categoryHero__menu-line {
+        display: inline-block;
+        
+        
+        @include bp(desktop) {
+            margin: 0 4.7%;
+        }
+        @include bp(tablet) {
+            margin: 0 6.1%;
+        }
+        @include bp(mobile) {
+            background: $black-color;
+            margin: 0 7.8%;
+            width: 6px;
+            height: 2.5px;
+            vertical-align: 5px;
+        }
+        @include bp(ofMobile) {
+            background: $white-color;
+            width: 3px;
+            height: 1px;
+            vertical-align: 4px;
+            
+            &.ofMobileNone {
+                display: block;
+                background: transparent;
+            }
+        }
+        @media (min-width: 751px) and (max-width: 860px) {
+            margin: 0 5.1%;
+        }
+    }
+}

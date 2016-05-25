@@ -9,7 +9,7 @@
     }
     @include bp(mobile) {
         @include mFooterGradient;
-        padding: 60px 0;
+        padding: 98px 0;
 	}
     
     .footer__body {
@@ -33,7 +33,7 @@
             max-width: 295px;
         }
         @include bp(mobile) {
-            max-width: 220px;
+            max-width: 48%;
         }
     }
     
@@ -47,7 +47,7 @@
             margin-top: 30px;
         }
         @include bp(mobile) {
-            margin-top: 35px;
+            margin-top: 50px;
         }
     }
     
@@ -69,7 +69,7 @@
             margin-bottom: 22px;
         }
         @include bp(mobile) {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
         }
     }
     
@@ -86,7 +86,8 @@
             font-size: calc-rem(10.5px);
         }
         @include bp(mobile) {
-            font-size: calc-rem(15.5px);
+            font-size: calc-rem(25px);
+            letter-spacing: 3px;
         }
     }
     
@@ -97,36 +98,90 @@
             right: 0;
         }
     }
-    
     .footer__social {
-        @include bp(toDesktop) {
-            margin-top: 26px;
-        }
         @include bp(desktop) {
             margin-bottom: 8px;
         }
+        @include bp(tablet) {
+            margin-top: 21px;
+        }
+        @include bp(mobile) {
+            margin-top: 24px;
+        }
     }
-    
     .footer__social-item {
-        color: $white-color;
+//        color: $white-color;
+        display: inline-block;
         
         @include bp(desktop) {
-            font-size: calc-rem(20px);
+//            font-size: calc-rem(20px);
             &:not(:last-child) {
                 margin-right: 4px;
             }
         }
         @include bp(tablet) {
-            font-size: calc-rem(22px);
+//            font-size: calc-rem(22px);
             &:not(:last-child) {
-                margin-right: 34px;
+                margin-right: 32px;
             }
         }
         @include bp(mobile) {
-            font-size: calc-rem(25px);
+//            font-size: calc-rem(25px);
             &:not(:last-child) {
-                margin-right: 43px;
+                margin-right: 10%;
             }
+        }
+    }
+    .footer__social-fb {
+        @extend .whiteFacebook;
+        
+        @include bp(desktop) {
+            @include iconSize (18px);
+        }
+        @include bp(tablet) {
+            @include iconSize (22px);
+        }
+        @include bp(mobile) {
+            @include iconSize (40px);
+        }
+    }
+    .footer__social-tw {
+        @extend .whiteTwitter;
+        
+        @include bp(desktop) {
+            @include iconSize (18px);
+        }
+        @include bp(tablet) {
+            @include iconSize (22px);
+        }
+        @include bp(mobile) {
+            @include iconSize (40px);
+        }
+    }
+    .footer__social-in {
+        @extend .whiteInstagram;
+        
+        @include bp(desktop) {
+            @include iconSize (17px);
+        }
+        @include bp(tablet) {
+            @include iconSize (21px);
+        }
+        @include bp(mobile) {
+            @include iconSize (40px);
+        }
+    }
+    .footer__social-yt {
+        @extend .whiteYouTube;
+        
+        @include bp(desktop) {
+            @include iconSize (18px);
+        }
+        @include bp(tablet) {
+            @include iconSize (24px);
+        }
+        @include bp(mobile) {
+            @include iconSize (52px);
         }
     }
     
@@ -138,13 +193,14 @@
             margin-top: 36px;
         }
         @include bp(mobile) {
-            margin-top: 44px;
+            margin-top: 70px;
         }
     }
     
     .footer__empowered {
         @include bp(mobile) {
-            font-size: calc-rem(15px);
+            font-size: calc-rem(23.75px);
+            letter-spacing: 1px;
         }
         @include bp(ofMobile) {
             font-size: calc-rem(12px);
@@ -159,7 +215,7 @@
             max-width: 90px;
         }
         @include bp(mobile) {
-            max-width: 110px;
+            width: 174px;
         }
     }
 }

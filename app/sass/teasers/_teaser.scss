@@ -1,6 +1,6 @@
 .teaser-section--first {
     @include bp(tablet) {
-        .teaser:nth-child(even) { clear: both; }
+        .teaser:nth-child(odd) { clear: both; }
     }
 }
 .teaser {
