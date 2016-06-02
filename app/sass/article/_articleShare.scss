@@ -1,0 +1,140 @@
+.sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 90px;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+.stickyy {
+    display: none;
+}
+
+.articleSingle__body {
+    @include bp(ofMobile) {
+        display: inline-block;
+    }
+    
+    .articleSingle__shareSticky {
+        @include bp(mobile) {
+            display: none;
+        }
+    }
+}
+.articleSingle__shareSticky {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    
+//    &.sticky {
+//        position: -webkit-sticky;
+//        position: sticky;
+//        top: 0;
+//        
+//        &:before, &:after {
+//            content: '';
+//            display: table;
+//        }
+//    }
+    
+    @include bp(ofMobile) {
+        float: left;
+    }
+    @include bp(desktop) {
+        width: 23%;
+//        margin-top: 9.3%;
+    }
+    @include bp(tablet) {
+        width: 24% !important;
+//        margin-top: 13.5%;
+    }
+    
+    .articleSingle__share {
+        
+        @include bp(desktop) {
+            margin-left: 8px;
+        }
+        @include bp(tablet) {
+            display: inline-block;
+            margin-left: 35%;
+        }
+    }
+    .articleSingle__shareNum {
+        font-family: $fontMedium;
+        background: $primary-color;
+        color: $white-color;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(18px);
+            padding: 7px 16px;
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(12.5px);
+            padding: 7px 12px;
+        }
+        
+        .shareNum {
+            font-family: $fontHeavy;
+        }
+    }
+    .articleSingle__shareLink {
+        display: block;
+        margin: 0 auto;
+                
+        &.articleSingle__fb {
+            background: $blueFacebook;
+            
+            @include bp(desktop) {
+                @include iconSize(32px);
+                margin-bottom: 35px;
+            }
+            @include bp(tablet) {
+                @include iconSize(24px);
+                margin-bottom: 41px;
+            }
+        }
+        &.articleSingle__tw {
+            background: $blueTwitter;
+            
+            @include bp(desktop) {
+                @include iconSize(33px);
+                margin-bottom: 36px;
+            }
+            @include bp(tablet) {
+                @include iconSize(28px);
+                margin-bottom: 41px;
+            }
+        }
+        &.articleSingle__gp {
+            background: $blueGooglePlus;
+            
+            @include bp(desktop) {
+                @include iconSize(34px);
+                margin-bottom: 21px;
+            }
+            @include bp(tablet) {
+                @include iconSize(29px);
+                margin-bottom: 26px;
+            }
+        }
+        &.articleSingle__em {
+            background: $blueEnvelope;
+            
+            @include bp(desktop) {
+                @include iconSize(30px);
+            }
+            @include bp(tablet) {
+                @include iconSize(25px);
+            }
+        }        
+    }
+}

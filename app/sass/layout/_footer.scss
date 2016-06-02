@@ -1,15 +1,14 @@
 .footer {
+    @include dtmPadding (103px 0, 74px 0, calc-rem(98px) 0) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        
     @include bp(desktop) {
         @include dFooterGradient;
-        padding: 103px 0;
 	}
     @include bp(tablet) {
         @include tFooterGradient;
-        padding: 74px 0;
     }
     @include bp(mobile) {
         @include mFooterGradient;
-        padding: 98px 0;
 	}
     
     .footer__body {
@@ -24,19 +23,9 @@
             text-align: center;
         }
     }
-    
     .footer__logo-fist {
-        @include bp(desktop) {
-            max-width: 358px;
-        }
-        @include bp(tablet) {
-            max-width: 295px;
-        }
-        @include bp(mobile) {
-            max-width: 48%;
-        }
+        @include dtmMaxWidth(358px, 295px, 48%); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
     }
-    
     .footer__menu {
         overflow: hidden;
         
@@ -47,10 +36,9 @@
             margin-top: 30px;
         }
         @include bp(mobile) {
-            margin-top: 50px;
+            margin-top: calc-rem(58px);
         }
     }
-    
     .footer__menu-list {
         @include bp(desktop) {
             float: left;
@@ -62,35 +50,34 @@
                 background: $white-color;
                 height: 1px;
                 vertical-align: middle;
-                margin: 0 20px 0 18px;            
+                margin: 0 29px 0 29px;
+                    margin-right: -moz-calc(29px);
+                    margin-left: -moz-calc(29px);
             }
         }
         @include bp(tablet) {
             margin-bottom: 22px;
         }
         @include bp(mobile) {
-            margin-bottom: 50px;
+            margin-bottom: calc-rem(49px);
         }
     }
-    
     .footer__menu-link {
         font-family: $fontBook;
         color: $white-color;
-        letter-spacing: 2px;
+        @include fontSize(10px, 10.5px, 25px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         
         @include bp(desktop) {
             display: inline-block;
-            font-size: calc-rem(10px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(10.5px);
+            letter-spacing: 1px;
         }
         @include bp(mobile) {
-            font-size: calc-rem(25px);
             letter-spacing: 3px;
         }
+        @include bp(mobileSmall) {
+            letter-spacing: 2px;
+        }
     }
-    
     .footer__social-text {
         @include bp(desktop) {
             position: absolute;
@@ -106,83 +93,42 @@
             margin-top: 21px;
         }
         @include bp(mobile) {
-            margin-top: 24px;
+            margin-top: 21px;
+        }
+        @include bp(mobileSmall) {
+            margin-top: 8px;
         }
     }
     .footer__social-item {
-//        color: $white-color;
         display: inline-block;
         
-        @include bp(desktop) {
-//            font-size: calc-rem(20px);
-            &:not(:last-child) {
+        &:not(:last-child) {
+            @include bp(desktop) {
                 margin-right: 4px;
             }
-        }
-        @include bp(tablet) {
-//            font-size: calc-rem(22px);
-            &:not(:last-child) {
+            @include bp(tablet) {
                 margin-right: 32px;
             }
-        }
-        @include bp(mobile) {
-//            font-size: calc-rem(25px);
-            &:not(:last-child) {
+            @include bp(mobile) {
                 margin-right: 10%;
             }
         }
     }
     .footer__social-fb {
-        @extend .whiteFacebook;
-        
-        @include bp(desktop) {
-            @include iconSize (18px);
-        }
-        @include bp(tablet) {
-            @include iconSize (22px);
-        }
-        @include bp(mobile) {
-            @include iconSize (40px);
-        }
+        background: $whiteFacebook;
+        @include footerIcons (18px, 22px, 40px); //------ Defined in mixins - Desktop, Talbet and Mobile.
     }
     .footer__social-tw {
-        @extend .whiteTwitter;
-        
-        @include bp(desktop) {
-            @include iconSize (18px);
-        }
-        @include bp(tablet) {
-            @include iconSize (22px);
-        }
-        @include bp(mobile) {
-            @include iconSize (40px);
-        }
+        background: $whiteTwitter;
+        @include footerIcons (18px, 22px, 40px);
     }
     .footer__social-in {
-        @extend .whiteInstagram;
-        
-        @include bp(desktop) {
-            @include iconSize (17px);
-        }
-        @include bp(tablet) {
-            @include iconSize (21px);
-        }
-        @include bp(mobile) {
-            @include iconSize (40px);
-        }
+        background: $whiteInstagram;
+        @include footerIcons (17px, 21px, 40px);
     }
     .footer__social-yt {
-        @extend .whiteYouTube;
-        
-        @include bp(desktop) {
-            @include iconSize (18px);
-        }
-        @include bp(tablet) {
-            @include iconSize (24px);
-        }
-        @include bp(mobile) {
-            @include iconSize (52px);
-        }
+        background: $whiteYouTube;
+        @include footerIcons (18px, 24px, 52px);
     }
     
     .footer__brand {
@@ -193,7 +139,7 @@
             margin-top: 36px;
         }
         @include bp(mobile) {
-            margin-top: 70px;
+            margin-top: calc-rem(70px);
         }
     }
     
@@ -208,14 +154,9 @@
     }
     
     .footer__brand-logo {
-        @include bp(desktop) {
-            max-width: 88px;
-        }
-        @include bp(tablet) {
-            max-width: 90px;
-        }
-        @include bp(mobile) {
-            width: 174px;
+        @include dtmMaxWidth(88px, 90px, 174px); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
+        @include bp(mobileSmall) {
+            width: 93px;
         }
     }
 }

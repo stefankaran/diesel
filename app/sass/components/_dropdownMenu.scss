@@ -1,13 +1,13 @@
 .sub__first:hover > .header__sub-first {
-    @include bp(desktop) {
-        display: block;        
-    }
+//    @include bp(desktop) {
+        display: inline-block;        
+//    }
 }
 .header__sub {
     display: none;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
-    top: 28px;
+    top: 26px;
     left: 0;
     right: 0;
     
@@ -57,6 +57,10 @@
             height: 3px;
             vertical-align: 4px;
             margin: 0 2px;
+        }
+        &:hover {
+            -ms-transform: scale(1.2);
+            transform: scale(1.2);
         }
         
         @include bp(tablet) {
@@ -115,7 +119,11 @@
             height: 198px;
         }        
         @include bp(mobile) {
-            height: 266px;
+            height: calc-rem(266px);
+        }      
+        @include bp(mobileSmall) {
+//            background-size: 100% !important;
+            background-size: auto 100% !important;
         }
     }
     .header__sub-description {
@@ -125,52 +133,28 @@
         @include bp(ofMobile) {
             position: absolute;
             background: $white-color;
-            padding: 25px 18px;
+            padding: 23px 15px;
             right: 0;
             bottom: 0;
-            min-height: 30%;
-            max-width: 55%;
+            min-height: 50%;
+            width: 57%;
         }
         @include bp(tablet) {
             padding: 19px 14px;
         }
     }
     .heading__sub-video {
-        color: $white-color;
-        @include btnGradient;
-        font-family: $fontHeavy;
-        position: absolute;
-        left: 0;
-        width: 113px;
-        font-size: calc-rem(12px);
-        padding: 4px 0;
-        text-align: center;
-              
-        @include bp(tablet) {
-            font-size: calc-rem(10px);
-            padding: 5px 0;
-        }        
+        @extend .videoLittle;
         @include bp(mobile) {
-            font-size: calc-rem(16px);
-            padding: 5px 0;
-            bottom: 54%;
-            width: 61%;
+            top: 235px;
+        }
+        @include bp(mobileSmall) {
+            top: 119px;
+            padding: 4px 0 2px;
             
             .play {
-                vertical-align: 2px; 
+                vertical-align: -1px;
             }
-        }
-        @include bp(ofMobile) {
-            top: -20px;
-        }  
-        
-        .play {
-            background: url(../../assets/images/play_small.png) center center no-repeat;
-            width: 5px;
-            height: 7px;
-            background-size: 7px;
-            display: inline-block;
-            margin-right: 5px;
         }
     }
     .header__sub-tag {

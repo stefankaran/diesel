@@ -13,7 +13,7 @@ a {
     @include transition-all(all 0.3s ease-in-out);
 }
 p {
-    text-transform: lowercase;
+    text-transform: initial;
 }
 img {
     max-width: 100%;
@@ -31,14 +31,10 @@ img {
     @include bp(tablet) {
         max-width: 964px;
     }
-    @include bp(mobile) {
-        text-align: center;
-    }
 }
-.teaser-section {
-    display: inline-block;
-    
+.mobileWrap {
     @include bp(mobile) {
-        text-align: left;
+        max-width: calc-rem(554px);
+        margin: 0 auto;
     }
 }

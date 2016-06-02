@@ -1,0 +1,448 @@
+// -------------- GENERAL --------------
+.articleHero {
+    position: relative;
+    
+    @include bp(desktop) {
+        margin-bottom: 5.5%;
+    }
+    @include bp(tablet) {
+        margin-bottom: 5%;
+    }
+    @include bp(mobile) {
+        margin-bottom: calc-rem(56px);
+    }
+    @include bp(mobileSmall) {
+        margin-bottom: calc-rem(32px);
+    }
+    
+    .articleHero__image {
+        display: block;
+        position: relative;
+        z-index: 1;
+        @include articleHeroImageShadow;
+    }
+    .articleHero__bigTittle {
+        font-family: $fontDemiCond;
+        color: #c0c0c0;
+        position: absolute;
+        z-index: 2;
+        text-align: left;
+        letter-spacing: -1px;
+        
+        @include bp(desktop) {
+            @include fontSizeLineHeight(calc-rem(76px), calc-rem(60px));
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight(calc-rem(58.5px), calc-rem(45px));
+        }
+    }
+    .articleHero__fist {
+        position: absolute;
+        z-index: 2;
+    }
+    .articleHero__tag {
+        @extend .tag;
+        @include fontSize(15px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        color: $white-color;
+    }
+}
+.bodyBeforeAfter {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    background: $white-color; 
+    top: 0;
+    left: 0;           
+}
+
+// -------------- LANDSCAPE --------------
+.articleHero--landscape {
+    text-align: center;
+    
+    .articleHero__body {
+        @include videoMonthlyGradient;
+        
+        &:before {
+            @extend .bodyBeforeAfter;
+            width: 44.3%;
+        
+            @include bp(ofMobile) {
+                height: 42.5%;
+            }
+            @include bp(mobile) {
+                height: 35.5%;
+            }
+        }
+        @include dtmPadding (3.2% 6% 1.4%, 3.2% 9% 1.2%, 8.7% 8% 4.2%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+    }
+    .articleHero__image {
+        margin: 0 auto;
+        
+        @include bp(desktop) {
+            width: 1022px;
+        }
+    }
+    .articleHero__bigTittle {        
+        @include bp(ofMobile) {
+            top: 2.5%;
+        }
+        @include bp(desktop) {
+            left: 2.2%;
+        }
+        @include bp(tablet) {
+            left: 2.4%;
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight(calc-rem(50px), calc-rem(40px));
+            top: 2.1%;
+            left: 13%;
+        }
+    }
+    .articleHero__fist {
+        @include bp(ofMobile) {
+            bottom: 13.5%;
+        }
+        @include bp(desktop) {
+            max-width: 12%;
+            left: 2.6%;
+        }
+        @include bp(tablet) {
+            max-width: 11.7%;
+            left: 2.8%;
+        }
+        @include bp(mobile) {
+            max-width: 16%;
+            left: 4.5%;
+            bottom: 9.3%;
+        }
+    }
+    .articleHero__tagHeading {        
+        @include bp(mobileAndDesktop) {
+            margin-top: 20px;
+        }
+        @include bp(tablet) {
+            margin-top: 8px;
+        }
+    }
+}
+
+// -------------- PORTRAIT --------------
+.articleHero--portrait {
+    
+    @include bp(ofMobile) {
+        float: left;
+        margin: 3px 3% 1% 0;
+    }
+    @include bp(desktop) { 
+        width: 54.2%;
+    }
+    @include bp(tablet) {
+        width: 49%;
+        margin: 3px 2% 1% 0;
+    }
+    
+    .articleHero__body {
+        @include articlePortraitGradient;
+        
+        &:before {
+            @extend .bodyBeforeAfter; 
+            height: 100%;
+            width: 15.2%;
+        }
+        &:after  {
+            @extend .bodyBeforeAfter;
+            height: 30%;
+        
+            @include bp(ofMobile) {
+                width: 82%;
+            }
+            @include bp(mobile) {
+                width: 84.5%;
+            }
+        }
+        
+        @include bp(ofMobile) {
+            padding: 5% 11.4% 9% 0;
+        }
+        @include bp(mobile) {
+            padding: 4.7% 8% 6.7% 7.8%;
+        }
+    }
+    .articleHero__bigTittle {
+        @include bp(ofMobile) {
+            left: 4.5%;
+            top: 1%;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(67px);
+            line-height: calc-rem(52px);
+            left: 12.9%;
+            top: 0.6%;
+        }
+    }
+    .articleHero__fist {
+        @include bp(ofMobile) {
+            right: 3%;
+            bottom: 2.5%;
+            max-width: 21.5%;
+        }
+        @include bp(mobile) {
+            right: 1.5%;
+            bottom: 3.3%;
+            max-width: 16.5%;
+        }
+    }
+    .articleHero__tagHeading {
+        position: absolute;
+        z-index: 2;
+        
+        @include bp(desktop) {
+            bottom: 1.8%;
+            right: 39.7%;
+        }
+        @include bp(tablet) {
+            bottom: 1.7%;
+            right: 38.9%;
+        }
+        @include bp(mobile) {
+            bottom: 1.8%;
+            right: 46.5%;
+        }
+    }
+}
+
+// -------------- ARTICLE BODY/CONTENT --------------
+.articleSingle__content {
+    text-align: justify;
+    
+    &.articleSingle__bodyContent {   
+        @include bp(ofMobile) {
+            float: right;
+            margin-right: 11%;
+        }
+    }
+        
+    @include bp(ofMobile) {
+//        float: left;
+//        float: right;
+//        margin-right: 11%;
+    }
+    @include bp(desktop) {
+        width: 66%;
+    }
+    @include bp(tablet) {
+        width: 64%;
+        margin-left: 1%;
+    }  
+    @media (min-width: 481px) and (max-width: 600px) {
+        margin-left: 4%;
+        margin-right: 4%;
+    }    
+    
+    .articleSingle__date {
+        @extend .date;
+        text-align: center;
+        
+        @include bp(desktop) {
+            margin-bottom: 13px;
+        }
+        @include bp(tablet) {
+            margin-bottom: 10px;
+        }
+        @include bp(mobile) {
+            margin-bottom: calc-rem(24px);
+        }
+    }
+    .articleSingle__heading {
+        font-family: $fontDemiCond;
+        text-align: center;
+        margin: 0 auto;
+        
+        
+        @include bp(ofMobile) {
+            width: 60%;
+        }
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(40px), calc-rem(39px));
+            margin-bottom: 57px;
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight (calc-rem(27.5px), calc-rem(35px));
+            margin-bottom: 36px;
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight (calc-rem(50px), calc-rem(64px));
+            margin-bottom: calc-rem(56px);
+        }
+    }
+    .articleSingle__textBold {
+        text-transform: none;
+        font-family: $fontDemi;
+        
+        @include bp(ofMobile) {
+            margin-bottom: 35px;
+        }
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(25px), calc-rem(35px));
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight (calc-rem(17.5px), calc-rem(29px));
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight (calc-rem(33px), calc-rem(58px));
+            margin-bottom: 57px;
+        }
+    }
+    .articleSingle__textLight {
+        text-transform: none;
+        font-family: $fontBook;
+        color: #686868;
+        letter-spacing: 1px;
+        
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(25px), calc-rem(35px));
+            margin-bottom: 23px;
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight (calc-rem(17.5px), calc-rem(29px));
+            margin-bottom: 28px;
+            
+            &.textLigh-tBigger {
+            @include fontSizeLineHeight (calc-rem(20px), calc-rem(29px));
+                letter-spacing: 0;
+            }
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight (calc-rem(33px), calc-rem(58px));
+            margin-bottom: 23px;
+        }
+        
+        .articleSingle__textColor {
+            font-family: $fontMedium;
+            color: $primary-color;
+        }
+    }
+    .articleSingle__quote {
+        letter-spacing: 1px;
+        text-align: left;
+        
+        @include bp(desktop) {
+            width: 90%;
+            margin: 47px 0 3px -18%;
+            background-position: 0% 0%;
+        }
+        @include bp(tablet) {
+            margin: 39px 0 0px -20.5%;
+            background-position: 9% 1%;
+            background-size: 21%;
+        }
+        @include bp(mobile) {
+            margin: 51px 0 0 -18%;
+            background-position: 6% 0%;
+            background-size: 40%;
+        }
+        @include bp(mobileSmall) {
+            background-position: 18% 0%;
+        }
+        
+        .articleSingle__quoteSocial {
+            visibility: hidden;
+        }        
+        .articleSingle__quoteFist {
+            @include bp(ofMobile) {
+                display: none;
+            }
+            @include bp(mobile) {
+                margin-left: 14px;
+            }
+        }
+        .articleSingle__quoteBody {            
+            @include bp(ofMobile) {
+                padding: 45px 0 27px 14%;
+            }
+            @include bp(mobile) {
+                padding: calc-rem(62px) 0 12px 15%;
+            }
+        }
+        .btn {
+            @include bp(desktop) {
+                letter-spacing: 0px;
+                margin: 22px 0 0 4px;
+            }
+            @include bp(tablet) {
+                margin: 33px 0 0 4px;
+            }
+            @include bp(mobile) {
+                margin: calc-rem(40px) 0 0;                
+                float: right;
+            }
+        }
+    }
+    .articleSingle__headingBold {
+        font-family: $fontDemiCond;
+        text-transform: none;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(30px);
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(27.5px);
+            margin-bottom: 5px;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(40px);
+            margin-top: calc-rem(65px);
+            margin-bottom: 12px;
+        }
+    }
+    .articleSingle__tags {       
+        @include bp(ofMobile) {
+            margin-top: 30px; 
+        }
+        @include bp(mobile) {
+            margin-top: calc-rem(78px); 
+        }
+    }
+    .articleSingle__tag {
+        font-family: $fontHeavy;
+        color: $black-color;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(15px);
+            margin: 10px 17px 0 0;
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(12.5px);
+            margin: 10px 6.2% 0 0;
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(25px);
+            margin: 10px calc-rem(56px) 0 0;
+        }
+    }
+}
+
+// -------------- ARTICLE BODY/CONTENT PORTRAIT PAGE --------------
+@include bp(ofMobile) {
+    .articlePortrait {
+        .articleSingle__contentRight {
+            padding: 7% 0 0 3%;
+
+            .articleSingle__content {
+                width: auto;
+                float: none;            
+            }
+            .articleSingle__heading {
+                width: 100%;
+            }
+        }
+        .articleSingle__quote {
+            @include bp(desktop) {
+                margin: 54px 0 3px 0;
+            }
+            @include bp(tablet) {
+                margin: 0px 0 3px 0;
+            }
+        }
+    }    
+}

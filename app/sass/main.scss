@@ -2,6 +2,7 @@
 @import "helpers/mixins";
 @import "helpers/functions";
 @import "helpers/variables";
+@import "helpers/ie";
 
 //------BASE
 @import "base/breakpoints";
@@ -28,14 +29,13 @@
 @import "teasers/teaserGraphical";
 @import "teasers/teaserMagazine";
 @import "teasers/teaserMost";
-@import "teasers/teaserMostRead";
-@import "teasers/teaserMostShared";
 @import "teasers/teaserQuote";
 @import "teasers/teaserWhite";
 
 //------LAOUT
 @import "layout/header";
 @import "layout/footer";
+@import "layout/teasersLayouts";
 
 //------ARTICLE
 @import "article/articleShare";

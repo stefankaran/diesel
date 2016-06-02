@@ -2,11 +2,15 @@
     position: relative;
     text-align: center;
     
-    @include bp(ofMobile) {
-        @extend .backgroundCropGradient;
-    }
     .categoryHero__body {
         position: relative;
+        
+        @include bp(ofMobile) {
+            @extend .backgroundCropGradient;
+        }
+        .wrap {
+            position: relative;
+        }
     }
     .categoryHero__image {
         position: relative;
@@ -19,41 +23,19 @@
         @media (min-width: 480px) and (max-width: 579px) {
             min-height: 390px;
         }
-        
-        @include bp(mobile) {
-//            width: 100%;
-//            text-align: center;
-//            overflow: hidden;
-            
-//            width: 90%; /* or whatever is required */
-//            text-align: center; /* ensures the image is always in the h-middle */
-//            overflow: hidden; /* hide the cropped portion */
+        @media (max-width: 479px) {
+            min-height: 242px;
         }
         
         img {
             display: block;
             
-            @media (min-width: 480px) and (max-width: 750px) {
+            @include bp(mobile) {
                 position: absolute;
                 bottom: -20%;
                 top: 26%;
+                -ms-transform: scale(2);
                 transform: scale(2);
-            }
-            
-            @include bp(mobile) {
-//                max-width: none;
-//                margin: 0 0 0 -34%;
-//                vertical-align: middle;
-//                max-height: 489px;
-                
-//                position: relative;
-//                left: 0;
-//                margin-left: 0%;
-//                min-height: 489px;
-                
-//                position: relative; /* allows repositioning */
-//                left: 100%; /* move the whole width of the image to the right */
-//                margin-left: -200%; /* magic! */
             }
         }
     }
@@ -70,14 +52,12 @@
             top: 24%;
             right: 11.3%;
             width: 31.5%;
-            /* height: 65%; */
-            padding: 3.4% 4.3%;
+            padding: 3.4% 4%;
         }
         @include bp(tablet) {
             top: 25%;
             right: 10.5%;
             width: 32%;
-            /* height: 65%; */
             padding: 3.7% 4.2%;
         }
         @include bp(mobile) {
@@ -93,35 +73,27 @@
     }
     .categoryHero__heading {
         font-family: $fontDemiCond;
-        
-        @include bp(desktop) {
-            font-size: calc-rem(36px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(28px);
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(39px);
-        }
+        @include fontSize(36px, 28px, 39px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
     }
     .categoryHero__text {
         font-family: $fontMedium;
-        text-transform: initial;
+        text-transform: none;
         
-        @include bp(desktop) {
-            font-size: calc-rem(18px);
-            line-height: calc-rem(25px);
+        @include bp (ofMobile) {
             margin-top: 9px;
+        }
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(18px), calc-rem(25px));
         }
         @include bp(tablet) {
-            font-size: calc-rem(15px);
-            line-height: calc-rem(17px);
-            margin-top: 9px;
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(17px));
         }
         @include bp(mobile) {
-            font-size: calc-rem(27px);
-            line-height: calc-rem(41px);
+            @include fontSizeLineHeight (calc-rem(27px), calc-rem(41px));
             margin-top: 21px;
+        }
+        @include bp(mobileSmall) {
+            margin-top: 14px;
         }
     }
     .categoryHero__fist {
@@ -133,7 +105,7 @@
             max-width: 11.8%;
         }
         @include bp(desktop) {
-            bottom: 13%;
+            bottom: 8%;
         }
         @include bp(tablet) {
             bottom: 7%;
@@ -143,26 +115,19 @@
             right: 4.7%;
             max-width: 22%;
         }
-        @media (min-width: 480px) and (max-width: 640px) {
+        @media (min-width: 481px) and (max-width: 640px) {
             bottom: 53%;
         }
     }
     .categoryHero__menu {
         position: relative;
         z-index: 2;
+        @include dtmPadding (13px 0 11px, 7px 0, calc-rem(74px) 0) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
         
         @include bp(ofMobile) {       
             @include btnGradient;
         }
-        @include bp(desktop) {
-            padding: 13px 0 11px;
-        }
-        @include bp(tablet) {
-            padding: 7px 0;
-        }
         @include bp(mobile) {
-            padding: 74px 0;
-            
             .categoryHero__list:nth-last-child(-n+13), .categoryHero__menu-line:nth-last-child(-n+14) { //----- PROVERITI JOS JEDNOM!
                 display: none;
             }
@@ -175,17 +140,13 @@
         font-family: $fontMediumCond;
         letter-spacing: 1px;
         
-//        @include bp(desktop) {
-//            font-size: calc-rem(15px);
-//        }
         @include bp(mobile) {
             color: $black-color;
             font-size: calc-rem(30px);
         }        
         @include bp(ofMobile) {
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(31px));
             color: $white-color;
-            font-size: calc-rem(15px);
-            line-height: calc-rem(31px);
         }
     }
     .categoryHero__menu-line {

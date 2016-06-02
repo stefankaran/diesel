@@ -1,0 +1,122 @@
+//----------
+//Stylesheet only for IE9
+//----------
+.ie9 {
+    body {
+//        overflow-x: scroll;
+//        overflow-y:hidden;
+//        overflow-x: hidden;
+//        overflow-y:scroll;
+    }
+    .header {
+        &.header__sticky {
+                .header__sub {
+                    position: fixed;
+                }
+        }
+    }
+    .articleSingle__contentRight {
+        .articleSingle__content {
+            @media (min-width: 751px) and (max-width: 1100px) {
+                margin-left: 10%!important;
+                margin-right: 2%;
+            }
+        }
+    }
+    .articleSingle__body {
+        .articleSingle__content {
+            @media (min-width: 751px) and (max-width: 1100px) {
+                margin-left: -10%!important;
+            }
+            @media (min-width: 1101px){
+                margin-left: -1%!important;
+            }
+        }
+    }
+}
+
+//----------
+//Stylesheet for IE10 and IE11
+//----------
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+/* IE10+ CSS styles go here */
+    
+    body {
+//        overflow-x: scroll;
+//        overflow-y:hidden;
+//        overflow-x: hidden;
+//        overflow-y:scroll;
+    } 
+    .header {
+        &.header__sticky {
+                .header__sub {
+                    position: fixed;
+                }
+        }
+    }
+}
+
+//----------
+//Stylesheet for Edge
+//----------
+@supports (-ms-accelerator:true) {
+    body {
+//        overflow-x: scroll;
+//        overflow-y:hidden;
+//        overflow-x: hidden;
+//        overflow-y:scroll;
+    }
+       
+    .header {
+        .header__menu {
+            .header__menu-line {
+                @extend .headerMenuLineResponsive;
+            }
+        }
+        &.header__sticky {
+            .header__menu{
+                .header__menu-line {
+                    @extend .headerStickyMenuLineResponsive;
+                }
+            }
+        }
+    }
+}
+//----------
+//Responsive menus in all IE browsers
+//----------
+.headerMenuLineResponsive {
+    @media (min-width: 1123px) and (max-width: 1171px) {
+        margin: 0 46px;
+    }
+    @media (min-width: 1007px) and (max-width: 1044px) {
+        margin: 0 36px;
+    }
+    @media (min-width: 885px) and (max-width: 930px) {
+        margin: 0 30px;
+    }
+    @media (min-width: 751px) and (max-width: 884px) {
+        margin: 0 15px;
+    }
+}
+
+.headerStickyMenuLineResponsive {
+    @media (min-width: 1246px) {                
+        margin: 0 30px;
+    }
+    @media (min-width: 751px) and (max-width: 883px) {
+        margin: 0 8px !important;
+    }
+    @media (min-width: 884px) and (max-width: 931px) {
+        margin: 0 10px !important;
+    }
+    @media (min-width: 1005px) and (max-width: 1049px) {
+        margin: 0 14px !important;
+    }
+    @media (min-width: 1122px) and (max-width: 1187px) {
+        margin: 0 16px!important;
+    }
+    @media (min-width: 1180px) and (max-width: 1245px) {
+        margin: 0 24px !important;
+    }
+}

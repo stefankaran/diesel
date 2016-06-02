@@ -1,63 +1,55 @@
 .teaser--most {
-    display: table;
     
+    @include bp(ofMobile) {
+        display: inline-block;
+    }
     @include bp(mobile) {
-            max-width: 554px;
-            margin: 0 auto;
+        display: block;
     }
     
     .teaser--most_head {
         text-align: center;
         @include btnGradient;
-        
-        @include bp(desktop) {
-            padding: 27px 1%;
-        }
-        @include bp(tablet) {
-            padding: 11px 1%;
-        }
-        @include bp(mobile) {
-            padding: 19px 1%;
-        }
+        @include dtmPadding (27px 1%, 11px 1%, calc-rem(19px) 1%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
     }
     .teaser--most__tittle {
         color: $white-color;
         font-family: $fontHeavy;
         display: inline-block;
+        @include fontSize(30px, 18px, 26px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
                
         @include bp(desktop) {
-            font-size: calc-rem(30px);
             letter-spacing: 1px;
             margin-left: 8px;
         }
         @include bp(tablet) {
-            font-size: calc-rem(18px);
             margin-left: 4px;
         }        
         @include bp(mobile) {
-            font-size: calc-rem(26px);
             letter-spacing: 1px;
+        }       
+        @include bp(mobileSmall) {
+            letter-spacing: 0px;
         }
     }
     .teaser--most__fist {
-        vertical-align: -4px;
-        margin-left: 5px;
+        @include dtmMaxWidth(13%, 6.5%, 8%); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
         
         @include bp(desktop) {
-            max-width: 13%;
-        vertical-align: -5px;
-        margin-left: 6px;
+            vertical-align: -5px;
+            margin-left: 6px;
         }
-        @include bp(tablet) {
-            max-width: 6.5%;
+        @include bp(toDesktop) {
+            vertical-align: -4px;
+            margin-left: 5px;
         }
-        @include bp(mobile) {
-            max-width: 8%;
-        }        
     }
     .teaser--most__body {
         @include bp(desktop) {
             margin-top: 4%;
+        }
+        @include bp(mobile) {
+            display: inline-block;
         }
     }
     .teaser--most__item {
@@ -121,42 +113,32 @@
                 margin-bottom: 5px;
             }
             @include bp(mobile) {
-                margin: 20px 0 26px;
+                margin: calc-rem(20px) 0 calc-rem(26px);
             }
         }
     }
     .teaser--most__tag {
         color: $primary-color;
+        @include fontSize(15px, 11px, 28px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         
-        @include bp(desktop) {
-            font-size: calc-rem(15px);
-        }
         @include bp(tablet) {
-            font-size: calc-rem(11px);
             letter-spacing: 0px;
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(18px);
         }
     }
     .teaser--most__heading {
         font-family: $fontDemiCond;
+        @include fontSize(18px, 14.5px, 27px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         
         @include bp(desktop) {
-            font-size: calc-rem(18px);
             margin-top: 6px;
         }
-        @include bp(tablet) {
-            font-size: calc-rem(14.5px);
-        }
         @include bp(mobile) {
-            font-size: calc-rem(27px);
             line-height: calc-rem(30px);
         }
     }
     .teaser--most__text {
+        text-transform: none;
         font-family: $fontBook;
-        text-transform: initial;
         
         @include bp(desktop) {
             font-size: calc-rem(15px);
@@ -173,7 +155,8 @@
         }
     }
     @include bp(tablet) {
-        width: 100%;
+        width: 100% !important;
+        margin-top: calc-rem(27px); // 1.6875rem;
     }
     
     .teaser--most__tittle {
@@ -212,29 +195,25 @@
             position: relative;
             overflow: hidden;
         }
-        @include bp(desktop) {
-            max-width: 105px;
-            min-height: 105px;
-        }
+//        @include bp(desktop) {
+//            max-width: 105px;
+//            min-height: 105px;
+//        }
         @include bp(tablet) {
             margin-bottom: -7px;
         }
-        @include bp(mobile) {
-            max-width: 157px;
-            min-height: 157px;
-        }
-        @media (min-width: 1025px) and (max-width: 1170px) {
-            max-width: 93px;
-            min-height: 93px;
-        }
-        @media (min-width: 420px) and (max-width: 500px) {
-            max-width: 141px;
-            min-height: 141px;
-        }
-        @media (min-width: 320px) and (max-width: 419px) {
-            max-width: 105px;
-            min-height: 105px;
-        }
+//        @include bp(mobile) {
+//            max-width: 157px;
+//            min-height: 157px;
+//        }
+//        @media (min-width: 1025px) and (max-width: 1170px) {
+//            max-width: 93px;
+//            min-height: 93px;
+//        }
+//        @media (min-width: 320px) and (max-width: 480px) {
+//            max-width: 79px;
+//            min-height: 79px;
+//        }
     }
     .mostShared__imageLink {
         @include bp(mobileAndDesktop) {
@@ -250,11 +229,8 @@
         @media (min-width: 1025px) and (max-width: 1170px) {
             line-height: 93px;
         }
-        @media (min-width: 420px) and (max-width: 500px) {
-            line-height: 141px;
-        }
-        @media (min-width: 320px) and (max-width: 419px) {
-            line-height: 105px;
+        @media (min-width: 320px) and (max-width: 480px) {
+            line-height: 79px;
         }
     }
     .mostShared__image {
@@ -273,11 +249,8 @@
         @media (min-width: 1025px) and (max-width: 1170px) {
             height: 93px;
         }
-        @media (min-width: 420px) and (max-width: 500px) {
-            height: 141px;
-        }
-        @media (min-width: 320px) and (max-width: 419px) {
-            height: 105px;
+        @media (min-width: 320px) and (max-width: 480px) {
+            height: 79px;
         }
     }
 }

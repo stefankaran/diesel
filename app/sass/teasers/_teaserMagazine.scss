@@ -2,120 +2,164 @@
     @include btnGradient;
     
     @include bp(toDesktop) {
-        display: table;
+        display: inline-block;
+    }
+    @include bp(mobile) {
+        margin-top: calc-rem(-22px);
+        margin-bottom: calc-rem(100px);
+    }
+    &:hover {
+        .teaser--magazine__fist img{
+            transform: scale(1.1);
+        }
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        overflow: hidden;
     }
     
     .teaser--magazine__image {
         position: relative;
         
         @include bp(toDesktop) {
-            display: table-cell;
+//            display: table-cell;
             overflow: hidden;
+            float: left;
         }
         @include bp(tablet) {
             width: 52%;
+            min-height: calc-rem(316px);
         }
         @include bp(mobile) {
-            width: 50%;
+            width: 53%;
+            min-height: calc-rem(545px);
+        }
+        @media (min-width: 481px) and (max-width: 715px) {
+            min-height: calc-rem(480px);
         }
  
         .teaser--magazine__img {
-            display: block;
-            
             @include bp(toDesktop) {
-                width: auto;
                 max-width: none;
-                height: auto;
                 margin: auto;
                 position: absolute;
-//                top: -76%;
-                right: -97%;
-                bottom: -100%;
-                left: -100%;
                 
-                @media (min-width: 946px) and (max-width: 1024px) {
-                    top: -84%;
+                @include bp(tablet) {
+                    left: -37%;
                 }
-                @media (min-width: 751px) and (max-width: 811px) {
-                    top: -100%;
+                @media (min-width: 601px) and (max-width: 750px) {
+                    zoom: 2;
+                    left: -54%;
                 }
-                @media (min-width: 812px) and (max-width: 945px) {
-                    top: -95%;
+                @media (min-width: 481px) and (max-width: 600px) {
+                    zoom: 1.5;
+                    left: -60%;
+                }
+                @media (min-width: 320px) and (max-width: 480px) {
+                    zoom: 1;
+                    left: -44%;
                 }
             }
-            @include bp(mobile) {
-                top: -90%;
-            }
-        }
-        
-        @include bp(desktop) {
         }
     }
     .teaser--magazine__elements {
         display: inline-block;
         text-align: center;
-//        padding-top: 20px;
+        
+        @include bp(desktop) {
+            margin-left: -20px;
+        }
+        @include bp(mobile) {
+            margin-right: 5px;
+        }
     }
     .teaser--magazine__social {
         position: absolute;
         color: #7f7f7f;
-        left: 8px;
-        top: 14px;
         
         @include bp(desktop) {
             left: 8px;
             top: 14px;
-            
-            img {
-                width: 30px;
-            }
         }        
         @include bp(tablet) {
             left: 20px;
             top: 20px;
-            
-            img {
-                width: 25px;
-            }
         }       
         @include bp(mobile) {
-            left: 34px;
-            top: 30px;
+            left: calc-rem(34px);
+            top: calc-rem(30px);
+        }
+        
+        img {
+            @include dtmMaxWidth(30px, 25px, calc-rem(49px)); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
         }
     }
     .teaser--magazine__body {
-//        background: #294e79;
         text-align: center;
-        padding: 25px 70px;
+        @include dtmPadding (25px 70px, 47px 7px, calc-rem(49px) calc-rem(7px)) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
         
         @include bp(tablet) {
-            width: 52%;
+            width: 48%;
         }
         @include bp(mobile) {
-            width: 50%;
-        }     
+            width: 47%;
+        }  
         @include bp(toDesktop) {
-            display: table-cell;
-            padding: 47px 7px;
-//            height: 313px;
+            display: inline-block;
+            float: left;
         }
         @media (min-width: 1025px) and (max-width: 1140px) {
             padding: 25px 40px;
         }
+        @media (min-width: 751px) and (max-width: 910px) {
+            padding: 30px 5px;
+            
+            .teaser--magazine__fist {
+                width: 33px;
+                height: 33px;
+                
+                img {
+                    margin-bottom: 7px;
+                }
+            }
+            .teaser--magazine__heading a {
+                font-size: calc-rem(17px);
+            }
+            .teaser--magazine__share {
+                font-size: calc-rem(14px);
+            }
+        }
     }
     .teaser--magazine__fist {
         background: $white-color;
-        width: 38px;
-        height: 38px;
         line-height: calc-rem(40px);
         float: left;
-//        margin-left: 8px;
+        
+        @include bp(desktop) {
+            width: 40px;
+            height: 40px;            
+        }
+        @include bp(tablet) {
+            width: 38px;
+            height: 38px;            
+        }
+        @include bp(mobile) {
+            width: calc-rem(60px);
+            height: calc-rem(60px);
+            margin: 3px 4px 0 0;
+        }
+        @include bp(mobileSmall) {
+            margin: 0;
+        }
+        @media (min-width: 481px) and (max-width: 600px) {
+            width: 45px;
+            height: 45px;
+        }
 
         img {
             vertical-align: middle;
             
             @include bp(desktop) {
-                width: 30px;
+                width: calc-rem(30px);
             }
             @include bp(tablet) {
                 width: 28px;
@@ -124,30 +168,39 @@
             @include bp(mobile) {
                 margin-top: 10px;
             }
-        }
-        
-        @include bp(mobile) {
-            width: 60px;
-            height: 60px;
-        }
+            @include bp(mobileSmall) {
+                width: calc-rem(50px);
+                margin-top: 5px;
+            }
+            @media (min-width: 481px) and (max-width: 600px) {
+                margin-top: 4px;
+                width: 85%;
+            }
+        }        
     }
     .teaser--magazine__head {
         float: left;
         text-align: left;
         margin-left: 5px;
+        margin-left: -moz-calc(4px);
+        
+        @include bp(ofMobile) {
+            line-height: 19px;
+        }
     }
     .teaser--magazine__heading a {
         font-family: $fontMediumCond;
         color: $white-color;
+        @include fontSize(22px, 21px, 33px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         
-        @include bp(desktop) {
-            font-size: calc-rem(22px);
+        @media (max-width: 360px) {
+            font-size: calc-rem(26px);
         }
-        @include bp(tablet) {
-            font-size: calc-rem(21px);
+        @media (min-width: 481px) and (max-width: 600px) {
+            font-size: 20px;
         }
-        @include bp(mobile) {
-            font-size: calc-rem(33px);
+        @media (min-width: 601px) and (max-width: 715px) {
+            font-size: 26px;
         }
     }
     .teaser--magazine__share {
@@ -155,15 +208,10 @@
         color: $primary-color;
         text-transform: uppercase;
         margin: 2px 0 0 4px;
+        @include fontSize(16px, 15.4px, 25px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         
-        @include bp(desktop) {
-            font-size: calc-rem(16px);
-        }        
-        @include bp(tablet) {
-            font-size: calc-rem(15.4px);            
-        }   
-        @include bp(mobile) {
-            font-size: calc-rem(25px);            
+        @media (min-width: 481px) and (max-width: 600px) {
+            font-size: 20px;
         }
     }
     .teaser--magazine__num {
@@ -172,20 +220,33 @@
     .teaser--magazine__text {
         font-family: $fontDemi;
         text-transform: uppercase;
-        line-height: calc-rem(17px);
         color: $white-color;
-        margin: 15px 0 21px;
+        margin: 12px 0 21px;
         
         @include bp(desktop) {
-            font-size: calc-rem(14px);
+            @include fontSizeLineHeight (calc-rem(14px), calc-rem(17px));
         }
         @include bp(tablet) {
-            font-size: calc-rem(15px);
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(16px));
             padding: 5px 10px 0;
+            margin: 12px 0 24px;            
         }
         @include bp(mobile) {
-            font-size: calc-rem(22px);
-            line-height: calc-rem(24px);
+            @include fontSizeLineHeight (calc-rem(27px), calc-rem(33px));
+            margin: calc-rem(57.6px) 1%;
+        }
+        @media (min-width: 481px) and (max-width: 600px) {
+            margin: 14px 1%;
+            font-size: 24px;
+            line-height: 26px;
+        }
+        @media (min-width: 601px) and (max-width: 715px) {
+            margin: 31px 1%;
+            @include fontSizeLineHeight (24px, 30px);
+        }
+        @media (max-width: 340px) {
+            margin: 25px 1%;
+            @include fontSizeLineHeight (12px, 14px);
         }
     }
 }

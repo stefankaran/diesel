@@ -1,6 +1,11 @@
 
 <!DOCTYPE html>
 <html>
+    
+    <!-- Conditional comments for IE 9 -->
+    <!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+    <!-- Conditional comments for IE 9 END -->
+    
     <head>
         <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +13,6 @@
         <title>Bravely</title>
        
         <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="assets/js/script.js"></script>
-        
     </head>
     <body>
         <div id="page" class="page">  
@@ -25,9 +25,11 @@
                     </button>
                     <span class="header__cross"></span>
                     <div class="header__logo">
-                        <h1 class="header__heading">Bravely<span class="header__heading-line"></span></h1>
-<!--                        <img src="assets/images/header_fist_blue.png" alt="Bravely" class="header__fist">-->
-                       <span class="header__fist"></span>
+                        <a class="header__logoLink" href="index.html">
+                            <h1 class="header__heading">Bravely<span class="header__heading-line"></span></h1>
+    <!--                        <img src="assets/images/header_fist_blue.png" alt="Bravely" class="header__fist">-->
+                           <span class="header__fist"></span>
+                        </a>
                     </div>
                     <nav class="header__menu">
                         <ul class="header__menu-row">
@@ -102,75 +104,91 @@
                     </div>
                     <div class="header__brand">
                         <p class="empowered header__empowered">Empowered by</p>
-                        <a href="#"><img src="assets/images/header_brand-logo.png" alt="Only the brave" class="header__brand-logo"><a/>
+                        <a href="#"><img src="assets/images/header_brand-logo.png" alt="Only the brave" class="header__brand-logo"></a>
                     </div>                      
                 </div>
             </header>
             <main id="homepage" class="homepage">
-               
-                <div class="imgslider" style="text-align:center;"><img src="assets/images/slider_image.png" alt=""></div>
-                <div class="clearfix"></div>
-                <article class="categoryHero">
-                    <div class="categoryHero__body wrap">
-                        <div class="categoryHero__image">
-                            <img src="assets/images/categoryHero-img.png" alt="">
-                        </div>
-                        <div class="categoryHero__description">
-                            <h1 class="categoryHero__heading">Entertainment</h1>
-                            <p class="categoryHero__text">Lorem ipsum dolor sit amet, egestu consectetur adipiscing ditacalit elit. Vestibulum posuere, tortor a rhoncus mollis, sem libero sollicitudin lorem, vitae lobortis ipsum ante sit amet mauris. Ut non egestas turpis, quis euismod augue. Fusce pulvinar urna sed orci accumsan imperdiet. Donec in orci orci. Vestibulum varius tristique hendrerit. </p>
-                        </div>
-                        <img src="assets/images/teaser-graphical-fist.png" alt="" class="categoryHero__fist">
+       
+        <article class="slider">
+           <div class="slider__body wrap">
+                <div class="slider__slides wrap">
+                    <div class="slider__slide">
+                        <img class="slider__image" src="assets/images/slider_image.png" alt="">
                     </div>
-                        <nav class="categoryHero__menu wrap">
-                            <ul class="categoryHero__menu-row">
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Music</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">People</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Style</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Cine/TV</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Culture</a>
-                                </li>
-                                <span class="categoryHero__menu-line ofMobileNone"></span>
-                                <li class="categoryHero__list ofMobileClear">
-                                    <a href="#" class="categoryHero__link">Lorem Ipsum</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Pellentesque</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">luctus</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">Praesent aliqua</a>
-                                </li>
-                                <span class="categoryHero__menu-line"></span>
-                                <li class="categoryHero__list">
-                                    <a href="#" class="categoryHero__link">fusc</a>
-                                </li>
-                            </ul>
-                        </nav>
-                </article>
+                    <div class="slider__slide">
+                        <img class="slider__image" src="assets/images/slider_image.png" alt="">
+                    </div>
+                    <div class="slider__slide">
+                        <img class="slider__image" src="assets/images/slider_image.png" alt="">
+                    </div>
+                    <div class="slider__slide">
+                        <img class="slider__image" src="assets/images/slider_image.png" alt="">
+                    </div>
+                    <div class="slider__slide">
+                        <img class="slider__image" src="assets/images/slider_image.png" alt="">
+                    </div>
+                </div>
+                <div class="slider__block mobileWrap">
+                    <div class="slider__info">
+                       <div class="slider__info-details">
+                           <h2><a href="#" class="slider__info-tag">Entertainment</a></h2>
+                           <h1 class="slider__info-heading">We can be heroes just for one day</h1>
+                           <p class="slider__info-text">The David Bowie LEGACY</p>
+                           <p class="slider__share"><b>74</b> share</p>
+                           <a href="#" class="btn btn--slider">Read more</a>
+                       </div>
+                    </div>
+                    <div class="slider__info">
+                       <div class="slider__info-details">
+                           <h2><a href="#" class="slider__info-tag">Entertainment</a></h2>
+                           <h1 class="slider__info-heading">We can be heroes just for one day</h1>
+                           <p class="slider__info-text">The David Bowie LEGACY</p>
+                           <p class="slider__share"><b>74</b> share</p>
+                           <a href="#" class="btn btn--slider">Read more</a>
+                       </div>
+                    </div>
+                    <div class="slider__info">
+                       <div class="slider__info-details">
+                           <h2><a href="#" class="slider__info-tag">Entertainment</a></h2>
+                           <h1 class="slider__info-heading">We can be heroes just for one day</h1>
+                           <p class="slider__info-text">The David Bowie LEGACY</p>
+                           <p class="slider__share"><b>74</b> share</p>
+                           <a href="#" class="btn btn--slider">Read more</a>
+                       </div>
+                    </div>
+                    <div class="slider__info">
+                       <div class="slider__info-details">
+                           <h2><a href="#" class="slider__info-tag">Entertainment</a></h2>
+                           <h1 class="slider__info-heading">We can be heroes just for one day</h1>
+                           <p class="slider__info-text">The David Bowie LEGACY</p>
+                           <p class="slider__share"><b>74</b> share</p>
+                           <a href="#" class="btn btn--slider">Read more</a>
+                       </div>
+                    </div>
+                    <div class="slider__info">
+                       <div class="slider__info-details">
+                           <h2><a href="#" class="slider__info-tag">Entertainment</a></h2>
+                           <h1 class="slider__info-heading">We can be heroes just for one day</h1>
+                           <p class="slider__info-text">The David Bowie LEGACY</p>
+                           <p class="slider__share"><b>74</b> share</p>
+                           <a href="#" class="btn btn--slider">Read more</a>
+                       </div>
+                    </div>
+                </div>
+           </div>
+        </article>
+        <div class="clearfix"></div>
+               <!-- END SLIDER -->
                 
-              <div class="wrap">
-                  <section class="teaser-section teaser-section--first">
+              <div class="homepage__body wrap">
+              <div class="clearfix"></div>
+                 
+                  <!--TEASER SECTION FIRTS-->
+                  <section class="teaser-section teaser-section--first clearfix">
                     
                     <!--TEASER WHITE - num_1-->
-                    <article class="teaser teaser--white t-left">
+                    <article class="teaser teaser--white mobileWrap t-left">
                         <div class="teaser--white__image">
                             <a href="#"><img src="assets/images/teaser1.jpg" alt="Barack Obama is like you"></a>
                         </div>
@@ -186,9 +204,9 @@
                         </div>
                     </article> 
                     <!-- END WHITE TEASER -->
-                                     
+
                     <!--TEASER WHITE - num_2-->
-                    <article class="teaser teaser--white d-right t-right">
+                    <article class="teaser teaser--white mobileWrap d-right t-right">
                         <div class="teaser--white__image">
                             <a href="#"><img src="assets/images/teaser2.jpg" alt="Barack Obama is like you"></a>
                         </div>
@@ -206,7 +224,7 @@
                     <!-- END WHITE TEASER -->
 
                     <!--TEASER MAGAZINE-->
-                    <article class="teaser teaser--magazine d-middle t-left">
+                    <article class="teaser teaser--magazine third d-middle t-left">
                         <div class="teaser--magazine__image">
                             <img src="assets/images/teaser-magazine-1.png" alt="Bravely Magazine" class="teaser--magazine__img"> 
                             <a href="#" class="teaser--magazine__social">
@@ -235,7 +253,7 @@
                     <!-- END MAGAZINE TEASER -->
 
                     <!--TEASER GRAPHICAL-->
-                    <article class="teaser teaser--graphical d-right t-right">
+                    <article class="teaser teaser--graphical fourth d-right t-right">
                        <div class="teaser--graphical__top">
                            <div class="teaser--graphical__topElements">
                                <h2><a href="" class="teaser__tag teaser--graphical__tag">Work</a></h2>
@@ -253,9 +271,9 @@
                        </div>
                     </article>
                     <!-- END GRAPHICAL TEASER -->
-                                     
+
                     <!--TEASER WHITE - num_3-->
-                    <article class="teaser teaser--white t-left">
+                    <article class="teaser teaser--white mobileWrap fifth t-left">
                         <div class="teaser--white__image">
                             <a href="#"><img src="assets/images/teaser3.jpg" alt="Barack Obama is like you"></a>
                         </div>
@@ -269,11 +287,11 @@
                                 <a href="#" class="btn btn--teaser-white">Read more</a>                            
                             </div>
                         </div>
-                    </article> 
+                    </article>
                     <!-- END WHITE TEASER -->
-                                     
+
                     <!--TEASER WHITE - num_4-->
-                    <article class="teaser teaser--white d-middle t-right">
+                    <article class="teaser teaser--white mobileWrap d-middle t-right">
                         <div class="teaser--white__image">
                             <a href="#"><img src="assets/images/teaser4.jpg" alt="Barack Obama is like you"></a>
                         </div>
@@ -287,15 +305,15 @@
                                 <a href="#" class="btn btn--teaser-white">Read more</a>                            
                             </div>
                         </div>
-                    </article> 
+                    </article>
                     <!-- END WHITE TEASER -->
-                    
+
                     <div class="clearfix"></div>
 
-                  </section> <!-- END TEASER SECTION No. 1 -->                  
+                 </section> <!-- END TEASER SECTION No. 1 -->
                    
-                   <!--VIDEO MONTHLY-->
-                   <article class="video video--monthly clearfix">
+                  <!--VIDEO MONTHLY-->
+                  <article class="video video--monthly clearfix">
                        <div class="video__body video--monthly__body">
                            <div class="video__videoBox">
                                <a href="#">
@@ -313,11 +331,31 @@
                            <a href="#" class="btn btn--video btn--gradient">Watch more</a>
                        </div>
                    </article>
-                   <!--END VIDEO MONTHLY-->
+                  <!--END VIDEO MONTHLY-->
+                  
+                  <!--TEASER SECTION SECOND-->
+                  <section class="teaser-section teaser-section--second clearfix">
+                    
+                    <!--TEASER WHITE - num_5-->
+                    <article class="teaser teaser--white mobileWrap first d-right t-left">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser5.jpg" alt="The power of words"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Entertainment</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">The power of words</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END WHITE TEASER -->
                                         
                     <!--TEASER QUOTE-->
-<!--
-                    <article class="teaser teaser--quote">
+                    <article class="teaser teaser--quote second d-right d-middle t-right">
                         <div class="teaser--quote__body">
                             <h1 class="teaser--quote__heading">Harder the fight, greater the victory<img src="assets/images/teaser-quote-fist.png" alt="" class="teaser--quote__fist"></h1>                    
                             <div class="teaser--quote__person">
@@ -335,12 +373,93 @@
                             <a href="" class="teaser--quote__social-item teaser--quote-tw"></a>
                             <a href="" class="teaser--quote__social-item teaser--quote-pt"></a>
                         </div>
+                    </article>
+                    <!-- END QUOTE TEASER -->
+
+                    <!--TEASER GRAPHICAL-->
+                    <article class="teaser teaser--graphical third t-left">
+                       <div class="teaser--graphical__top">
+                           <div class="teaser--graphical__topElements">
+                               <h2><a href="" class="teaser__tag teaser--graphical__tag">Work</a></h2>
+                               <h1 class="teaser--graphical__heading">a surprising portrait of evan spegel</h1>
+                               <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--graphical__fist">
+                           </div>
+                       </div>
+                       <div class="teaser--graphical__bottom">
+                          <div class="teaser--graphical__textShare">
+                               <p class="teaser--graphical__text">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                               <p class="teaser__share teaser--graphical__share"><b>95</b> share</p>                              
+                          </div>
+                           <a href="#" class="btn btn--gradient btn--teaser-graphical">Read more</a>
+                           <img src="assets/images/teaser_graphical_image2.png" alt="Renzo Rosso, the essence of unexepected" class="teaser--graphical__image">
+                       </div>
+                    </article>
+                    <!-- END GRAPHICAL TEASER -->
+
+                    <!--TEASER MAGAZINE-->
+                    <article class="teaser teaser--magazine fourth t-right">
+                        <div class="teaser--magazine__image">
+                            <img src="assets/images/teaser-magazine-2.png" alt="Bravely Magazine" class="teaser--magazine__img"> 
+                            <a href="#" class="teaser--magazine__social">
+                                <img src="assets/images/teaser-magazine-twitterDarkGray.png" alt="">
+                            </a>
+                        </div>
+                        <div class="teaser--magazine__body">
+                            <div class="teaser--magazine__elements">
+                                <div class="teaser--magazine__fist">
+                                    <img src="assets/images/teaser-magazine-fist.png" alt="">
+                                </div>
+                                <div class="teaser--magazine__head">
+                                    <h1 class="teaser--magazine__heading"><a href="#">Bravely Magazine</a></h1>
+                                    <p class="teaser--magazine__share"><span class="teaser--magazine__num">2,550</span> j’aime</p>         
+                                </div>
+                            </div>                                
+                            <div class="clearfix"></div>
+                            <p class="teaser--magazine__text">the meaning of mean tweets how even the us president takes means remarks is an inspiration #bravely # laugh #motivation</p>
+                            <a href="#" class="btn btn--teaser-magazine">s’abonner</a>
+                        </div>
                     </article> 
--->
-                    <!-- END QUOTE TEASER --> 
-                                       
+                    <!-- END MAGAZINE TEASER -->
+                    
+                    <!--TEASER WHITE - num_6-->
+                    <article class="teaser teaser--white mobileWrap fifth d-middle t-left">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser6.jpg" alt="Gaming is everywhere"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Entertainment</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">Gaming is everywhere</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END WHITE TEASER -->
+                    
+                    <!--TEASER WHITE - num_7-->
+                    <article class="teaser teaser--white mobileWrap sixth t-right">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser7.jpg" alt="The power of words"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <a href="#" class="teaser--white__videoLittle"><span class="play"></span>Video</a>
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Entertainment</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">The power of words</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END WHITE TEASER -->
+                    
                     <!-- MOST SHARED TEASER -->
-                    <article class="teaser teaser--most teaser--mostShared">
+                    <article class="teaser teaser--most mobileWrap teaser--mostShared seventh">
                         <div class="teaser--most_head">
                             <h2 class="teaser--most__tittle">Most shared</h2>
                             <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--most__fist">
@@ -430,9 +549,10 @@
                     </article>
                     <!-- END MOST SHARED TEASER -->
                     
-                   <!--VIDEO ARTICLE-->                    
-<!--                   <div class="clearfix"></div>-->
-                   <article class="video video--article clearfix">
+                   </section> <!-- END TEASER SECTION No. 2 -->
+                    
+                  <!--VIDEO ARTICLE-->
+                  <article class="video video--article clearfix">
                        <div class="video__body video--article__body">
                            <div class="video__videoBox">
                                <a href="#">
@@ -452,11 +572,53 @@
                            <a href="#" class="btn btn--video btn--gradient">Play</a>
                        </div>
                    </article>
-                   <!--END VIDEO ARTICLE-->
+                  <!--END VIDEO ARTICLE-->
+                  
+                  <!--TEASER SECTION THIRD-->
+                  <section class="teaser-section teaser-section--third clearfix">
+                                        
+                    <!--TEASER QUOTE-->
+                    <article class="teaser teaser--quote modified first t-left">
+                        <div class="teaser--quote__body">
+                            <h1 class="teaser--quote__heading">If evertything was perfect, you would never learn and would<img src="assets/images/teaser-quote-fist.png" alt="" class="teaser--quote__fist"></h1>                    
+                            <div class="teaser--quote__person">
+                               <div class="teaser--quote__person-img">
+                                   <img src="assets/images/teaser-quote-person2.png" alt="Mohamed Ali">
+                               </div>
+                               <div class="teaser--quote__person-details">
+                                   <h2 class="teaser--quote__person-name">beyoncé</h2>
+                                   <span class="teaser--quote__person-proffesion">Artist</span>
+                               </div>
+                            </div>
+                        </div>
+                        <div class="teaser--quote__social">
+                            <a href="" class="teaser--quote__social-item teaser--quote-fb"></a>
+                            <a href="" class="teaser--quote__social-item teaser--quote-tw"></a>
+                            <a href="" class="teaser--quote__social-item teaser--quote-pt"></a>
+                        </div>
+                    </article>
+                    <!-- END QUOTE TEASER -->
                     
+                    <!--TEASER WHITE - num_8-->
+                    <article class="teaser teaser--white mobileWrap second t-right">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser1.jpg" alt="Barack Obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">Top motivation in Music</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article> 
+                    <!-- END WHITE TEASER -->
+                  
                     <!--TEASER MOST READ-->
-<!--
-                    <article class="teaser teaser--most teaser--mostRead">
+                    <article class="teaser teaser--most mobileWrap teaser--mostRead third d-right t-left">
                         <div class="teaser--most_head">
                             <h2 class="teaser--most__tittle">most read</h2>
                             <img src="assets/images/teaser-graphical-fist.png" alt="" class="teaser--most__fist">
@@ -524,8 +686,76 @@
                             </div>
                         </div>
                     </article>
--->
-                    <!-- END MOST READ TEASER --> 
+                    <!-- END MOST READ TEASER -->
+
+                    <!--TEASER MAGAZINE-->
+                    <article class="teaser teaser--magazine fourth d-middle t-right">
+                        <div class="teaser--magazine__image">
+                            <img src="assets/images/teaser-magazine-3.png" alt="Bravely Magazine" class="teaser--magazine__img"> 
+                            <a href="#" class="teaser--magazine__social">
+                                <img src="assets/images/teaser-magazine-twitterLightkGray.png" alt="">
+                            </a>
+                        </div>
+                        <div class="teaser--magazine__body">
+                            <div class="teaser--magazine__elements">
+                                <div class="teaser--magazine__fist">
+                                    <img src="assets/images/teaser-magazine-fist.png" alt="">
+                                </div>
+                                <div class="teaser--magazine__head">
+                                    <h1 class="teaser--magazine__heading"><a href="#">Bravely Magazine</a></h1>
+                                    <p class="teaser--magazine__share"><span class="teaser--magazine__num">2,550</span> j’aime</p>         
+                                </div>
+                            </div>                                
+                            <div class="clearfix"></div>
+                            <p class="teaser--magazine__text">think out of the box a french student curates tweets to showcase his motivation #bravely #love #motivation</p>
+                            <a href="#" class="btn btn--teaser-magazine">s’abonner</a>
+                        </div>
+                    </article> 
+                    <!-- END MAGAZINE TEASER -->
+                    
+                    <!--TEASER WHITE - num_9-->
+                    <article class="teaser teaser--white mobileWrap fifth t-left">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser8.jpg" alt="Barack obama is like you"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">barack obama is like you</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus. Vestibulum id orci quis odio imperdiet fringilla in vel ex.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END WHITE TEASER -->
+                    
+                    <!--TEASER WHITE - num_10-->
+                    <article class="teaser teaser--white mobileWrap sixth d-right t-right">
+                        <div class="teaser--white__image">
+                            <a href="#"><img src="assets/images/teaser9.jpg" alt="Mark Zuckerberg continues to dream"></a>
+                        </div>
+                        <div class="teaser--white__body">
+                            <div class="teaser--white__elements">
+                                <h2><a href="" class="teaser__tag teaser--white__tag">Work</a></h2>
+                                <p class="teaser--white__date">12/02/16</p>
+                                <h1 class="teaser--white__heading">mark zuckerberg continues to dream</h1>
+                                <p class="teaser--white__text">Lorem ipsum dolor sit amet, consectetur adipiscing elitus.</p>
+                                <p class="teaser__share teaser--white__share"><b>250</b> share</p>
+                                <a href="#" class="btn btn--teaser-white">Read more</a>                            
+                            </div>
+                        </div>
+                    </article>
+                    <!-- END WHITE TEASER -->
+                      
+                  </section> <!-- END TEASER SECTION No. 3 -->
+                   
+                   <!--LOAD MORE BUTTON-->
+                   <div class="loadMore">
+                       <a href="#" class="btn btn--gradient btn--load-more">Load more</a>
+                   </div>
+                   <!--END LOAD MORE BUTTON-->
                     
                 </div> <!-- END WRAP -->
             </main>
@@ -560,5 +790,12 @@
             </footer> 
             <!-- END FOOTER -->
         </div>
+        <!-- JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script type="text/javascript" src="assets/js/slick.min.js"></script>
     </body>
 </html>

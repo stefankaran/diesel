@@ -11,7 +11,7 @@
         @include btn-responsive (calc-rem(25px), 196px, 22px, 22px);
     }
     @include bp(mobileSmall) {
-        @include btn-responsive (calc-rem(20px), 140px, 15px, 15px);
+        @include btn-responsive (calc-rem(24px), 100px, 11px, 11px);
     }
 }
 .btn--teaser-white {
@@ -22,7 +22,7 @@
     @include border-radius(1px);
     
     @include bp(desktop) {
-        @include btn-responsive (calc-rem(15px), 133px, 14px, 14px);
+        @include btn-responsive (calc-rem(15px), 146px, 14px, 14px);
 	}
 }
 .btn--teaser-graphical {
@@ -48,7 +48,7 @@
     @include border-radius(1px);
     
     @include bp(desktop) {
-        @include btn-responsive (calc-rem(16px), 138px, 16px, 16px);
+        @include btn-responsive (calc-rem(16px), 148px, 15px, 15px);
 	}
 }
 .btn--video {
@@ -60,33 +60,46 @@
     @include bp(mobile) {
         @include btn-responsive (calc-rem(25px), 237px, 24px, 24px);
 	}
+    @include bp(mobileSmall) {
+        @include btn-responsive (calc-rem(25px), calc-rem(237px), calc-rem(24px), calc-rem(24px));
+	}
 }
 .btn--article-quote {
     font-family: $fontMedium;
     
     @include bp(desktop) {
-        @include btn-responsive (calc-rem(14px), 80px, 8px, 8px);
+        @include btn-responsive (calc-rem(14px), 90px, 8px, 8px);
 	}
 }
-.btn--load-more {
-    font-family: $fontHeavy;
+.loadMore {
+    text-align: center;
     
-    @include bp(desktop) {
-        @include btn-responsive (calc-rem(16px), 210px, 18px, 18px);
-	}
-    @include bp(tablet) {
-        @include btn-responsive (calc-rem(14px), 190px, 17px, 17px);
-	}
+    @include bp(desktop){
+        margin: calc-rem(37px) 0 calc-rem(78px);
+    }
+    @include bp(tablet){
+        margin: calc-rem(22px) 0 calc-rem(59px);
+    }
+    @include bp(mobile){
+        margin-bottom: calc-rem(100px);
+    }
+    .btn--load-more {
+        @include bp(ofMobile) {
+            font-family: $fontHeavy;
+        }
+        @include bp(desktop) {
+            @include btn-responsive (calc-rem(16px), 220px, 18px, 18px);
+        }
+        @include bp(tablet) {
+            @include btn-responsive (calc-rem(14px), 200px, 17px, 17px);
+        }
+        @include bp(mobile) {
+            font-family: $fontMediumCond;
+            @include btn-responsive (calc-rem(24px), calc-rem(240px), calc-rem(32px),  calc-rem(32px));
+        }
+    }
 }
 .btn--gradient {
     @include btnGradient;
     color: $white-color;
 }
-//.btn--tablet {
-//    @include bp(tablet) {
-//        @include btn-responsive (calc-rem(14px), 113px, 13px, 13px);
-//    }
-//    @include bp(mobile) {
-//        @include btn-responsive (calc-rem(25px), 189px, 21px, 21px);
-//    }
-//}

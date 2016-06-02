@@ -27,13 +27,12 @@
             width: 100%;
             max-width: 662px;
             background: $white-color;
-//            text-align: center;
             z-index: 999;
             top: 0;
             padding-top: 80px;
         }
         @include bp(mobileSmall) {
-            padding-top: 20px;
+            padding-top: 36px;
         }
     }
     .header__logo {
@@ -48,9 +47,12 @@
         @include bp(mobile) {
             margin: 37px 0 65px;
         }
-        @include bp(mobileSmall) {
-            margin: 17px 0 35px;
+        @include bp(mobileSmall) {            
+            margin: 5px 0 34px;
         }
+    }
+    .header__logoLink {
+        color: $black-color;
     }
     .header__heading {
             position: relative;
@@ -72,7 +74,7 @@
             margin-top: -2px;
         }
         @include bp(mobileSmall) {
-            letter-spacing: 3px;
+            letter-spacing: 5px;
         }
     }
     .header__fist {
@@ -83,8 +85,9 @@
         height: 59px;
         
         @include bp(mobileSmall) {
-            max-width: 50px;
-            background-size: 50px;
+            max-width: 40px;
+            background-size: 35px;
+            margin-left: -1px;
         }
     }
     .header__heading-line {
@@ -104,8 +107,9 @@
             right: 18px;
         }
         @include bp(mobileSmall) {
-            width: 62px;
-            right: 9px;
+            width: 48px;
+            height: 1px;
+            right: 10px;
         }
     }
     .header__social {
@@ -114,20 +118,19 @@
         }
         @include bp(tablet) {
             margin-left: 30px;
-//            padding-left: 15px;
         }
         @include bp(ofMobile) {
             position: absolute;
             top: 0;
             left: 0;
         }
+        @include bp(mobile) {
+            display: none;
+        }
     }
     .header__social-em {
         @include bp(ofMobile) {
             background: #f7f6f7 url("../images/email_gray.png") no-repeat;
-//            background-position: 29px;
-//            padding: 2px 29px;
-//            margin-left: 21px;
 
             &:after {
                 content: 'EMAIL';
@@ -135,7 +138,6 @@
                 color: #bbbbbb;
                 margin-left: 24px;
                 vertical-align: 1px;
-//                font-size: calc-rem(11px);
             }
         }
         @include bp(desktop) {
@@ -145,11 +147,6 @@
 
             &:after {
                 font-size: calc-rem(11px);
-//                content: 'EMAIL';
-//                font-family: $fontBook;
-//                color: #bbbbbb;
-//                margin-left: 24px;
-//                vertical-align: 3px;
             }
         }
         @include bp(tablet) {
@@ -161,199 +158,135 @@
 
             &:after {
                 font-size: calc-rem(9px);
-//                vertical-align: 1px;
             }
         }
         @include bp(mobile) {
-            background: url("../../assets/images/envelope_blue.png") center center no-repeat;
-            background-size: 62px;
-            width: 60px;
-            height: 60px;
+            background: $blueEnvelope;
+                @include iconSize(calc-rem(60px));
         }
     }
     .header__social-link {
-//        color: $primary-color;
         vertical-align: middle;
         display: inline-block;
-        
-        &.header__social-fb {
-            background: url("../../assets/images/facebook_blue.png") center center no-repeat;
-            
-            @include bp(desktop) {
-                background-size: 18px;
-                width: 18px;
-                height: 18px;
-            }
-            
-            @include bp(tablet) {
-                background-size: 21px;
-                width: 10px;
-                height: 25px;
-            }
-            
-            @include bp(mobile) {
-                background-size: 50px;
-                width: 60px;
-                height: 60px;
-            }
-        }
-        
-        &.header__social-tw {
-            background: url("../../assets/images/twitter_blue.png") center center no-repeat;
-            
-            @include bp(desktop) {
-                background-size: 18px;
-                width: 18px;
-                height: 18px;
-            }
-            
-            @include bp(tablet) {
-                background-size: 21px;
-                width: 20px;
-                height: 25px;
-            }
-            
-            @include bp(mobile) {
-                background-size: 53px;
-                width: 60px;
-                height: 60px;
-            }
-        }
-        
-        &.header__social-in {
-            background: url("../../assets/images/instagram_blue.png") center center no-repeat;
-            
-            @include bp(desktop) {
-                background-size: 18px;
-                width: 18px;
-                height: 18px;
-            }
-            
-            @include bp(tablet) {
-                background-size: 21px;
-                width: 23px;
-                height: 25px;
-            }
-            
-            @include bp(mobile) {
-                background-size: 50px;
-                width: 60px;
-                height: 60px;
-            }
-        }
-        
-        &.header__social-yt {
-            background: url("../../assets/images/youtube_blue.png") center center no-repeat;
-            
-            @include bp(desktop) {
-                background-size: 18px;
-                width: 18px;
-                height: 18px;
-            }
-            
-            @include bp(tablet) {
-                background-size: 25px;
-                width: 23px;
-                height: 25px;
-            }
-            
-            @include bp(mobile) {
-                background-size: 59px;
-                width: 60px;
-                height: 60px;
-            }
-        }
 
         @include bp(desktop) {
             margin-right: 23px;
-//            font-size: calc-rem(21px);
         }
         @include bp(tablet) {
             margin-right: 35px;
-//            font-size: calc-rem(23px);
         }
         @include bp(mobile) {
             &:not(:last-child) {
-                margin-right: 12%;
+                margin-right: 11%;
             }
         }
-        @media (max-width: 630px) {
+        @include bp(mobileSmall) {
+            &:not(:last-child) {
+                margin-right: 12%;
+                margin-left: -2%;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 630px) {
             &:not(:last-child) {
                 margin-right: 8%;
             }
         }
+        &.header__social-fb {
+            background: $blueFacebook;
+            
+            @include bp(desktop) {
+                @include iconSize(18px); //----- iconSize - Defined in mixin, same size for background-size, width and height.
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 10px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(50px), calc-rem(60px), calc-rem(60px)); //----- iconSizeDiff - Defined in mixin, different size for background-size, width and height.
+            }
+        }
+        &.header__social-tw {
+            background: $blueTwitter;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 20px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(53px), calc-rem(60px), calc-rem(60px));
+            }
+        }
+        &.header__social-in {
+            background: $blueInstagram;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 23px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(50px), calc-rem(60px), calc-rem(60px));
+            }
+        }
+        &.header__social-yt {
+            background: $blueYouTube;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (25px, 23px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSize(calc-rem(60px));
+            }
+        }
     }
     .header__brand {
-        
-        @include bp(tablet) {
-            margin-right: 30px;
-        }
+        position: absolute;
+        text-align: right;
         
         @include bp(ofMobile) {
-            position: absolute;
-            text-align: right;
             top: 0;
             right: 0;
             display: table-cell;
         }
+        @include bp(tablet) {
+            margin-right: 30px;
+        }
         @include bp(mobile) {
-            position: absolute;
-            text-align: right;
             top: 76px;
             right: 15px;
         }
         @include bp(mobileSmall) {
-            top: 27px;
-        }
-        @media (min-width: 751px) and (max-width: 1260px) {
-//            padding-right: 15px;
+            top: 39px;
+            right: 29px;
         }
     }
     .header__brand-logo {
-        @include bp(tablet) {
-            width: 50%;
-        }
         @include bp(ofMobile) {
             vertical-align: middle;
             margin: 0 2px 5px 5px;
             display: inline-block;
         }
+        @include bp(tablet) {
+            width: 50%;
+        }
         @include bp (mobile) {
             max-width: 83%;
-//            display: block;
         }
         @include bp(mobileSmall) {
-            max-width: 62%;
+            max-width: 42%;
         }
     }
     .header__empowered {
-        @include bp(desktop) {
-            font-size: calc-rem(14px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(11.25px);
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(17.6px);
-        }
+        @include fontSize(14px, 11.25px, 17.6px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
         @include bp(ofMobile) {
             display: inline-block;
         }
     }
-//    .header__body-mobile {
-//
-//        @include bp(ofMobile) {
-//            display: block !important;
-//        }
-//        @include bp(mobile) {
-//            position: absolute;
-//            width: 100%; 
-//            background: $white-color;
-//            text-align: center;
-//            z-index: 999;
-//            top: 0;
-//        }
-//    }
     .header__hamburger {
         background: none;
         padding: 7px 0 0 16px;
@@ -361,21 +294,26 @@
         border: 0;
         cursor: pointer;
         outline: none;
-//        z-index: 9999;
-//        position: absolute;
-//        top: 0;
-//        left: 0;
 
         @include bp(ofMobile) {
             display: none !important;
         }
+        @include bp(mobileSmall) {
+            margin-left: 13px;
+        }
     }
     .header__hamburger-line {
-        height: 5px;
-        width: 39px;
         background: $primary-color;
         display: block;
         margin-bottom: 7px;
+        height: 5px;
+        width: 39px;
+        
+        @include bp(mobileSmall) {
+            margin-bottom: 3.5px;
+            height: 2.5px;
+            width: 19.5px;
+        }
     }
     .header__cross {
         position: absolute;
@@ -397,6 +335,11 @@
             top: 50%;
             left: 0;
             background: #000;
+            
+            @include bp(mobileSmall) {
+                width: 20px;
+                height: 3px;
+            }
         }
         
         &:before {
@@ -410,17 +353,10 @@
             display: none !important;
         }
         @include bp(mobileSmall) {
-            top: 22px;
+            top: 38px;
+            right: 28px;
+            width: 19px;
+            height: 19px;
         }
-    }
-}
-
-
-
-
-// Remove
-.header__menu, .header__social {
-    @include bp(mobile) {
-        display: none;
     }
 }

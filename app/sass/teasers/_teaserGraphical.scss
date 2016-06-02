@@ -1,19 +1,29 @@
 .teaser--graphical {
     position: relative;
     
+    @include bp(mobile) {
+        margin-bottom: calc-rem(96px);
+    }
+    &:hover {
+        .teaser--graphical__heading {
+            opacity: 0.3;
+        }
+        .teaser--graphical__fist {
+            opacity: 1;
+        }
+    }
+    
     .teaser--graphical__top {
         position: relative;
         @include btnGradient;
-        padding: 2% 2% 16%;
-        
-        @include bp(desktop) {
-            padding: 2% 2% 16%;
-        }
+        @include dtmPadding (2% 2% 16%, 2% 2% 7.6%, 2% 2% 8.2%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+            
         @include bp(toDesktop) {
             width: 100%;
-            padding: 2% 2% 7%;
         }
-        
+        @media (min-width: 751px) and (max-width: 910px) {
+            max-height: 190px;
+        }
         h2 {
             text-align: center;
         }
@@ -23,14 +33,21 @@
             width: 51%;
         }
         @include bp(tablet) {
-            padding-top: 3%;
+            padding-top: 2.5%;
         }
-        @include bp(toDesktop) {
+        @include bp(mobile) {
             padding-top: 4%;
+        }
+        @media (min-width: 751px) and (max-width: 910px) {
+            width: 60%;
+        }
+        @media (min-width: 481px) and (max-width: 749px) {
+            width: 62%;
         }
     }
     .teaser--graphical__tag {
         color: $white-color;
+        padding-bottom: 0;
         
         @include bp(desktop) {
             margin-left: 16px;
@@ -39,22 +56,17 @@
     .teaser--graphical__heading {
         color: $white-color;
         font-family: $fontDemiCond;
-//        font-weight: 100;
-        padding: 4% 5%;
         text-align: center;
+        @include dtmPadding (4% 5%, 5% 0%, 7% 0%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
         
         @include bp(desktop) {
-            font-size: calc-rem(49px);
-            line-height: calc-rem(48px);
+            @include fontSizeLineHeight (calc-rem(49px), calc-rem(48px));
         }
         @include bp(tablet) {
             font-size: calc-rem(32.5px);
-            padding: 5% 0%;
         }
         @include bp(mobile) {
-            font-size: calc-rem(50px);
-            line-height: calc-rem(51px);
-            padding: 7% 0%;
+            @include fontSizeLineHeight (calc-rem(50px), calc-rem(51px));
         }
     }
     .teaser--graphical__fist {
@@ -73,7 +85,7 @@
         }
         @include bp(mobile) {
             max-width: 40%;
-            bottom: -5%;
+            bottom: -3%;
         }
         @include bp(toDesktop) {
             left: 3.5%;
@@ -91,28 +103,31 @@
         }
         @include bp(tablet) {
             width: 100%;
-            margin-top: -49%;
             position: absolute;
-            bottom: -65%;
+            bottom: -58%;
         }
         @include bp(mobile) {
-            margin-top: -43%;
+            margin-top: -50.5%;
         }
         
         .btn {
             position: absolute;
             
             @include bp(desktop) {
-                bottom: -14px;
                 left: 31%;
+                bottom: -14px;
             }
             @include bp(tablet) {
                 right: 16%;
-                bottom: 13%;
+                bottom: 9%;
             }
             @include bp(mobile) {
                 left: 13.5%;
-                bottom: 1%;
+                bottom: 10%;
+            }
+            @media (min-width: 481px) and (max-width: 660px) {
+                left: 9%;
+                bottom: 6%;
             }
         }
     }
@@ -125,28 +140,29 @@
             top: 28%;
         }
         @include bp(tablet) {
-            bottom: 5.5%;
+            bottom: 2.5%;
             left: 4%;
         }
         @include bp(mobile) {
-            bottom: 21%;
+            bottom: 27%;
             left: 9%;
         }
         @include bp(toDesktop) {
             width: 35%;
         }
+        @media (min-width: 751px) and (max-width: 910px) {
+            width: 43%;
+        }
     }
     .teaser--graphical__text {
         font-family: $fontMedium;
-        text-transform: initial;
+        text-transform: none;
         
         @include bp(desktop) {
-            font-size: calc-rem(20px);
-            line-height: calc-rem(24px);
+            @include fontSizeLineHeight (calc-rem(20px), calc-rem(24px));
         }
         @include bp(tablet) {
-            font-size: calc-rem(17.5px);
-            line-height: calc-rem(18px);
+            @include fontSizeLineHeight (calc-rem(17.5px), calc-rem(18px));
             margin-bottom: 11px;
         }
         @include bp(mobile) {
@@ -154,8 +170,11 @@
         }
     }
     .teaser--graphical__image {
-        @include bp(toDesktop) {
-            max-width: 60%;
+        @include bp(tablet) {
+            max-width: 58%;
+        }
+        @include bp(mobile) {
+            width: 63%;
         }
     }
 }

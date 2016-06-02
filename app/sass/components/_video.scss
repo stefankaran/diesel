@@ -6,16 +6,10 @@
     }
     .video__heading {
         font-family: $fontDemiCond;
+        @include fontSize(29px, 26.5px, 36px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
 
         @include bp(desktop) {
-            font-size: calc-rem(29px);
             line-height: calc-rem(28px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(26.5px);
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(36px);
         }
     }
     .video__tag {
@@ -80,8 +74,21 @@
     }
 }
 .video--article {
+    @include bp(desktop) {
+        margin-top: calc-rem(128px);
+        margin-bottom: calc-rem(118px);
+    }
+    @include bp(tablet) {
+        margin-top: calc-rem(8px);
+        margin-bottom: calc-rem(46px);
+    }
+    @include bp(mobile) {
+        margin: calc-rem(100px) 0;
+    }
+    
     .video--article__body {
         @include videoArticleGradient;
+        @include dtmPadding (0 0 6%, 0 0 5.5%, 0 0 9.4%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
 
         &:before {
             content: '';
@@ -101,18 +108,9 @@
                 height: 23%;   
             }     
         }
-        @include bp(desktop) {
-            padding: 0 0 6%;
-        }
-        @include bp(tablet) {
-            padding: 0 0 5.5%;
-        }
-        @include bp(mobile) {
-            padding: 0 0 9.4%;
-        }
     }
     .video--article__play {
-        @include bp(desktop) {
+        @include bp(mobileAndDesktop) {
             top: 3%;
             right: 0.5%;
             width: 3.7%;
@@ -122,30 +120,23 @@
             right: 0%;
             width: 3.8%;
         }
-        @include bp(mobile) {
-            top: 3%;
-            right: 0.5%;
-            width: 3.7%;
-        }
     }
     .video--article__fist {
         position: absolute;
         z-index: 2;
+        @include dtmMaxWidth(15.9%, 11.9%, 13.9%); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
 
         @include bp(desktop) {
             bottom: 5.9%;
             left: 5%;
-            max-width: 15.9%;
         }
         @include bp(tablet) {
             bottom: 8.9%;
             left: 9.5%;
-            max-width: 11.9%;
         }
         @include bp(mobile) {
             bottom: 8.9%;
             left: 2.8%;
-            max-width: 13.9%;
         }    
     }
     .video--article__tagHeading {
@@ -168,15 +159,7 @@
         }
     }
     .video--article__tag {
-        @include bp(desktop) {
-            font-size: calc-rem(15px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(12px);
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(20px);
-        }
+        @include fontSize(15px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
     }
     .video--article__bottom {
         @include bp(desktop) {
@@ -203,10 +186,10 @@
                 margin: 3px 3px 0 0;
             }
             @include bp(mobile) {
-                margin-top: 26px;
-                min-width: 195px;
-                padding-top: 23px;
-                padding-bottom: 23px;
+                margin-top: calc-rem(26px);
+                min-width: calc-rem(195px);
+                padding-top: calc-rem(23px);
+                padding-bottom: calc-rem(23px);
             }
             @include bp(ofMobile) {
                 float: right;
@@ -236,7 +219,7 @@
         margin-bottom: 2px;
 
         @include bp(mobile) {
-            margin: 43px 0 21px;
+            margin: calc-rem(43px) 0 calc-rem(21px);
         }
     }
     .video--article__text {
@@ -255,6 +238,17 @@
     }
 }
 .video--monthly {
+    @include bp(desktop) {
+        margin-top: calc-rem(34px);
+        margin-bottom: calc-rem(91px);
+    }
+    @include bp(tablet) {
+        margin-bottom: calc-rem(45px);
+    }
+    @include bp(mobile) {
+        margin-bottom: calc-rem(99px);
+    }
+    
     .video--monthly__body {
         padding: 8.3% 0% 1.3%;
         max-width: 960px;
@@ -299,22 +293,19 @@
         color: #deddde;
         text-align: left;
         width: 30%;
-        top: 3%;
-        right: 1.6%;
-        font-size: calc-rem(76px);
-        line-height: calc-rem(59px);
 
+        @include bp(ofMobile) {
+            top: 3%;
+            right: 1.6%;
+        }
         @include bp(desktop) {
-            font-size: calc-rem(76px);
-            line-height: calc-rem(59px);
+            @include fontSizeLineHeight (calc-rem(76px), calc-rem(59px));
         }
         @include bp(tablet) {
-            font-size: calc-rem(56.5px);
-            line-height: calc-rem(44px);        
+            @include fontSizeLineHeight (calc-rem(56.5px), calc-rem(44px));
         }
         @include bp(mobile) {
-            font-size: calc-rem(50px);
-            line-height: calc-rem(45px);
+            @include fontSizeLineHeight (calc-rem(50px), calc-rem(45px));
             top: 1%;
             right: 9.5%;
         }
@@ -323,7 +314,14 @@
             right: 10%;
         }
         @media (min-width: 751px) and (max-width: 885px) {
-            right: 10%;
+            right: 12%;
+        }
+        @media (min-width: 481px) and (max-width: 700px) {
+            right: 15%;
+            @include fontSizeLineHeight (calc-rem(39px), calc-rem(39px));
+        }
+        @media (min-width: 320px) and (max-width: 385px) {
+            right: 18%;
         }
     }
     .video--monthly__fist {
@@ -342,7 +340,6 @@
             max-width: 23.5%;
             left: 1.5%;
         }
-
         @media (min-width: 1025px) and (max-width: 1249px) {
             left: -4%;
         }        
@@ -360,19 +357,11 @@
             margin-top: 10px;
         }    
         @include bp(mobile) {
-            margin-top: 32px;
+            margin-top: calc-rem(32px);
         }
     }
     .video--monthly__tag {
-        @include bp(desktop) {
-            font-size: calc-rem(14px);
-        }
-        @include bp(tablet) {
-            font-size: calc-rem(12px);
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(20px);
-        }
+        @include fontSize(14px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
     }
     .video--monthly__bottom {
         text-align: center;
@@ -393,7 +382,7 @@
             max-width: 75%;
 
             .btn {
-                margin-top: 29px;
+                margin-top: calc-rem(29px);
             }
         }
     }
@@ -404,7 +393,7 @@
             margin: 17px 0 15px;
         }
         @include bp(mobile) {
-            margin: 42px 0 19px;
+            margin: calc-rem(42px) 0 calc-rem(19px);
         }
     }
 }

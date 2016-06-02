@@ -1,16 +1,16 @@
 $(document).ready(function(){
     
     // Sticky header
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 240 && $(this).width() >= 751){
-            $('header').addClass("header__sticky");
-//            $('header').removeClass("header");
-        }
-        else{
-            $('header').removeClass("header__sticky");
-//            $('header').addClass("header");
-        }
-    });
+//    $(window).scroll(function() {
+//        if ($(this).scrollTop() > 240 && $(this).width() >= 751){
+//            $('header').addClass("header__sticky");
+////            $('header').removeClass("header");
+//        }
+//        else{
+//            $('header').removeClass("header__sticky");
+////            $('header').addClass("header");
+//        }
+//    });
 
     // Mobile hamb - open 
     $( ".header__cross" ).hide();
@@ -37,4 +37,30 @@ $(document).ready(function(){
             });
         }
     });
+    
+    // Sticky share on single pages
+    var stickyElements = document.getElementsByClassName('sticky');
+
+    for (var i = stickyElements.length - 1; i >= 0; i--) {
+        Stickyfill.add(stickyElements[i]);
+    }
+    
+    
+    $('.slider__slides').slick({
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.slider__block',
+        focusOnSelect: true,
+    });
+    $('.slider__block').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        asNavFor: '.slider__slides',
+        dots: true,
+        fade: true,
+    });
+
+    
 });

@@ -1,63 +1,14 @@
-.teaser-section--first {
-    @include bp(tablet) {
-        .teaser:nth-child(odd) { clear: both; }
-    }
-}
 .teaser {
-    @include bp(desktop) {
-        width: 31.3%;
-        float: left;
-        margin-bottom: 45px !important;
-    
-        &.d-middle {
-            margin: 0 3.05%;
-        }
-        &.d-right {
-            float: right;
-        }
-    }
-    @include bp(tablet) {
-        width: 49%;
-        float: left;
-        margin-bottom: 50px;
-    
-        &.t-left {
-            margin-right: 1%;
-        }
-        &.t-right {
-            margin-left: 1%;
-        }
-    }
-    @include bp(mobile) {
-        width: 100%;
-//        margin-bottom: 100px;
-    }
-    
     .teaser__tag {
         @extend .tag; //-----------DEFINED IN base/_helpers
-        
-//        font-family: $fontMediumCond; -----------DEFINED IN base/_helpers
-//        border-bottom: 1px solid;
-//        padding-bottom: 2px;
-//        letter-spacing: 1px;
+        @include fontSize(14px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
     
-        @include bp(desktop) {
-            font-size: calc-rem(14px);
-        }
         @include bp(tablet) {
-            font-size: calc-rem(12px);
-            padding-bottom: 0px;
-        }
-        @include bp(mobile) {
-            font-size: calc-rem(20px);
+            padding-bottom: 4px;
         }
     }
     .teaser__share {
-        @extend .teaserShare;
-//        font-family: $fontMedium; -----------DEFINED IN base/_helpers
-//        color: $primary-color;
-//        text-transform: uppercase;
-//        letter-spacing: 1px;
+        @extend .teaserShare; //-----------DEFINED IN base/_helpers
         
         @include bp(desktop) {
             display: none;
@@ -68,9 +19,5 @@
         @include bp(mobile) {
             font-size: calc-rem(22px);
         }
-    }
-    
-    @include bp(mobile) {
-//        display: none;
     }
 }

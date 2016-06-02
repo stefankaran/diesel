@@ -8,6 +8,20 @@
     padding-bottom: 2px;
     letter-spacing: 1px;
 }
+.date {
+    font-family: $fontDemiCond;
+    color: #e0dfe0;
+
+    @include bp(desktop) {
+        font-size: calc-rem(12px);
+    }
+    @include bp(tablet) {
+        font-size: calc-rem(9px);
+    }
+    @include bp(mobile) {
+        font-size: calc-rem(16px);
+    }    
+}
 .teaserShare {
     font-family: $fontMedium;
     color: $primary-color;
@@ -27,10 +41,10 @@
             width: 100%;
 
             @include bp(desktop) {
-                height: 5.5%;   
+                height: calc-rem(34px); //2.125rem;   
             }
             @include bp(tablet) {
-                height: 9.5%;   
+                height: calc-rem(47px); //2.9375rem;   
             }
         }
         &:after {
@@ -42,10 +56,10 @@
             width: 100%;
 
             @include bp(desktop) {
-                height: 26.5%;   
+                height: calc-rem(83px); //5.1875rem;   
             }
             @include bp(tablet) {
-                height: 26%;   
+                height: calc-rem(54px); //3.375rem;   
             }
         }
     }
@@ -55,15 +69,47 @@
     width: 17px;
     height: 17px;
 }
-.whiteFacebook {
-    background: url("../../assets/images/facebook_white.png") center center no-repeat;
-}
-.whiteTwitter {
-    background: url("../../assets/images/twitter_white.png") center center no-repeat;
-}
-.whiteInstagram {
-    background: url("../../assets/images/instagram_white.png") center center no-repeat;
-}
-.whiteYouTube {
-    background: url("../../assets/images/youtube_white.png") center center no-repeat;
+.videoLittle {
+    color: $white-color;
+    @include btnGradient;
+    font-family: $fontHeavy;
+    position: absolute;
+    left: 0;
+    font-size: calc-rem(12px);
+    padding: 4px 0;
+    text-align: center;
+    width: 113px;
+    
+    @include bp(desktop) {
+        width: 113px;
+        font-size: calc-rem(12px);
+        top: -20px;
+    }
+    @include bp(tablet) {
+        padding: 5px 0;
+        width: 123px;
+        font-size: calc-rem(12.9px);
+        top: -22px;
+    }        
+    @include bp(mobile) {
+        font-size: calc-rem(16px);
+        padding: 5px 0;
+        width: 61%;
+
+        .play {
+            vertical-align: 2px;
+            
+            @include bp(mobileSmall) {
+                vertical-align: 0px;
+            }
+        }
+    }
+    .play {
+        background: url(../../assets/images/play_small.png) center center no-repeat;
+        width: 5px;
+        height: 7px;
+        background-size: 7px;
+        display: inline-block;
+        margin-right: 5px;
+    }
 }

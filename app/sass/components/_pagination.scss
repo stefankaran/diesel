@@ -1,0 +1,42 @@
+.pagination {
+    text-align: center;
+    
+    @include bp(desktop) {
+        margin-top: calc-rem(10px);
+        margin-bottom: calc-rem(74px);
+    }
+    @include bp(tablet) {
+        margin-top: calc-rem(18px);
+        margin-bottom: calc-rem(81px);
+    }
+    @include bp(mobile) {
+        margin-top: calc-rem(-5px);
+        margin-bottom: calc-rem(109px);
+    }
+    
+    .pagination__link {
+        font-family: $fontBook;
+        color: #999999;
+        @include fontSize(16px, 22.5px, 35px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+            
+        &:not(:last-of-type) {
+            @include bp(desktop) {
+                margin-right: calc-rem(60px);
+            }
+            @include bp(tablet) {
+                margin-right: calc-rem(89px);
+            }
+            @include bp(mobile) {
+                margin-right: calc-rem(58px);
+            }
+        }
+        &.active {
+            font-family: $fontDemi;
+            color: $primary-color;
+            border-bottom: 2px solid;
+        }
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
