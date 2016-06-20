@@ -1,0 +1,24 @@
+//.t1of2 {
+//    @include bp(tablet) {
+//        width: 50%;
+//        float: left;
+//        
+//        &:after {
+//            content: "";
+//            display: table;
+//            clear: both;
+//        }
+//    }
+//}
+//.m1of3 {
+//    @include bp(mobile) {
+//        width: 33.333333%;
+//        float: left;
+//        
+//        &:after {
+//            content: "";
+//            display: table;
+//            clear: both;
+//        }
+//    }
+//}

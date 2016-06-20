@@ -1,0 +1,55 @@
+html {
+    font-size: $basefont-size;
+    font-weight: 100;
+    
+    @include bp(tabletSmall) {
+        font-size: $basefont-size-tSmall;
+    }
+    @include bp(mobileSmall) {
+        font-size: $basefont-size-mSmall;
+    }
+    @include bp(desktopSmall) {
+        font-size: $basefont-size-dSmall;
+    }
+}
+body {
+    text-transform: uppercase;
+}
+a {
+    @include transition-all(all 0.3s ease-in-out);
+}
+p {
+    text-transform: initial;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.clearfix {
+    clear: both;
+}
+.wrap {
+    margin: 0 auto;
+    
+    @include bp(desktop) {
+        max-width: 1246px;
+    }
+    @include bp(tablet) {
+        max-width: 94%;
+//        max-width: 964px;
+    }
+//    @media (min-width: 1025px) and (max-width: 1270px), (min-width: 751px) and (max-width: 990px) {
+//        padding-left: 1%;
+//        padding-right: 1%;
+//    }
+    @media (min-width: 1025px) and (max-width: 1270px) {
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+}
+.mobileWrap {
+    @include bp(mobile) {
+        max-width: calc-rem(554px);
+        margin: 0 auto;
+    }
+}

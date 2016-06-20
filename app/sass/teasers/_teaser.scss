@@ -1,0 +1,23 @@
+.teaser {
+    .teaser__tag {
+        @extend .tag; //-----------DEFINED IN base/_helpers
+        @include fontSize(14px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+    
+        @include bp(tablet) {
+            padding-bottom: 1px;
+        }
+    }
+    .teaser__share {
+        @extend .teaserShare; //-----------DEFINED IN base/_helpers
+        
+        @include bp(desktop) {
+            display: none;
+        }        
+        @include bp(tablet) {
+            font-size: calc-rem(12.5px);
+        }
+        @include bp(mobile) {
+            font-size: calc-rem(22px);
+        }
+    }
+}

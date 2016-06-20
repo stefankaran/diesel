@@ -1,0 +1,41 @@
+@mixin bp($breakpoint) {
+    
+    $bp--mobile-small              : "(max-width: 480px)";
+    $bp--mobile                    : "(max-width: 750px)";
+    $bp--tablet-small              : "(min-width: 751px) and (max-width: 930px)";
+    $bp--tablet                    : "(min-width: 751px) and (max-width: 1024px)";
+    $bp--desktop-small             : "(min-width: 1025px) and (max-width: 1199px)";
+    $bp--desktop                   : "(min-width: 1025px)";
+    
+    $bp--toDesktop                 : "(max-width: 1024px)";
+    $bp--ofMobile                  : "(min-width: 751px)";
+    $bp--mobileAndDesktop          : "(max-width: 750px), (min-width: 1025px)";
+
+    @if $breakpoint == mobileSmall {
+        @media #{$bp--mobile-small}                  { @content; }
+    }
+    @else if $breakpoint == mobile {
+        @media #{$bp--mobile}                        { @content; }
+    }
+    @else if $breakpoint == tablet {
+        @media #{$bp--tablet}                        { @content; }
+    }
+    @else if $breakpoint == tabletSmall {
+        @media #{$bp--tablet-small}                  { @content; }
+    }
+    @else if $breakpoint == desktop {
+        @media #{$bp--desktop}                       { @content; }
+    }
+    @else if $breakpoint == desktopSmall {
+        @media #{$bp--desktop-small}                 { @content; }
+    }
+    @else if $breakpoint == toDesktop {
+        @media #{$bp--toDesktop}                     { @content; }
+    }
+    @else if $breakpoint == ofMobile {
+        @media #{$bp--ofMobile}                      { @content; }
+    }
+    @else if $breakpoint == mobileAndDesktop {
+        @media #{$bp--mobileAndDesktop}              { @content; }
+    }
+}

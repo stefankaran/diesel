@@ -1,0 +1,223 @@
+//.articlePortrait {
+//    .sticky {
+//        @include bp(ofMobile) {
+//            top: 210px !important;
+//        }
+//    }
+//}
+//.articleLandscape {
+//    .sticky {
+//        @include bp(ofMobile) {
+//            top: 90px;
+//        }
+//    }
+//}
+
+.sticky {
+    @include bp(ofMobile) {
+        top: 90px;
+        position: -webkit-sticky !important;
+        position: sticky !important;
+    }
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+//.stickyy {
+//    display: none;
+//}
+
+.articleSingle__body {
+    @include bp(ofMobile) {
+        display: inline-block;
+    }
+}
+.articleSingle__shareSticky {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    
+//    &.sticky {
+//        position: -webkit-sticky;
+//        position: sticky;
+//        top: 0;
+//        
+//        &:before, &:after {
+//            content: '';
+//            display: table;
+//        }
+//    }
+    
+    @include bp(ofMobile) {
+        float: left;
+//        display: inline-block !important;
+    }
+    @include bp(desktop) {
+        width: 23%;
+//        margin-top: 9.3%;
+    }
+    @include bp(tablet) {
+        width: 24% !important;
+//        margin-top: 13.5%;
+    }
+    @include bp(mobile) {
+//        display: none;
+        
+        &.mobShareSticky {
+//            width: 100%;
+            min-height: calc-rem(91px);
+            max-width: calc-rem(588px);
+            @include btnGradient;
+            @include shadow;
+            position: fixed;
+            left: 2%;
+            right: 2%;
+            bottom: 10.6%;
+            margin: 0 auto;
+            padding: calc-rem(21px) 0;
+            @include pop (1.8);
+        }
+    }
+    
+    .articleSingle__share {
+        
+        @include bp(desktop) {
+            margin-left: 8px;
+        }
+        @include bp(tablet) {
+            display: inline-block;
+            margin-left: 35%;
+        }
+    }
+    .articleSingle__shareNum {
+        font-family: $fontMedium;
+        background: $primary-color;
+        color: $white-color;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(18px);
+            padding: 7px 16px;
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(12.5px);
+            padding: 7px 12px;
+        }
+        @include bp(mobile) {
+            display: none;
+        }
+        
+        .shareNum {
+            font-family: $fontHeavy;
+        }
+    }
+    .articleSingle__shareLink {
+        display: block;
+        margin: 0 auto;
+        
+        @include bp(mobile) {
+            display: inline-block;
+            @include iconSize(calc-rem(49px));
+            float: left;
+            @include pop (2);
+            
+            @media (min-width: 481px) and (max-width: 590px) {
+                margin: 0 4.5% !important;
+            }
+        }
+                
+        &.articleSingle__fb {
+            @include bp(ofMobile) {
+                background: $blueFacebook;
+            }
+            @include bp(desktop) {
+                @include iconSize(32px);
+                margin-bottom: 35px;
+            }
+            @include bp(tablet) {
+                @include iconSize(24px);
+                margin-bottom: 41px;
+            }
+            @include bp(mobile) {
+                background: $whiteFacebook;
+                margin-left: 5%;
+                margin-right: 4%;
+//                margin-left: calc-rem(26px);
+            }
+        }
+        &.articleSingle__tw {
+            @include bp(ofMobile) {
+                background: $blueTwitter;
+            }
+            @include bp(desktop) {
+                @include iconSize(33px);
+                margin-bottom: 36px;
+            }
+            @include bp(tablet) {
+                @include iconSize(28px);
+                margin-bottom: 41px;
+            }
+            @include bp(mobile) {
+                background: $whiteTwitter;
+                margin-left: 5.5%;
+                margin-right: 5%;
+//                margin: 0 calc-rem(30px) 0 calc-rem(58px);
+            }
+        }
+        &.articleSingle__gp {
+            @include bp(ofMobile) {
+                background: $blueGooglePlus;
+            }
+            @include bp(desktop) {
+                @include iconSize(34px);
+                margin-bottom: 21px;
+            }
+            @include bp(tablet) {
+                @include iconSize(29px);
+                margin-bottom: 26px;
+            }
+            @include bp(mobile) {
+                background: $whiteGooglePlus;
+                margin-left: 6%;
+                margin-right: 7%;
+//                margin: 0 calc-rem(30px) 0 calc-rem(40px);
+            }
+        }
+        &.articleSingle__em {
+            @include bp(ofMobile) {
+                background: $blueEnvelope;
+            }
+            @include bp(desktop) {
+                @include iconSize(30px);
+            }
+            @include bp(tablet) {
+                @include iconSize(25px);
+            }
+            @include bp(mobile) {
+                background: $whiteEnvelope;
+                margin-left: 7%;
+                margin-right: 5.5%;
+//                margin: 0 calc-rem(30px) 0 calc-rem(47px);
+            }
+        }
+        &.articleSingle__wa {
+            @include bp(ofMobile) {
+                display: none;
+            }
+            @include bp(mobile) {
+                background: $whiteWhatsapp;
+                margin-left: 6%;
+//                @include pop (2);
+//                margin-left: cal-rem(40px);
+            }
+        }
+    }
+}

@@ -1,0 +1,184 @@
+.categoryHero {
+    position: relative;
+    text-align: center;
+    
+    .categoryHero__body {
+        position: relative;
+        
+        @include bp(ofMobile) {
+            @extend .backgroundCropGradient;
+        }
+        .wrap {
+            position: relative;
+        }
+    }
+    .categoryHero__image {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+            
+//        @media (min-width: 580px) and (max-width: 750px) {
+//            min-height: 490px;
+//        }
+//        @media (min-width: 480px) and (max-width: 579px) {
+//            min-height: 390px;
+//        }
+//        @media (max-width: 479px) {
+//            min-height: 242px;
+//        }
+        
+        img {
+            display: block;
+            
+            @include bp(mobile) {
+//                position: absolute;
+//                bottom: -20%;
+//                top: 26%;
+//                @include transformScale(2);
+            }
+        }
+    }
+    .categoryHero__description {
+        @include btnGradient;
+        color: $white-color;
+        text-align: left;
+        @include shadow;
+        
+        @include bp(ofMobile) {
+            position: absolute;
+            z-index: 2;
+        }        
+        @include bp(desktop) {
+            top: 24%;
+            right: 11.3%;
+            width: 31.5%;
+            padding: 3.4% 4%;
+        }
+        @include bp(tablet) {
+            top: 25%;
+            right: 10.5%;
+            width: 32%;
+            padding: 3.7% 4.2%;
+        }
+        @include bp(mobile) {
+            padding: 7% 8%;
+        }
+        @media (min-width: 1025px) and (max-width: 1190px) {
+            top: 8%;
+        }
+        @media (min-width: 751px) and (max-width: 935px) {
+            top: 22%;
+            padding: 3.7% 3.2%;
+        }
+    }
+    .categoryHero__heading {
+        font-family: $fontDemiCond;
+        @include fontSize(36px, 28px, 39px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+    }
+    .categoryHero__text {
+        font-family: $fontMedium;
+        text-transform: none;
+        
+        @include bp (ofMobile) {
+            margin-top: 9px;
+        }
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(18px), calc-rem(25px));
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(17px));
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight (calc-rem(27px), calc-rem(41px));
+            margin-top: 21px;
+        }
+        @include bp(mobileSmall) {
+            margin-top: 14px;
+        }
+    }
+    .categoryHero__fist {
+        position: absolute;
+        z-index: 3;
+        
+        @include bp(ofMobile) {
+            right: 1.7%;
+            max-width: 11.8%;
+        }
+        @include bp(desktop) {
+            bottom: 8%;
+        }
+        @include bp(tablet) {
+            bottom: 7%;
+        }
+        @include bp(mobile) {
+            bottom: 43%;
+            right: 4.7%;
+            max-width: 22%;
+        }
+        @media (min-width: 481px) and (max-width: 640px) {
+            bottom: 53%;
+        }
+    }
+    .categoryHero__menu {
+        position: relative;
+        z-index: 2;
+        @include dtmPadding (13px 0 11px, 7px 0, calc-rem(74px) 0) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        
+        @include bp(ofMobile) {       
+            @include btnGradient;
+        }
+        @include bp(mobile) {
+            .categoryHero__list:nth-last-child(-n+13), .categoryHero__menu-line:nth-last-child(-n+14) { //----- PROVERITI JOS JEDNOM!
+                display: none;
+            }
+        }
+    }
+    .categoryHero__list {
+        display: inline-block;
+    }
+    .categoryHero__link {
+        font-family: $fontMediumCond;
+        letter-spacing: 1px;
+        
+        @include bp(mobile) {
+            color: $black-color;
+            font-size: calc-rem(30px);
+        }        
+        @include bp(ofMobile) {
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(31px));
+            color: $white-color;
+        }
+    }
+    .categoryHero__menu-line {
+        display: inline-block;
+        
+        
+        @include bp(desktop) {
+            margin: 0 4.7%;
+        }
+        @include bp(tablet) {
+            margin: 0 6.1%;
+        }
+        @include bp(mobile) {
+            background: $black-color;
+            margin: 0 7.8%;
+            width: 6px;
+            height: 2.5px;
+            vertical-align: 5px;
+        }
+        @include bp(ofMobile) {
+            background: $white-color;
+            width: 3px;
+            height: 1px;
+            vertical-align: 4px;
+            
+            &.ofMobileNone {
+                display: block;
+                background: transparent;
+            }
+        }
+        @media (min-width: 751px) and (max-width: 860px) {
+            margin: 0 5.1%;
+        }
+    }
+}

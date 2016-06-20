@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "sass-mediaqueries": "^1.6.1",
+    "video.js": "^5.10.5",
+    "slick-carousel": "^1.6.0",
+    "Stickyfill": "^1.1.4",
+    "videojs-vimeo": "^2.0.0",
+    "videojs-youtube": "^2.0.8"
+  },
+  "devDependencies": {}
+}

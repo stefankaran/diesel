@@ -1,0 +1,131 @@
+.btn {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: inline-block;
+    
+    @include bp(tablet) {
+        @include btn-responsive (calc-rem(14px), calc-rem(124px), calc-rem(13px), calc-rem(13px));  // --- Defined in mixins - font-size, min-width, padding-top, padding-bottom ---
+    }
+    @include bp(mobile) {
+        @include btn-responsive (calc-rem(25px), 196px, 22px, 22px);
+    }
+    @include bp(mobileSmall) {
+        @include btn-responsive (calc-rem(24px), 100px, 11px, 11px);
+    }
+}
+.btn--teaser-white {
+    font-family: $fontMediumCond;
+    border: 1px solid $black-color;
+    color: $black-color;
+    background: $white-color;
+    @include border-radius(1px);
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(15px), 146px, 14px, 14px);
+    
+        //----- CSS FOR HOVER / Sweep To Right
+        @include Sweep;
+        &:before {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 40%;
+            transform-origin: 0 40%;
+            @include btnGradient;
+        }
+	}
+    @include bp(tablet) {
+        margin-bottom: 1px;
+    }
+}
+.btn--teaser-graphical {
+    font-family: $fontMediumCond;
+    @include shadow;
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(16px), 162px, 17px, 17px);
+	}
+}
+.btn--teaser-magazine {
+    font-family: $fontMediumCond;
+    color: $primary-color;
+    background: $white-color;
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(15px), 160px, 14px, 14px);
+	}
+}
+.btn--slider {
+    font-family: $fontMediumCond;
+    color: $black-color;
+    background: $white-color;
+    @include border-radius(1px);
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(16px), 148px, 15px, 15px);
+	}
+}
+.btn--video {
+    font-family: $fontDemi;
+    border: 1px solid;
+    border-color:  $primary-color;
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(16px), 149px, 15px, 14px);
+	}
+    @include bp(mobile) {
+        @include btn-responsive (calc-rem(25px), 237px, 24px, 24px);
+	}
+    @include bp(mobileSmall) {
+        @include btn-responsive (calc-rem(25px), calc-rem(237px), calc-rem(24px), calc-rem(24px));
+	}
+    
+    //----- CSS FOR HOVER / Sweep To Bottom
+    @include Sweep;
+    &:before {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        background: #fff;
+    }
+}
+.btn--article-quote {
+    font-family: $fontMedium;
+    
+    @include bp(desktop) {
+        @include btn-responsive (calc-rem(14px), 90px, 8px, 8px);
+	}
+}
+.loadMore {
+    text-align: center;
+    
+    @include bp(desktop){
+        margin: calc-rem(37px) 0 calc-rem(78px);
+    }
+    @include bp(tablet){
+        margin: calc-rem(22px) 0 calc-rem(59px);
+    }
+    @include bp(mobile){
+        margin-bottom: calc-rem(100px);
+    }
+    .btn--load-more {
+        @include bp(ofMobile) {
+            font-family: $fontHeavy;
+        }
+        @include bp(desktop) {
+            @include btn-responsive (calc-rem(16px), 220px, 18px, 18px);
+        }
+        @include bp(tablet) {
+            @include btn-responsive (calc-rem(14px), 200px, 17px, 17px);
+        }
+        @include bp(mobile) {
+            font-family: $fontMediumCond;
+            @include btn-responsive (calc-rem(24px), calc-rem(240px), calc-rem(32px),  calc-rem(32px));
+        }
+    }
+}
+.btn--gradient {
+    @include btnGradient;
+    color: $white-color;
+}

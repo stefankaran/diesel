@@ -1,0 +1,374 @@
+.header {
+//    background: red;
+    width: 100%;
+    
+    @include bp(desktop) {
+        padding-top: 40px;
+    }
+    @include bp(tablet) {
+        padding-top: 32px;
+    }
+    @include bp(mobile) {
+//        position: relative;
+    }
+    
+    .header__body {
+        position: relative;
+        margin: 0 auto;
+        
+        &.active {
+            .header__cross {
+                &::after,
+                &::before {
+                    visibility: visible;
+                }
+            }
+        }
+        
+        @include bp(desktop) {
+            max-width: 1246px;
+        }
+        
+        @include bp(ofMobile) {
+//            position: relative;
+        }
+        @include bp(mobile) {
+//            position: absolute;
+            width: 100%;
+            max-width: 662px;
+            background: $white-color;
+            z-index: 999;
+            top: 0;
+            padding-top: 80px;
+        }
+        @include bp(mobileSmall) {
+            padding-top: 36px;
+        }
+    }
+    .header__logo {
+        text-align: center;
+        
+        @include bp(desktop) {
+            padding-top: 60px;
+        }
+        @include bp(tablet) {
+            padding-top: 66px;
+        }
+        @include bp(mobile) {
+            margin: 37px 0 65px;
+        }
+        @include bp(mobileSmall) {            
+            margin: 5px 0 34px;
+        }
+    }
+    .header__logoLink {
+        color: $black-color;
+    }
+    .header__heading {
+            position: relative;
+            display: inline-block;
+            padding: 0;
+            font-size: calc-rem(50px);
+            font-family: $fontHeavy;
+
+        @include bp(desktop) {
+            margin: 0 0 0 19px;
+            letter-spacing: 10px;
+        }    
+        @include bp(tablet) {
+            margin: 0 0 0 9px;
+        }
+        @include bp(toDesktop) {
+            letter-spacing: 9px;
+            margin-left: 0px;
+            margin-top: -2px;
+        }
+        @include bp(mobileSmall) {
+            letter-spacing: 5px;
+        }
+    }
+    .header__fist {
+        margin: 0px 0px -25px 5px;
+        background: url("../../assets/images/header_fist_blue.png") center center no-repeat;
+        display: inline-block;
+        width: 67px;
+        height: 59px;
+        
+        @include bp(mobileSmall) {
+            max-width: 40px;
+            background-size: 35px;
+            margin-left: -1px;
+        }
+    }
+    .header__heading-line {
+        height: 2px;
+        background: $primary-color;
+        display: inline-block;
+        position: absolute;
+        width: 33%;
+
+        @include bp(desktop) {
+//            width: 93px;
+            bottom: -4px;
+            right: 20px;
+        }
+        @include bp(toDesktop) {
+//            width: 91px;
+            bottom: -3px;
+            right: 18px;
+        }
+        @include bp(mobileSmall) {
+//            width: 48px;
+            height: 1px;
+            right: 10px;
+        }
+    }
+    .header__social {
+        @include bp(desktop) {
+            padding-left: 44px;
+        }
+        @include bp(tablet) {
+            margin-left: 30px;
+        }
+        @include bp(ofMobile) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        @include bp(mobile) {
+            display: none;
+        }
+    }
+    .header__social-em {
+        @include bp(ofMobile) {
+            background: #f7f6f7 url("../images/email_gray.png") no-repeat;
+
+            &:after {
+                content: 'EMAIL';
+                font-family: $fontBook;
+                color: #bbbbbb;
+                margin-left: 24px;
+                vertical-align: 1px;
+            }
+        }
+        @include bp(desktop) {
+            background-position: 29px;
+            padding: 5px 29px;
+            margin-left: 21px;
+
+            &:after {
+                font-size: calc-rem(11px);
+            }
+        }
+        @include bp(tablet) {
+            margin-left: 4px;
+            padding: 1px 18px;
+            font-size: calc-rem(16px);
+            background-size: 15% !important;
+            background-position: 24px !important;
+
+            &:after {
+                font-size: calc-rem(9px);
+            }
+        }
+        @include bp(mobile) {
+            background: $blueEnvelope;
+                @include iconSize(calc-rem(60px));
+        }
+    }
+    .header__social-link {
+        vertical-align: middle;
+        display: inline-block;
+
+        @include bp(desktop) {
+            margin-right: 23px;
+        }
+        @include bp(tablet) {
+            margin-right: 35px;
+        }
+        @include bp(mobile) {
+            &:not(:last-child) {
+                margin-right: 11%;
+            }
+        }
+        @include bp(mobileSmall) {
+            &:not(:last-child) {
+                margin-right: 12%;
+                margin-left: -2%;
+            }
+        }
+        @media (min-width: 481px) and (max-width: 630px) {
+            &:not(:last-child) {
+                margin-right: 8%;
+            }
+        }
+        &.header__social-fb {
+            background: $blueFacebook;
+            
+            @include bp(desktop) {
+                @include iconSize(18px); //----- iconSize - Defined in mixin, same size for background-size, width and height.
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 10px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(50px), calc-rem(60px), calc-rem(60px)); //----- iconSizeDiff - Defined in mixin, different size for background-size, width and height.
+            }
+        }
+        &.header__social-tw {
+            background: $blueTwitter;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 20px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(53px), calc-rem(60px), calc-rem(60px));
+            }
+        }
+        &.header__social-in {
+            background: $blueInstagram;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (21px, 23px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSizeDiff (calc-rem(50px), calc-rem(60px), calc-rem(60px));
+            }
+        }
+        &.header__social-yt {
+            background: $blueYouTube;
+            
+            @include bp(desktop) {
+                @include iconSize(18px);
+            }
+            @include bp(tablet) {
+                @include iconSizeDiff (25px, 23px, 25px);
+            }
+            @include bp(mobile) {
+                @include iconSize(calc-rem(60px));
+            }
+        }
+    }
+    .header__brand {
+        position: absolute;
+        text-align: right;
+        
+        @include bp(ofMobile) {
+            top: 0;
+            right: 0;
+            display: table-cell;
+        }
+        @include bp(tablet) {
+            margin-right: 30px;
+        }
+        @include bp(mobile) {
+            top: 76px;
+            right: 15px;
+        }
+        @include bp(mobileSmall) {
+            top: 39px;
+            right: 29px;
+        }
+    }
+    .header__brand-logo {
+        @include bp(ofMobile) {
+            vertical-align: middle;
+            margin: 0 2px 5px 5px;
+            display: inline-block;
+        }
+        @include bp(tablet) {
+            width: 50%;
+        }
+        @include bp (mobile) {
+            max-width: 83%;
+        }
+        @include bp(mobileSmall) {
+            max-width: 42%;
+        }
+    }
+    .header__empowered {
+        @include fontSize(14px, 11.25px, 17.6px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        @include bp(ofMobile) {
+            display: inline-block;
+        }
+    }
+    .header__hamburger {
+        background: none;
+        padding: 7px 0 0 16px;
+        color: #000;
+        border: 0;
+        cursor: pointer;
+        outline: none;
+
+        @include bp(ofMobile) {
+            display: none !important;
+        }
+        @include bp(mobileSmall) {
+            margin-left: 13px;
+        }
+    }
+    .header__hamburger-line {
+        background: $primary-color;
+        display: block;
+        margin-bottom: 7px;
+        height: 5px;
+        width: 39px;
+        
+        @include bp(mobileSmall) {
+            margin-bottom: 3.5px;
+            height: 2.5px;
+            width: 19.5px;
+        }
+    }
+    .header__cross {
+        position: absolute;
+        top: 76px;
+        right: 10px;
+        width: 41px;
+        height: 41px;
+        overflow: hidden;
+        cursor: pointer;
+        outline: none;
+        border: 0;
+        
+        &:before, &:after {
+            height: 5px;
+            @include border-radius(1px);
+            content: '';
+            position: absolute;
+            width: 41px;
+            top: 50%;
+            left: 0;
+            background: #000;
+            visibility: hidden;
+            
+            @include bp(mobileSmall) {
+                width: 20px;
+                height: 3px;
+            }
+        }
+        
+        &:before {
+            @include transform-rotate(45deg);
+        }
+        &:after {
+            @include transform-rotate(-45deg);
+        }
+
+        @include bp(ofMobile) {
+            display: none !important;
+        }
+        @include bp(mobileSmall) {
+            top: 38px;
+            right: 28px;
+            width: 19px;
+            height: 19px;
+        }
+    }
+}

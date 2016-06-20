@@ -1,0 +1,268 @@
+.header.header__sticky {
+    @include bp(ofMobile) {
+        @include stickyGradient;
+        z-index: 99999;
+        position: fixed;
+        padding: 0;
+        top: 0;
+        
+        @media (min-width: 751px) and (max-width: 1365px) {
+            width: 100%;              
+        } 
+    }
+    a {
+        @include transition-all(none)
+    }
+    .header__body {
+        display: table;
+        vertical-align: middle;
+        max-width: 1366px;
+        position: initial;
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            padding: 0px 10px;
+        }
+        @media (min-width: 888px) and (max-width: 1023px) {
+            padding: 0px 15px;
+        }
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            padding: 0px 15px;
+        }
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            padding: 0px 25px;
+        }
+    }
+    .header__logo {
+        float: left;
+        margin: 0;
+        padding: 0;
+        
+        @include bp(desktop) {
+            padding: 28px 0 0;
+        }
+        @include bp(tablet) {
+            padding: 17px 0 0;
+        }
+    }
+    .header__heading {
+        font-size: calc-rem(23px);
+        color: $white-color;
+        margin: 0;
+        letter-spacing: 5px;
+
+        @include bp(tablet) {
+            font-size: calc-rem(22px);
+        }
+    }
+    .header__heading-line {
+        background: $white-color;
+        width: 33%;
+//        width: 43px;
+        bottom: -2px;
+        right: 9px;
+        height: 2px;
+    }
+    .header__fist {
+        background: url("../../assets/images/footer_fist.png") center center no-repeat;
+        background-size: 32px;
+        width: 32px;
+        height: 28px;
+        margin: 0px 0px -12px 0px;
+
+        @include bp(tablet) {
+            background-size: 30px;
+        }
+    }
+    .header__menu {
+        float: left;
+        margin: -3px 0 0 79px;
+        padding: 0;
+        position: initial;
+
+        @include bp(tablet) {
+            margin: 0 0 0 50px;
+        }
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin: 0 0 0 12px;
+        }
+        @media (min-width: 888px) and (max-width: 1023px) {
+            margin: 0 0 0 20px;
+        }
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            margin: -3px 0 0 20px;
+        }
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            margin: -3px 0 0 40px;
+        }
+    }
+    .header__menu-list {
+        &:not(:last-child) .header__menu-link {
+            border-bottom: 2px solid transparent;
+            
+            &:after {
+                background: transparent;
+            }
+        }
+        @include bp (desktop) {
+            padding: 28px 0 25px;
+            margin-bottom: 0;
+            
+            &:last-child {
+                margin-left: -19px;
+            }
+            &:not(:last-child):hover .header__menu-link {
+                color: $white-color;
+                border-color: $white-color;
+            }
+        }
+        @include bp(tablet) {
+            padding: 20px 0;
+        }
+        @include bp (toDesktop) {
+            &:not(:last-child) .header__menu-link.active {
+                color: $white-color;
+                border-color: $white-color;
+            }
+        }
+    }
+    .header__menu-link {
+        font-size: calc-rem(16px);
+        color: $white-color;
+        letter-spacing: 6px;
+
+        @include bp(tablet) {
+            letter-spacing: 5px;
+        }
+        &.header__menu-magnifier {
+            background: url("../../assets/images/magnifier_white.png") center center no-repeat;
+            background-position: 3px 8px;
+            height: 22px;
+
+            @include bp(tablet) {
+                background-position: 0px 6px;
+                height: 15px;
+                background-size: 10px;
+            }
+        }
+        @include bp(tablet) {
+            font-size: calc-rem(12px);
+        }
+        @media (min-width: 751px) and (max-width: 887px) {
+            letter-spacing: 3px;
+        }
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            letter-spacing: 5px;
+        }
+    }
+    .header__menu-line {
+        background: $white-color;
+        height: 1px;
+
+        @media (min-width: 1366px) {
+            margin: 0 35px;                
+        }
+        @include bp(tablet) {
+            margin: 0 18px;
+            height: 2px;
+            width: 2px;
+            vertical-align: 2px;
+        }
+        @media (min-width: 751px) and (max-width: 919px) {
+            margin: 0 14px;
+        }
+        @media (min-width: 920px) and (max-width: 1023px) {
+            margin: 0 14px;
+        }
+        @media (min-width: 1025px) and (max-width: 1234px) {
+            margin: 0 16px 0 19px;
+        }
+        @media (min-width: 1235px) and (max-width: 1365px) {
+            margin: 0 29px 0 32px;
+        }
+    }
+    .header__sub {
+        max-width: 1246px;
+        margin: 0 auto;
+        top: 75px;
+            top: -moz-calc(76px);
+        right: 0;
+        left: 0;
+        @include shadow;
+
+        @include bp(tablet) {
+            top: 57px;
+        }
+    }
+    .header__social {
+        float: left;
+        position: inherit;
+        margin: 4px 0 0 54px;
+        padding: 0;
+        
+        @include bp(desktop) {
+            padding: 28px 0 0;
+        }
+        @include bp(tablet) {
+            padding: 17px 0 0;
+        }
+        @media (min-width: 751px) and (max-width: 1023px) {
+            margin: 2px 0 0 12px;
+            margin-top: -moz-calc(1px);
+        }
+//        @media (min-width: 888px) and (max-width: 1023px) {
+//            margin: 4px 0 0 12px;
+//        }
+        @media (min-width: 1025px) and (max-width: 1195px) {
+            margin: 4px 0 0 19px;
+        }
+        @media (min-width: 1196px) and (max-width: 1365px) {
+            margin: 4px 0 0 36px;
+        }
+    }
+    .header__social-link {
+        margin-right: 18px;
+
+        @media (min-width: 751px) and (max-width: 887px) {
+            margin-right: 7px;
+        }
+        &.header__social-fb {
+            background: $whiteFacebook;
+            @extend .stickySocialSize;
+
+            @include bp(desktop) {
+                margin-right: 12px;
+            }
+        }
+        &.header__social-tw {
+            background: $whiteTwitter;
+            @extend .stickySocialSize;
+        }
+        &.header__social-in {
+            background: $whiteInstagram;
+            @extend .stickySocialSize;
+        }
+        &.header__social-yt {
+            display: none;
+        }
+    }
+
+    .header__social-em {
+        background: $whiteEnvelope;
+        display: inline-block;
+        background-size: 19px !important;
+        padding: 0;
+        margin: 0 0 0 7px;
+        width: 19px;
+        height: 19px;
+
+        &:after {
+            display: none;
+        }
+        @include bp(tablet) {
+            background-position: 0 !important;
+        }
+    }
+    .header__brand {
+        display: none;
+    }
+}

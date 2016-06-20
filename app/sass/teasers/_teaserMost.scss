@@ -1,0 +1,263 @@
+.teaser--most {
+    
+    @include bp(ofMobile) {
+        display: inline-block;
+    }
+    @include bp(mobile) {
+        display: block;
+    }
+    
+    .teaser--most_head {
+        text-align: center;
+        @include btnGradient;
+        @include dtmPadding (27px 1%, 11px 1%, calc-rem(19px) 1%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+    }
+    .teaser--most__tittle {
+        color: $white-color;
+        font-family: $fontHeavy;
+        display: inline-block;
+        @include fontSize(30px, 18px, 26px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+               
+        @include bp(desktop) {
+            letter-spacing: 1px;
+            margin-left: 8px;
+        }
+        @include bp(tablet) {
+            margin-left: 4px;
+        }        
+        @include bp(mobile) {
+            letter-spacing: 1px;
+        }       
+        @include bp(mobileSmall) {
+            letter-spacing: 0px;
+        }
+    }
+    .teaser--most__fist {
+        @include dtmMaxWidth(13%, 6.5%, 8%); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
+        
+        @include bp(desktop) {
+            vertical-align: -5px;
+            margin-left: 6px;
+        }
+        @include bp(toDesktop) {
+            vertical-align: -4px;
+            margin-left: 5px;
+        }
+    }
+    .teaser--most__body {
+        @include bp(desktop) {
+            margin-top: 4%;
+        }
+        @include bp(mobile) {
+            display: inline-block;
+        }
+    }
+    .teaser--most__item {
+        @include bp(desktop) {
+            display: inline-block;
+            margin-top: 2.8%;
+        }
+        @include bp(tablet) {
+            width: 22%;
+            float: left;
+            margin-top: 5%;
+            
+            &.teaser--most__tLeft {
+                margin-right: 2%;
+            }            
+            &.teaser--most__tMiddle {
+                margin-left: 2%;
+                margin-right: 2%;
+            }            
+            &.teaser--most__tRight {
+                margin-left: 2%;
+            }
+        }
+        @include bp(mobile) {
+            width: 28.3%;
+            float: left;
+            margin-top: 9%;
+            
+            &.teaser--most__mMiddle {
+                margin-left: 7.55%;
+                margin-right: 7.55%;
+            }
+            
+            &:nth-child(3n+1){
+                clear:left
+            }
+        }
+    }
+    .teaser--most__image {
+        @include bp(desktop) {
+            width: 27%;
+            float: left;
+            
+            img {
+                display: block;
+            }
+        }
+    }
+    .teaser--most__content {
+        @include bp(desktop) {
+            width: 73%;
+            float: left;
+            padding-left: 9px;
+        }
+        
+        h2 {
+            @include bp(desktop) {
+                margin-top: -7px;
+            }
+            @include bp(tablet) {
+                margin-bottom: 5px;
+            }
+            @include bp(mobile) {
+                margin: calc-rem(20px) 0 calc-rem(26px);
+            }
+        }
+    }
+    .teaser--most__tag {
+        color: $primary-color;
+        @include fontSize(15px, 11px, 16px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        
+        @include bp(tablet) {
+            letter-spacing: 0px;
+        }
+    }
+    .teaser--most__heading {
+        font-family: $fontDemiCond;
+        @include fontSize(18px, 14.5px, 27px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        
+        @include bp(desktop) {
+            margin-top: 6px;
+        }
+        @include bp(mobile) {
+            line-height: calc-rem(30px);
+        }
+    }
+    .teaser--most__text {
+        text-transform: none;
+        font-family: $fontBook;
+        
+        @include bp(desktop) {
+            font-size: calc-rem(15px);
+        }
+        @include bp(toDesktop) {
+            display: none;
+        }
+    }
+}
+.teaser.teaser--mostShared {
+    @include bp(mobileAndDesktop) {
+        .teaser--most__item:nth-last-child(-n+2) {
+            display: none;
+        }
+    }
+    @include bp(tablet) {
+        width: 100% !important;
+        margin-top: calc-rem(27px); // 1.6875rem;
+    }
+    
+    .teaser--most__tittle {
+        @include bp(tablet) {
+            margin-left: 0;
+        }
+    }
+    .teaser--most__fist {
+        @include bp(tablet) {
+            max-width: 3%;
+            margin-left: 7px;
+        }
+    }
+    .teaser--most__item {
+        @include bp(tablet) {
+            width: 23.5%;
+            margin-top: 2.6%;
+            
+            &.teaser--mostShared__tLeft {
+                margin-right: 1%;
+            }            
+            &.teaser--mostShared__tMiddle {
+                margin-left: 1%;
+                margin-right: 1%;
+            }            
+            &.teaser--mostShared__tRight {
+                margin-left: 1%;
+            }            
+            &:nth-child(4n+1){
+                clear:left
+            }
+        }
+    }
+    .mostShared__imageBox {
+        @include bp(mobileAndDesktop) {
+            position: relative;
+            overflow: hidden;
+        }
+//        @include bp(desktop) {
+//            max-width: 105px;
+//            min-height: 105px;
+//        }
+        @include bp(tablet) {
+            margin-bottom: -7px;
+        }
+//        @include bp(mobile) {
+//            max-width: 157px;
+//            min-height: 157px;
+//        }
+//        @media (min-width: 1025px) and (max-width: 1170px) {
+//            max-width: 93px;
+//            min-height: 93px;
+//        }
+//        @media (min-width: 320px) and (max-width: 480px) {
+//            max-width: 79px;
+//            min-height: 79px;
+//        }
+    }
+    .mostShared__imageLink {
+        @include bp(mobileAndDesktop) {
+            display:block;
+            overflow:hidden;
+        }
+        @include bp(desktop) {
+            line-height: 105px;
+        }
+        @include bp(mobile) {
+            line-height: 157px;
+        }
+        @media (min-width: 1025px) and (max-width: 1170px) {
+            line-height: 93px;
+        }
+        @media (min-width: 320px) and (max-width: 480px) {
+            line-height: 79px;
+        }
+    }
+    .mostShared__image {
+        @include bp(mobileAndDesktop) {
+            max-width: none;
+            margin: 0 0 0 -30%;
+            vertical-align: middle;
+            @include transformScale(1.25);
+        }
+        @include bp(desktop) {
+            height: 105px;          
+        }
+        @include bp(mobile) {
+            height: 157px;          
+        }
+        @media (min-width: 1025px) and (max-width: 1170px) {
+            height: 93px;
+        }
+        @media (min-width: 320px) and (max-width: 480px) {
+            height: 79px;
+        }
+    }
+}
+.teaser--mostRead {
+    @include bp(ofMobile) {
+        .teaser--most__item:nth-last-child(-n+2) {
+            display: none;
+        }
+    }
+}

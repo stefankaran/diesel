@@ -1,0 +1,217 @@
+.teaser--quote {
+    background: url('../images/teaser-quote-bc-gray.png');
+    background-repeat: no-repeat;
+        
+    @include bp(desktop) {
+        background-position: 5% 1%;
+    }        
+    @include bp(tablet) {
+        background-position: 21% 17%;
+        background-size: 33%;
+    }      
+    @include bp(mobile) {
+        background-position: 5% 0%;
+        background-size: 35%;
+    }
+    
+    &.modified {
+        @include bp(desktop) {
+            .teaser--quote__body {
+                padding-left: 14%;
+            }
+            .teaser-quote__person {
+                padding: 5px 0 0;
+                margin-left: -16px;
+                display: block;
+            }
+            .teaser--quote__fist {
+                margin: 0 0 0 15px
+            }
+        }
+        @include bp(tablet) {
+            background-position: 0% 4%;
+            
+            .teaser--quote__body {
+                padding: 52px 12px 26px 53px;
+            }
+            .teaser--quote__social {
+                margin-left: 0;
+            }
+        }
+    }
+    
+    .teaser--quote__body {
+        @include dtmPadding (45px 0 27px 67px, calc-rem(89px) calc-rem(12px) calc-rem(26px) calc-rem(124px), 8.5% 14% 1.5% 12.5%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        @media (min-width: 1025px) and (max-width: 1100px) {
+            padding-left: 6% !important;
+        }
+//        @media (min-width: 751px) and (max-width: 865px) {
+//            padding: 2% 2%;
+//        }
+        @media (min-width: 481px) and (max-width: 584px) {
+            padding-left: 3%;
+            padding-right: 1%;
+        }
+    }
+    .teaser--quote__heading {
+        font-family: $fontHeavy;
+        color: $primary-color;
+        @include fontSize(50px, 44.5px, 74px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+           
+        @include bp(mobile) {
+            line-height: calc-rem(78px);
+        }
+        @media (min-width: 481px) and (max-width: 560px) {
+            font-size: calc-rem(70px);
+        }
+    }
+    .teaser--quote__fist {
+        @include dtmMaxWidth(49px, 55px, calc-rem(110px)); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
+        @include bp(desktop) {
+            margin-left: 24px;
+            margin-bottom: -4px;
+        }
+        @include bp(tablet) {
+            margin-left: 27px;
+            margin-bottom: -5px;
+        }
+        @include bp(mobile) {
+            margin-left: 28px;
+            margin-bottom: -14px;
+        }
+        @include bp(mobileSmall) {
+            margin-left: 13px;
+            margin-bottom: -7px;
+        }
+    }
+
+    .teaser--quote__person {
+        display: table-cell;
+        @include dtmPadding (10px 0 0 12px, 23px 0 0, calc-rem(27px) 0 0) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        
+        &.modified {
+            @include bp(desktop) {
+                display: inline-block;
+                margin-left: -8%;
+                padding-top: 8px;
+            }
+        }
+    }
+
+    .teaser--quote__person-img {
+        overflow: hidden;
+        @include border-radius(100%);
+        display: inline-block;
+        vertical-align: middle;
+        
+        @include bp(desktop) {
+            border: 3px solid $primary-color;
+        }
+        @include bp(tablet) {
+            border: 5px solid $primary-color;
+        }
+        @include bp(mobile) {
+            border: calc-rem(6px) solid $primary-color;
+        }
+        
+        img {
+            vertical-align:bottom; 
+            position:relative;
+            @include dtmMaxWidth(69px, 78px, calc-rem(121px)); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
+        }
+    }    
+    .teaser--quote__person-details {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 7px;
+        
+        @include bp(mobile) {
+            margin-left: calc-rem(20px);
+            margin-top: -13px;
+        }
+    }    
+    .teaser--quote__person-name {
+        font-family: $fontHeavy;
+        letter-spacing: 2px;
+        margin-top: 4px;
+        @include fontSize(20px, 21.5px, 33px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        
+        @include bp(mobile) {
+            letter-spacing: calc-rem(4px);
+            margin-bottom: 7px;
+            margin-top: 7px;
+        }
+    }    
+    .teaser--quote__person-proffesion {
+        font-family: $fontMedium;
+        color: $primary-color;
+        @include fontSize(14px, 11.5px, 25px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+    }
+    .teaser--quote__social {
+        @include bp(desktop) {
+            visibility: hidden;
+            margin-left: 2px;
+        }
+        @include bp(tablet) {
+            margin-left: 66px;
+        }
+        @include bp(mobile) {
+            text-align: right;
+        }
+    }
+    .teaser--quote__social-item {
+        display: inline-block;
+        background-size: 19px !important;
+        width: 19px;
+        height: 19px;
+        
+        @include bp(desktop) {
+            margin-right: 19px;
+        }
+        @include bp(tablet) {
+            margin-right: 31px;
+        }
+        @include bp(mobile) {
+            text-align: right;
+            background-size: calc-rem(50px) !important;
+            width: calc-rem(50px);
+            height: calc-rem(50px);
+            margin-right: calc-rem(77px);
+            
+            &:last-child {
+                margin-right: calc-rem(64px);
+            }
+        }
+        
+        &.teaser--quote-fb {
+            background: $blueFacebook;
+        }
+        &.teaser--quote-tw {
+            background: $blueTwitter;
+        }
+        &.teaser--quote-pt {
+            background: $bluePinterest;
+        }
+    }
+    
+    //----- HOVER EFFECTS
+    &:hover {
+        @include bp(desktop) {
+            background: url("../images/teaser-quote-bc-blue.png") no-repeat;
+            background-position: 5% 1%;
+
+            .teaser--quote__heading {
+                color: $black-color;
+            }
+            .teaser--quote__person-img {
+                border-color: #636363;
+            }
+            .teaser--quote__person-proffesion {
+                color: #636363;
+            }
+            .teaser--quote__social {
+                visibility: visible;
+            }
+        }
+    }
+}

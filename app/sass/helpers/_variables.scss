@@ -1,0 +1,48 @@
+// Fonts
+$fontBook: 'Franklin Gothic Book' !default;
+$fontDemi: 'Franklin Gothic Demi' !default;
+$fontDemiCond: 'Franklin Gothic Demi Cond' !default;
+$fontHeavy: 'Franklin Gothic Heavy' !default;
+$fontMedium: 'Franklin Gothic Medium' !default;
+$fontMediumCond: 'Franklin Gothic Medium Cond' !default;
+$fontHeavyRegular: 'TestHeavyRegular' !default;
+
+// Basic Font Size
+$basefont-size: 16px;
+
+// Basic Font Size for desktop small devices
+$basefont-size-dSmall: 15px;
+
+// Basic Font Size for tablet small devices
+$basefont-size-tSmall: 13px;
+
+// Basic Font Size for extra small devices
+$basefont-size-mSmall: 8px;
+
+// Primar color
+$primary-color: #376fa7;
+$white-color: #fff;
+$black-color: #000;
+
+// Social
+    // White
+$whiteFacebook: url("../../assets/images/facebook_white.png") center center no-repeat;
+$whiteTwitter: url("../../assets/images/twitter_white.png") center center no-repeat;
+$whiteInstagram: url("../../assets/images/instagram_white.png") center center no-repeat;
+$whiteYouTube: url("../../assets/images/youtube_white.png") center center no-repeat;
+$whiteEnvelope: url("../images/envelope_white.png") no-repeat;
+$whiteGooglePlus: url("../../assets/images/googlePlusWhite.png") center center no-repeat;
+$whiteWhatsapp: url("../../assets/images/whatsappWhite.png") center center no-repeat;
+
+    //Blue
+$blueFacebook: url("../../assets/images/facebook_blue.png") center center no-repeat;
+$blueTwitter: url("../../assets/images/twitter_blue.png") center center no-repeat;
+$blueInstagram: url("../../assets/images/instagram_blue.png") center center no-repeat;
+$blueYouTube: url("../../assets/images/youtube_blue.png") center center no-repeat;
+$blueGooglePlus: url("../../assets/images/googlePlusBlue.png") center center no-repeat;
+$bluePinterest: url("../../assets/images/pinterest_blue.png") center center no-repeat;
+$blueEnvelope: url("../../assets/images/envelope_blue.png") center center no-repeat;
+
+// Slick arrows
+$slick-prev-character: url("../../assets/images/slider_arrow-left.png") center center no-repeat;
+$slick-next-character: url("../../assets/images/slider_arrow-right.png") center center no-repeat;

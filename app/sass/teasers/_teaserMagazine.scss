@@ -1,0 +1,297 @@
+.teaser--magazine {
+    @include btnGradient;
+    
+    @include bp(toDesktop) {
+        display: inline-block;
+    }
+    @include bp(tablet) {
+        width: auto !important;
+        max-width: 49%;
+    }
+    @include bp(mobile) {
+        margin-top: calc-rem(-22px);
+        margin-bottom: calc-rem(100px);
+    }
+    @media (min-width: 481px) and (max-width: 600px) {
+        overflow: hidden;
+    }
+    
+    .teaser--magazine__image {
+        position: relative;
+        
+        @include bp(toDesktop) {
+//            display: table-cell;
+            overflow: hidden;
+            vertical-align: middle;
+            display: inline-block;
+//            float: left;
+        }
+        @include bp(mobileSmall) {
+            max-height: 300px;
+        }
+        @include bp(tablet) {
+            width: 52%;
+//            min-height: calc-rem(310.4px);
+        }
+//        @media (min-width: 751px) and (max-width: 930px) {
+//            min-height: calc-rem(260px);
+//        }
+        @include bp(mobile) {
+            width: 53%;
+//            min-height: calc-rem(545px);
+        }
+        @media (min-width: 751px) and (max-width: 850px) {
+            width: 53%;
+        }
+//        @media (min-width: 481px) and (max-width: 715px) {
+//            min-height: calc-rem(480px);
+//        }
+ 
+//        .teaser--magazine__img {
+//            @include bp(toDesktop) {
+//                max-width: none;
+//                margin: auto;
+//                position: absolute;
+//                
+//                @include bp(tablet) {
+//                    left: -37%;
+//                }
+//                @media (min-width: 751px) and (max-width: 850px) {
+//                    left: -54%;
+//                }
+//                @media (min-width: 601px) and (max-width: 750px) {
+//                    -moz-transform: scale(1.8);
+//                    margin-left: -moz-calc(60%);
+//                    zoom: 2;
+//                    left: -54%;
+//                }
+//                @media (min-width: 481px) and (max-width: 600px) {
+//                    -moz-transform: scale(1.5);
+//                    margin-left: -moz-calc(40%);
+//                    zoom: 1.5;
+//                    left: -60%;
+//                }
+//                @media (min-width: 320px) and (max-width: 480px) {
+//                    -moz-transform: scale(1);
+//                    zoom: 1;
+//                    left: -44%;
+//                }
+//            }
+//        }
+        picture {
+            @include bp(toDesktop) {
+                display: block;
+                margin-bottom: -4px;
+            }
+        }
+    }
+    .teaser--magazine__elements {
+        display: inline-block;
+        text-align: center;
+        
+        @include bp(desktop) {
+            margin-left: -20px;
+        }
+        @include bp(mobile) {
+            margin-right: 5px;
+        }
+    }
+    .teaser--magazine__social {
+        position: absolute;
+        color: #7f7f7f;
+        
+        @include bp(desktop) {
+            left: 8px;
+            top: 14px;
+        }        
+        @include bp(tablet) {
+            left: 20px;
+            top: 20px;
+        }       
+        @include bp(mobile) {
+            left: calc-rem(34px);
+            top: calc-rem(30px);
+        }
+        
+        img {
+            @include dtmMaxWidth(30px, 25px, calc-rem(49px)); // ----- dtmMaxWidth - Defined in mixins for Desktop, Tablet and Mobile.
+        }
+    }
+    .teaser--magazine__body {
+        text-align: center;
+//        @include dtmPadding (25px 70px, 44px 7px, calc-rem(49px) calc-rem(7px)) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+//  
+        @include bp(desktop) {
+            padding: 25px 70px;
+        }        
+        @include bp(tablet) {
+            width: 47%;
+        }
+        @include bp(mobile) {
+            width: 46%;
+        }  
+        @include bp(toDesktop) {
+            vertical-align: middle;
+            display: inline-block;
+        }
+        @media (min-width: 1025px) and (max-width: 1140px) {
+            padding: 25px 40px;
+        }
+        @media (min-width: 751px) and (max-width: 850px) {
+            width: 45%;
+        }
+        @media (min-width: 751px) and (max-width: 930px) {
+//            padding: 17px 5px;
+            
+            .teaser--magazine__fist {
+                width: 33px;
+                height: 33px;
+                
+                img {
+                    margin-bottom: calc-rem(4px);
+                }
+            }
+            .teaser--magazine__heading a {
+                font-size: calc-rem(16.5px);
+            }
+            .teaser--magazine__share {
+                font-size: calc-rem(14px);
+                line-height: calc-rem(14px);
+            }
+        }
+    }
+    .teaser--magazine__fist {
+        background: $white-color;
+        line-height: calc-rem(40px);
+        float: left;
+        
+        @include bp(desktop) {
+            width: 40px;
+            height: 40px;            
+        }
+        @include bp(tablet) {
+            width: 38px;
+            height: 38px;            
+        }
+        @include bp(mobile) {
+            width: calc-rem(60px);
+            height: calc-rem(60px);
+            margin: 3px 4px 0 0;
+        }
+        @include bp(mobileSmall) {
+            margin: 0;
+        }
+        @media (min-width: 481px) and (max-width: 600px) {
+            width: 45px;
+            height: 45px;
+        }
+
+        img {
+            vertical-align: middle;
+            
+            @include bp(desktop) {
+                width: calc-rem(30px);
+            }
+            @include bp(tablet) {
+                width: 28px;
+                margin-bottom: 4px;
+            }
+            @include bp(mobile) {
+                margin-top: 10px;
+            }
+            @include bp(mobileSmall) {
+                width: calc-rem(50px);
+                margin-top: 5px;
+            }
+            @media (min-width: 481px) and (max-width: 600px) {
+                margin-top: 4px;
+                width: 85%;
+            }
+        }        
+    }
+    .teaser--magazine__head {
+        float: left;
+        text-align: left;
+        margin-left: 5px;
+        margin-left: -moz-calc(4px);
+        
+        @include bp(ofMobile) {
+            line-height: 19px;
+        }
+    }
+    .teaser--magazine__heading a {
+        font-family: $fontMediumCond;
+        color: $white-color;
+        @include fontSize(22px, 21px, 33px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        
+        @media (max-width: 360px) {
+            font-size: calc-rem(26px);
+        }
+        @media (min-width: 481px) and (max-width: 600px) {
+            font-size: 20px;
+        }
+        @media (min-width: 601px) and (max-width: 715px) {
+            font-size: 26px;
+        }
+    }
+    .teaser--magazine__share {
+        font-family: $fontMedium; 
+        color: $primary-color;
+        text-transform: uppercase;
+        margin: 2px 0 0 4px;
+        @include fontSize(16px, 15.4px, 25px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        
+        @media (min-width: 481px) and (max-width: 600px) {
+            font-size: 20px;
+        }
+    }
+    .teaser--magazine__num {
+        font-family: $fontHeavy;   
+    }
+    .teaser--magazine__text {
+        font-family: $fontDemi;
+        text-transform: uppercase;
+        color: $white-color;
+        margin: 12px 0 21px;
+        
+        @include bp(desktop) {
+            @include fontSizeLineHeight (calc-rem(14px), calc-rem(17px));
+            margin: 12px 0 17px;
+        }
+        @include bp(tablet) {
+            @include fontSizeLineHeight (calc-rem(15px), calc-rem(16px));
+            padding: calc-rem(5px) calc-rem(10px) 0;
+            margin: calc-rem(12px) auto calc-rem(24px);
+            max-width: 83%;
+        }
+        @media (min-width: 751px) and (max-width: 930px) {
+            font-size: calc-rem(13px);
+        }
+        @include bp(mobile) {
+            @include fontSizeLineHeight (calc-rem(27px), calc-rem(33px));
+            margin: calc-rem(57.6px) 1%;
+        }
+        @media (min-width: 481px) and (max-width: 600px) {
+            margin: 14px 1%;
+            font-size: 20px;
+            line-height: 26px;
+        }
+        @media (min-width: 601px) and (max-width: 715px) {
+            margin: 31px 1%;
+            @include fontSizeLineHeight (24px, 30px);
+        }
+        @media (max-width: 340px) {
+            margin: 25px 1%;
+            @include fontSizeLineHeight (12px, 14px);
+        }
+    }
+    
+    //----- HOVER EFFECTS
+    &:hover {
+        @include bp(desktop) {
+            .teaser--magazine__fist img {
+                @include pop (1.3);
+            }
+        }
+    }
+}
