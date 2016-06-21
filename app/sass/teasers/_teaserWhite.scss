@@ -158,7 +158,7 @@
                 /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
                 /* Opera 11.10+ */background: -ms-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
                 /* IE 10+ */background: linear-gradient(to bottom, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
-                /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#485c70', endColorstr='#4391e0', GradientType=0 );
+                /* W3C */-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#485c70', endColorstr='#4391e0', GradientType=0 )";
                 /* IE6-9 */
 
                 img {

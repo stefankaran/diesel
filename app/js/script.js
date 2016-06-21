@@ -37,7 +37,8 @@ $(document).ready(function(){
                     $(this).parent().addClass('active');
                     $(".sub__first .header__menu-link").toggleClass("active");
                     e.preventDefault();
-                } else {
+                }
+                else {
                     return true;
                 }
             });
