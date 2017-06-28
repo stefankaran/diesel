@@ -1,0 +1,23 @@
+.stickyFist {
+    display: none;
+    width: calc-rem(91px);
+    height: calc-rem(91px);
+//    width: 50px;
+//    height: 50px;
+    @include btnGradient;
+    @include shadow;
+    position: fixed;
+    z-index: 99999;
+    left: 4%;
+    top: 10%;
+    
+    &_image {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        max-width: calc-rem(46px);
+    }
+}

@@ -4,7 +4,7 @@
         @include fontSize(14px, 12px, 20px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
     
         @include bp(tablet) {
-            padding-bottom: 4px;
+            padding-bottom: 1px;
         }
     }
     .teaser__share {

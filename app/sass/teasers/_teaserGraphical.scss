@@ -1,28 +1,37 @@
 .teaser--graphical {
     position: relative;
     
+    @include bp(desktop) {
+        &:hover {
+            .teaser--graphical__heading {
+                opacity: 0.3;
+            }
+            .teaser--graphical__fist {
+                opacity: 1;
+            }
+        }
+    }
     @include bp(mobile) {
         margin-bottom: calc-rem(96px);
-    }
-    &:hover {
-        .teaser--graphical__heading {
-            opacity: 0.3;
-        }
-        .teaser--graphical__fist {
-            opacity: 1;
-        }
     }
     
     .teaser--graphical__top {
         position: relative;
         @include btnGradient;
-        @include dtmPadding (2% 2% 16%, 2% 2% 7.6%, 2% 2% 8.2%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        @include dtmPadding (2% 2% 16%, 2% 2% 6.5%, 2% 2% 8.2%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
             
         @include bp(toDesktop) {
             width: 100%;
         }
-        @media (min-width: 751px) and (max-width: 910px) {
-            max-height: 190px;
+        @media (min-width: 751px) and (max-width: 930px) {
+            max-height: 175px;
+            padding-bottom: 6%;
+        }
+//        @media (min-width: 751px) and (max-width: 830px) {
+//            padding-bottom: 0;
+//        }
+        @media (min-width: 931px) and (max-width: 970px) {
+            padding-bottom: 4.5%;
         }
         h2 {
             text-align: center;
@@ -34,12 +43,13 @@
         }
         @include bp(tablet) {
             padding-top: 2.5%;
+            width: 52%;
         }
         @include bp(mobile) {
             padding-top: 4%;
         }
         @media (min-width: 751px) and (max-width: 910px) {
-            width: 60%;
+            width: 57%;
         }
         @media (min-width: 481px) and (max-width: 749px) {
             width: 62%;
@@ -109,6 +119,9 @@
         @include bp(mobile) {
             margin-top: -50.5%;
         }
+        @media (min-width: 751px) and (max-width: 830px) {
+            bottom: -54%;
+        }
         
         .btn {
             position: absolute;
@@ -142,16 +155,26 @@
         @include bp(tablet) {
             bottom: 2.5%;
             left: 4%;
+            width: 36%;
         }
         @include bp(mobile) {
             bottom: 27%;
             left: 9%;
-        }
-        @include bp(toDesktop) {
             width: 35%;
         }
-        @media (min-width: 751px) and (max-width: 910px) {
-            width: 43%;
+//        @include bp(toDesktop) {
+//            width: 35%;
+//        }
+//        @media (min-width: 751px) and (max-width: 770px) {
+//            width: 46% !important;
+//        }
+        @media (min-width: 751px) and (max-width: 930px) {
+            width: 39%;
+            left: 2%;
+            bottom: 0;
+        }
+        @media (min-width: 931px) and (max-width: 970px) {
+            width: 38%;
         }
     }
     .teaser--graphical__text {
@@ -172,6 +195,9 @@
     .teaser--graphical__image {
         @include bp(tablet) {
             max-width: 58%;
+        }
+        @media (min-width: 851px) and (max-width: 930px) {
+            max-width: 52%;
         }
         @include bp(mobile) {
             width: 63%;

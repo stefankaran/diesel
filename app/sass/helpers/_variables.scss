@@ -10,8 +10,14 @@ $fontHeavyRegular: 'TestHeavyRegular' !default;
 // Basic Font Size
 $basefont-size: 16px;
 
+// Basic Font Size for desktop small devices
+$basefont-size-dSmall: 15px;
+
+// Basic Font Size for tablet small devices
+$basefont-size-tSmall: 13px;
+
 // Basic Font Size for extra small devices
-$basefont-size-small: 8px;
+$basefont-size-mSmall: 8px;
 
 // Primar color
 $primary-color: #376fa7;
@@ -25,6 +31,8 @@ $whiteTwitter: url("../../assets/images/twitter_white.png") center center no-rep
 $whiteInstagram: url("../../assets/images/instagram_white.png") center center no-repeat;
 $whiteYouTube: url("../../assets/images/youtube_white.png") center center no-repeat;
 $whiteEnvelope: url("../images/envelope_white.png") no-repeat;
+$whiteGooglePlus: url("../../assets/images/googlePlusWhite.png") center center no-repeat;
+$whiteWhatsapp: url("../../assets/images/whatsappWhite.png") center center no-repeat;
 
     //Blue
 $blueFacebook: url("../../assets/images/facebook_blue.png") center center no-repeat;

@@ -1,6 +1,7 @@
 .header {
+//    background: red;
     width: 100%;
-    
+
     @include bp(desktop) {
         padding-top: 40px;
     }
@@ -10,15 +11,24 @@
     @include bp(mobile) {
 //        position: relative;
     }
-    
+
     .header__body {
         position: relative;
         margin: 0 auto;
-        
+
+        &.active {
+            .header__cross {
+                &::after,
+                &::before {
+                    visibility: visible;
+                }
+            }
+        }
+
         @include bp(desktop) {
             max-width: 1246px;
         }
-        
+
         @include bp(ofMobile) {
 //            position: relative;
         }
@@ -37,7 +47,7 @@
     }
     .header__logo {
         text-align: center;
-        
+
         @include bp(desktop) {
             padding-top: 60px;
         }
@@ -47,7 +57,7 @@
         @include bp(mobile) {
             margin: 37px 0 65px;
         }
-        @include bp(mobileSmall) {            
+        @include bp(mobileSmall) {
             margin: 5px 0 34px;
         }
     }
@@ -64,7 +74,7 @@
         @include bp(desktop) {
             margin: 0 0 0 19px;
             letter-spacing: 10px;
-        }    
+        }
         @include bp(tablet) {
             margin: 0 0 0 9px;
         }
@@ -83,7 +93,7 @@
         display: inline-block;
         width: 67px;
         height: 59px;
-        
+
         @include bp(mobileSmall) {
             max-width: 40px;
             background-size: 35px;
@@ -95,19 +105,20 @@
         background: $primary-color;
         display: inline-block;
         position: absolute;
+        width: 33%;
 
         @include bp(desktop) {
-            width: 93px;
+//            width: 93px;
             bottom: -4px;
             right: 20px;
         }
         @include bp(toDesktop) {
-            width: 91px;
+//            width: 91px;
             bottom: -3px;
             right: 18px;
         }
         @include bp(mobileSmall) {
-            width: 48px;
+//            width: 48px;
             height: 1px;
             right: 10px;
         }
@@ -193,7 +204,7 @@
         }
         &.header__social-fb {
             background: $blueFacebook;
-            
+
             @include bp(desktop) {
                 @include iconSize(18px); //----- iconSize - Defined in mixin, same size for background-size, width and height.
             }
@@ -206,7 +217,7 @@
         }
         &.header__social-tw {
             background: $blueTwitter;
-            
+
             @include bp(desktop) {
                 @include iconSize(18px);
             }
@@ -219,7 +230,7 @@
         }
         &.header__social-in {
             background: $blueInstagram;
-            
+
             @include bp(desktop) {
                 @include iconSize(18px);
             }
@@ -232,7 +243,7 @@
         }
         &.header__social-yt {
             background: $blueYouTube;
-            
+
             @include bp(desktop) {
                 @include iconSize(18px);
             }
@@ -247,7 +258,7 @@
     .header__brand {
         position: absolute;
         text-align: right;
-        
+
         @include bp(ofMobile) {
             top: 0;
             right: 0;
@@ -308,7 +319,7 @@
         margin-bottom: 7px;
         height: 5px;
         width: 39px;
-        
+
         @include bp(mobileSmall) {
             margin-bottom: 3.5px;
             height: 2.5px;
@@ -325,7 +336,7 @@
         cursor: pointer;
         outline: none;
         border: 0;
-        
+
         &:before, &:after {
             height: 5px;
             @include border-radius(1px);
@@ -335,13 +346,14 @@
             top: 50%;
             left: 0;
             background: #000;
-            
+            visibility: hidden;
+
             @include bp(mobileSmall) {
                 width: 20px;
                 height: 3px;
             }
         }
-        
+
         &:before {
             @include transform-rotate(45deg);
         }

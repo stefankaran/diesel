@@ -1,6 +1,19 @@
-.sub__first:hover > .header__sub-first {
+//.sub__first {
 //    @include bp(desktop) {
-        display: inline-block;        
+//        &:hover {
+//            .header__sub-first {
+//                display: inline-block;
+//            }
+//        }
+//    }
+//}
+.header__menu-row {
+//    .sub__first {
+        &.active {
+            .header__sub-first {
+                display: inline-block;
+            }
+        }
 //    }
 }
 .header__sub {
@@ -10,6 +23,11 @@
     top: 26px;
     left: 0;
     right: 0;
+    background: $white-color;
+    
+//    &:active {
+//        display: inline-block;
+//    }
     
     @include bp(tablet) {
         top: 27px;
@@ -32,7 +50,8 @@
         width: 31%;
         
         @include bp(tablet) {
-            padding: 27px 0;
+            padding: 26.5px 0;
+//            padding: calc-rem(26.5px) 0;
         }
         @include bp(mobile) {
             background-size: 100%;
@@ -58,14 +77,16 @@
             vertical-align: 4px;
             margin: 0 2px;
         }
-        &:hover {
-            -ms-transform: scale(1.2);
-            transform: scale(1.2);
+        @include bp(desktop) {
+            &:hover {
+                @include transformScale(1.2);
+            }
         }
         
         @include bp(tablet) {
             &:not(:last-child) {
                 margin-bottom: 15px;
+//                margin-bottom: calc-rem(15px);
             }
             &:before, &:after {
                 height: 2px;
@@ -117,6 +138,10 @@
         }        
         @include bp(tablet) {
             height: 198px;
+//            height: calc-rem(198px);
+        }         
+        @include bp(tabletSmall) {
+            height: 178px;
         }        
         @include bp(mobile) {
             height: calc-rem(266px);
@@ -140,7 +165,7 @@
             width: 57%;
         }
         @include bp(tablet) {
-            padding: 19px 14px;
+            padding: calc-rem(19px) calc-rem(14px);
         }
     }
     .heading__sub-video {

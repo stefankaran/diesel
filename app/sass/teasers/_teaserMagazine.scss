@@ -4,14 +4,13 @@
     @include bp(toDesktop) {
         display: inline-block;
     }
+    @include bp(tablet) {
+        width: auto !important;
+        max-width: 49%;
+    }
     @include bp(mobile) {
         margin-top: calc-rem(-22px);
         margin-bottom: calc-rem(100px);
-    }
-    &:hover {
-        .teaser--magazine__fist img{
-            transform: scale(1.1);
-        }
     }
     @media (min-width: 481px) and (max-width: 600px) {
         overflow: hidden;
@@ -23,41 +22,66 @@
         @include bp(toDesktop) {
 //            display: table-cell;
             overflow: hidden;
-            float: left;
+            vertical-align: middle;
+            display: inline-block;
+//            float: left;
+        }
+        @include bp(mobileSmall) {
+            max-height: 300px;
         }
         @include bp(tablet) {
             width: 52%;
-            min-height: calc-rem(316px);
+//            min-height: calc-rem(310.4px);
         }
+//        @media (min-width: 751px) and (max-width: 930px) {
+//            min-height: calc-rem(260px);
+//        }
         @include bp(mobile) {
             width: 53%;
-            min-height: calc-rem(545px);
+//            min-height: calc-rem(545px);
         }
-        @media (min-width: 481px) and (max-width: 715px) {
-            min-height: calc-rem(480px);
+        @media (min-width: 751px) and (max-width: 850px) {
+            width: 53%;
         }
+//        @media (min-width: 481px) and (max-width: 715px) {
+//            min-height: calc-rem(480px);
+//        }
  
-        .teaser--magazine__img {
+//        .teaser--magazine__img {
+//            @include bp(toDesktop) {
+//                max-width: none;
+//                margin: auto;
+//                position: absolute;
+//                
+//                @include bp(tablet) {
+//                    left: -37%;
+//                }
+//                @media (min-width: 751px) and (max-width: 850px) {
+//                    left: -54%;
+//                }
+//                @media (min-width: 601px) and (max-width: 750px) {
+//                    -moz-transform: scale(1.8);
+//                    margin-left: -moz-calc(60%);
+//                    zoom: 2;
+//                    left: -54%;
+//                }
+//                @media (min-width: 481px) and (max-width: 600px) {
+//                    -moz-transform: scale(1.5);
+//                    margin-left: -moz-calc(40%);
+//                    zoom: 1.5;
+//                    left: -60%;
+//                }
+//                @media (min-width: 320px) and (max-width: 480px) {
+//                    -moz-transform: scale(1);
+//                    zoom: 1;
+//                    left: -44%;
+//                }
+//            }
+//        }
+        picture {
             @include bp(toDesktop) {
-                max-width: none;
-                margin: auto;
-                position: absolute;
-                
-                @include bp(tablet) {
-                    left: -37%;
-                }
-                @media (min-width: 601px) and (max-width: 750px) {
-                    zoom: 2;
-                    left: -54%;
-                }
-                @media (min-width: 481px) and (max-width: 600px) {
-                    zoom: 1.5;
-                    left: -60%;
-                }
-                @media (min-width: 320px) and (max-width: 480px) {
-                    zoom: 1;
-                    left: -44%;
-                }
+                display: block;
+                margin-bottom: -4px;
             }
         }
     }
@@ -95,37 +119,44 @@
     }
     .teaser--magazine__body {
         text-align: center;
-        @include dtmPadding (25px 70px, 47px 7px, calc-rem(49px) calc-rem(7px)) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
-        
+//        @include dtmPadding (25px 70px, 44px 7px, calc-rem(49px) calc-rem(7px)) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+//  
+        @include bp(desktop) {
+            padding: 25px 70px;
+        }        
         @include bp(tablet) {
-            width: 48%;
+            width: 47%;
         }
         @include bp(mobile) {
-            width: 47%;
+            width: 46%;
         }  
         @include bp(toDesktop) {
+            vertical-align: middle;
             display: inline-block;
-            float: left;
         }
         @media (min-width: 1025px) and (max-width: 1140px) {
             padding: 25px 40px;
         }
-        @media (min-width: 751px) and (max-width: 910px) {
-            padding: 30px 5px;
+        @media (min-width: 751px) and (max-width: 850px) {
+            width: 45%;
+        }
+        @media (min-width: 751px) and (max-width: 930px) {
+//            padding: 17px 5px;
             
             .teaser--magazine__fist {
                 width: 33px;
                 height: 33px;
                 
                 img {
-                    margin-bottom: 7px;
+                    margin-bottom: calc-rem(4px);
                 }
             }
             .teaser--magazine__heading a {
-                font-size: calc-rem(17px);
+                font-size: calc-rem(16.5px);
             }
             .teaser--magazine__share {
                 font-size: calc-rem(14px);
+                line-height: calc-rem(14px);
             }
         }
     }
@@ -225,11 +256,16 @@
         
         @include bp(desktop) {
             @include fontSizeLineHeight (calc-rem(14px), calc-rem(17px));
+            margin: 12px 0 17px;
         }
         @include bp(tablet) {
             @include fontSizeLineHeight (calc-rem(15px), calc-rem(16px));
-            padding: 5px 10px 0;
-            margin: 12px 0 24px;            
+            padding: calc-rem(5px) calc-rem(10px) 0;
+            margin: calc-rem(12px) auto calc-rem(24px);
+            max-width: 83%;
+        }
+        @media (min-width: 751px) and (max-width: 930px) {
+            font-size: calc-rem(13px);
         }
         @include bp(mobile) {
             @include fontSizeLineHeight (calc-rem(27px), calc-rem(33px));
@@ -237,7 +273,7 @@
         }
         @media (min-width: 481px) and (max-width: 600px) {
             margin: 14px 1%;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 26px;
         }
         @media (min-width: 601px) and (max-width: 715px) {
@@ -247,6 +283,15 @@
         @media (max-width: 340px) {
             margin: 25px 1%;
             @include fontSizeLineHeight (12px, 14px);
+        }
+    }
+    
+    //----- HOVER EFFECTS
+    &:hover {
+        @include bp(desktop) {
+            .teaser--magazine__fist img {
+                @include pop (1.3);
+            }
         }
     }
 }

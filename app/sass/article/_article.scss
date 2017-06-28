@@ -19,7 +19,7 @@
         display: block;
         position: relative;
         z-index: 1;
-        @include articleHeroImageShadow;
+        @include shadow;
     }
     .articleHero__bigTittle {
         font-family: $fontDemiCond;
@@ -148,6 +148,10 @@
             @extend .bodyBeforeAfter; 
             height: 100%;
             width: 15.2%;
+            
+            @include bp(mobile) {
+                width: 21%;
+            }
         }
         &:after  {
             @extend .bodyBeforeAfter;
@@ -165,8 +169,16 @@
             padding: 5% 11.4% 9% 0;
         }
         @include bp(mobile) {
-            padding: 4.7% 8% 6.7% 7.8%;
+            padding: 4.7% 8% 9% 7.8%;
         }
+    }
+    .articleHero__imageBox {
+//        @include bp(mobile) {
+            img {
+                margin-bottom: -4px;
+                margin-bottom: -moz-calc(-4px);
+            }
+//        }
     }
     .articleHero__bigTittle {
         @include bp(ofMobile) {
@@ -264,7 +276,7 @@
         }
         @include bp(desktop) {
             @include fontSizeLineHeight (calc-rem(40px), calc-rem(39px));
-            margin-bottom: 57px;
+            margin-bottom: 51px;
         }
         @include bp(tablet) {
             @include fontSizeLineHeight (calc-rem(27.5px), calc-rem(35px));
@@ -277,7 +289,7 @@
     }
     .articleSingle__textBold {
         text-transform: none;
-        font-family: $fontDemi;
+        font-family: $fontMedium;
         
         @include bp(ofMobile) {
             margin-bottom: 35px;
@@ -290,7 +302,7 @@
         }
         @include bp(mobile) {
             @include fontSizeLineHeight (calc-rem(33px), calc-rem(58px));
-            margin-bottom: 57px;
+            margin-bottom: calc-rem(57px);
         }
     }
     .articleSingle__textLight {
@@ -315,6 +327,7 @@
         @include bp(mobile) {
             @include fontSizeLineHeight (calc-rem(33px), calc-rem(58px));
             margin-bottom: 23px;
+            letter-spacing: 0;
         }
         
         .articleSingle__textColor {
@@ -337,7 +350,7 @@
             background-size: 21%;
         }
         @include bp(mobile) {
-            margin: 51px 0 0 -18%;
+            margin: calc-rem(51px) 0 0 -18%;
             background-position: 6% 0%;
             background-size: 40%;
         }
@@ -346,7 +359,8 @@
         }
         
         .articleSingle__quoteSocial {
-            visibility: hidden;
+            padding: calc-rem(30px) 0;
+//            visibility: hidden;
         }        
         .articleSingle__quoteFist {
             @include bp(ofMobile) {
@@ -377,6 +391,11 @@
                 float: right;
             }
         }
+    }
+    .articleSingle__quoteHeading {
+//        @include bp(desktop) {
+            letter-spacing: 0;
+//        }
     }
     .articleSingle__headingBold {
         font-family: $fontDemiCond;
@@ -425,6 +444,16 @@
 // -------------- ARTICLE BODY/CONTENT PORTRAIT PAGE --------------
 @include bp(ofMobile) {
     .articlePortrait {
+        .articleSingle__body {
+            @include bp(desktop) {
+                margin-top: 123px;
+            }
+        }
+        .articleSingle__bodyContent {
+            @include bp(desktop) {
+                margin-top: -123px;
+            }
+        }
         .articleSingle__contentRight {
             padding: 7% 0 0 3%;
 

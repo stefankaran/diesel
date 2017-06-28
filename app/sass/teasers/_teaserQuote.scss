@@ -41,13 +41,13 @@
     }
     
     .teaser--quote__body {
-        @include dtmPadding (45px 0 27px 67px, 0px 12px 26px 124px, 8.5% 14% 1.5% 12.5%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        @include dtmPadding (45px 0 27px 67px, calc-rem(89px) calc-rem(12px) calc-rem(26px) calc-rem(124px), 8.5% 14% 1.5% 12.5%) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
         @media (min-width: 1025px) and (max-width: 1100px) {
             padding-left: 6% !important;
         }
-        @media (min-width: 751px) and (max-width: 865px) {
-            padding: 2% 2%;
-        }
+//        @media (min-width: 751px) and (max-width: 865px) {
+//            padding: 2% 2%;
+//        }
         @media (min-width: 481px) and (max-width: 584px) {
             padding-left: 3%;
             padding-right: 1%;
@@ -59,10 +59,10 @@
         @include fontSize(50px, 44.5px, 74px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
            
         @include bp(mobile) {
-            line-height: alc-rem(78px);
+            line-height: calc-rem(78px);
         }
         @media (min-width: 481px) and (max-width: 560px) {
-            font-size: alc-rem(70px);
+            font-size: calc-rem(70px);
         }
     }
     .teaser--quote__fist {
@@ -88,6 +88,14 @@
     .teaser--quote__person {
         display: table-cell;
         @include dtmPadding (10px 0 0 12px, 23px 0 0, calc-rem(27px) 0 0) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        
+        &.modified {
+            @include bp(desktop) {
+                display: inline-block;
+                margin-left: -8%;
+                padding-top: 8px;
+            }
+        }
     }
 
     .teaser--quote__person-img {
@@ -183,6 +191,27 @@
         }
         &.teaser--quote-pt {
             background: $bluePinterest;
+        }
+    }
+    
+    //----- HOVER EFFECTS
+    &:hover {
+        @include bp(desktop) {
+            background: url("../images/teaser-quote-bc-blue.png") no-repeat;
+            background-position: 5% 1%;
+
+            .teaser--quote__heading {
+                color: $black-color;
+            }
+            .teaser--quote__person-img {
+                border-color: #636363;
+            }
+            .teaser--quote__person-proffesion {
+                color: #636363;
+            }
+            .teaser--quote__social {
+                visibility: visible;
+            }
         }
     }
 }

@@ -1,8 +1,24 @@
+// Disable loading issue - Hide Slider until Loaded
+.slider__slides .slider__slide, .slider__block .slider__info {
+  display: none;
+}
+.slider__slides .slider__slide:first-child, , .slider__block .slider__info:first-child {
+  display: block;
+}
+.slider__slides.slick-initialized .slider__slide, , .slider__block.slick-initialized .slider__info {
+  display: block;
+}
+
 //-----
 // CUSTOM CSS
 //-----
 .slider {
     position: relative;
+//    display: none;
+    
+//    .slick-initialized {
+//        display: block;
+//    }
     
     .slider__body {
         position: relative;
@@ -21,10 +37,10 @@
         outline: none;
         
         @include bp(mobile) {
-            display: block;
-            min-height: calc-rem(490px);
-            overflow: hidden;
-            position: relative;
+//            display: block;
+//            min-height: calc-rem(490px);
+//            overflow: hidden;
+//            position: relative;
         }
         
         &.slick-active {
@@ -35,21 +51,20 @@
         margin: 0 auto;
         
         @include bp(mobile) {
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-            transform: scale(2.5);
-            -ms-transform: scale(2.5);
+//            position: absolute;
+//            top: 0;
+//            left: 0;
+//            bottom: 0;
+//            right: 0;
+//            margin: auto;
+//            @include transformScale(2.5);
         }
         @include bp(mobileSmall) {
             top: 100px;
         }
     }
     .slider__block {
-        @include articleHeroImageShadow;
+        @include shadow;
         @include btnGradient;
         position: absolute;
         bottom: -12.5%;
@@ -59,10 +74,16 @@
             bottom: -12.5%;
             width: 31%;
         }
+        @include bp(desktopSmall) {
+            width: 34%;
+        }
         @include bp(tablet) {
             right: 10.5%;
             bottom: -10%;
             width: 32%;
+        }
+        @include bp(tabletSmall) {
+            bottom: -12%;
         }
         @include bp(mobile) {
             width: 100%;
@@ -73,16 +94,30 @@
         @media (min-width: 751px) and (max-width: 900px) {
             width: 38%;
         }
+        @media (min-width: 481px) and (max-width: 599px) {
+            font-size: 16px;
+            max-width: 82%;
+        }
+    }
+    .slider__info {
+        @media (min-width: 481px) and (max-width: 599px) {
+//            max-width: 30em;
+//            margin: 0 3em;
+//            font-size: 16px;
+        }
     }
     .slider__info-details {
         @include bp(desktop) {
-            padding: 55px 12%;
+            padding: calc-rem(55px) 12%;
         }
         @include bp(tablet) {
             padding: calc-rem(38px) 5% calc-rem(41px) 14%;
         }
         @include bp(mobile) {
             padding: calc-rem(33px) 14% calc-rem(41px) 18%;
+        }
+        @media (min-width: 481px) and (max-width: 599px) {
+            padding: 2em;
         }
         
         .btn--slider {
@@ -155,12 +190,15 @@
     }
     .slick-arrow {
         @include bp(desktop) {
-            @include iconSizeDiff (10px, 10px, 15px);
+            @include iconSizeDiff (10px, 13px, 18px);
             bottom: 6.7%;
         }
         @include bp(tablet) {
             @include iconSizeDiff (13px, 13px, 18px);
             bottom: 1.7%;
+        }
+        @include bp(mobile) {
+            display: none !important;
         }
     }
     .slick-prev {

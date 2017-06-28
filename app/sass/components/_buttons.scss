@@ -5,7 +5,7 @@
     display: inline-block;
     
     @include bp(tablet) {
-        @include btn-responsive (calc-rem(14px), 124px, 13px, 13px);  // --- Defined in mixins - font-size, min-width, padding-top, padding-bottom ---
+        @include btn-responsive (calc-rem(14px), calc-rem(124px), calc-rem(13px), calc-rem(13px));  // --- Defined in mixins - font-size, min-width, padding-top, padding-bottom ---
     }
     @include bp(mobile) {
         @include btn-responsive (calc-rem(25px), 196px, 22px, 22px);
@@ -23,10 +23,24 @@
     
     @include bp(desktop) {
         @include btn-responsive (calc-rem(15px), 146px, 14px, 14px);
+    
+        //----- CSS FOR HOVER / Sweep To Right
+        @include Sweep;
+        &:before {
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transform-origin: 0 40%;
+            transform-origin: 0 40%;
+            @include btnGradient;
+        }
 	}
+    @include bp(tablet) {
+        margin-bottom: 1px;
+    }
 }
 .btn--teaser-graphical {
     font-family: $fontMediumCond;
+    @include shadow;
     
     @include bp(desktop) {
         @include btn-responsive (calc-rem(16px), 162px, 17px, 17px);
@@ -53,6 +67,8 @@
 }
 .btn--video {
     font-family: $fontDemi;
+    border: 1px solid;
+    border-color:  $primary-color;
     
     @include bp(desktop) {
         @include btn-responsive (calc-rem(16px), 149px, 15px, 14px);
@@ -63,6 +79,16 @@
     @include bp(mobileSmall) {
         @include btn-responsive (calc-rem(25px), calc-rem(237px), calc-rem(24px), calc-rem(24px));
 	}
+    
+    //----- CSS FOR HOVER / Sweep To Bottom
+    @include Sweep;
+    &:before {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        background: #fff;
+    }
 }
 .btn--article-quote {
     font-family: $fontMedium;

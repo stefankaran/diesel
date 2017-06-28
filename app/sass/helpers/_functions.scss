@@ -2,3 +2,8 @@
 @function calc-rem($target) {
     @return ($target / $basefont-size) * 1rem;
 }
+
+// Calc px to percentage
+@function cp($target, $container) {
+  @return ($target / $container) * 100%;
+}

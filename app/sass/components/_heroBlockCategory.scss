@@ -17,25 +17,24 @@
         overflow: hidden;
         z-index: 1;
             
-        @media (min-width: 580px) and (max-width: 750px) {
-            min-height: 490px;
-        }
-        @media (min-width: 480px) and (max-width: 579px) {
-            min-height: 390px;
-        }
-        @media (max-width: 479px) {
-            min-height: 242px;
-        }
+//        @media (min-width: 580px) and (max-width: 750px) {
+//            min-height: 490px;
+//        }
+//        @media (min-width: 480px) and (max-width: 579px) {
+//            min-height: 390px;
+//        }
+//        @media (max-width: 479px) {
+//            min-height: 242px;
+//        }
         
         img {
             display: block;
             
             @include bp(mobile) {
-                position: absolute;
-                bottom: -20%;
-                top: 26%;
-                -ms-transform: scale(2);
-                transform: scale(2);
+//                position: absolute;
+//                bottom: -20%;
+//                top: 26%;
+//                @include transformScale(2);
             }
         }
     }
@@ -43,6 +42,7 @@
         @include btnGradient;
         color: $white-color;
         text-align: left;
+        @include shadow;
         
         @include bp(ofMobile) {
             position: absolute;
@@ -67,7 +67,7 @@
             top: 8%;
         }
         @media (min-width: 751px) and (max-width: 935px) {
-            top: 11%;
+            top: 22%;
             padding: 3.7% 3.2%;
         }
     }

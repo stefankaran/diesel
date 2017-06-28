@@ -12,7 +12,8 @@
        
         <title>Bravely | Entertainment</title>
        
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/main.min.css">
+        
     </head>
     <body>
         <div id="page" class="page">  
@@ -33,7 +34,7 @@
                     <nav class="header__menu">
                         <ul class="header__menu-row">
                             <li class="header__menu-list sub__first">
-                                <a href="#" class="header__menu-link">Entertainment</a>
+                                <a href="category.html" class="header__menu-link">Entertainment</a>
                                 <ul class="header__sub header__sub-first">
                                    <li class="header__sub-block header__sub-fist">
                                        <ul class="header__sub-row">
@@ -103,7 +104,7 @@
                     <div class="header__brand">
                         <p class="empowered header__empowered">Empowered by</p>
                         <a href="#"><img src="assets/images/header_brand-logo.png" alt="Only the brave" class="header__brand-logo"></a>
-                    </div>                      
+                    </div>
                 </div>
             </header>
             <main id="category" class="category">
@@ -115,7 +116,12 @@
                     <div class="categoryHero__body">
                         <div class="wrap">
                             <div class="categoryHero__image">
-                                <img src="assets/images/categoryHero-img.png" alt="">
+                                <picture>
+                                      <!--[if IE 9]><video style="display: none;"><![endif]-->
+                                      <source srcset="assets/images/categoryHero-img.png" media="(min-width: 751px)">
+                                      <!--[if IE 9]></video><![endif]-->
+                                      <img srcset="assets/images/categoryHero-img-mob.png" alt="…">
+                                </picture>
                             </div>
                             <div class="categoryHero__description">
                                 <h1 class="categoryHero__heading">Entertainment</h1>
@@ -179,6 +185,7 @@
                         <article class="teaser teaser--white mobileWrap t-left">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser1.jpg" alt="Barack Obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -197,6 +204,7 @@
                         <article class="teaser teaser--white mobileWrap d-middle t-right">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser2.jpg" alt="Barack Obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -215,6 +223,7 @@
                         <article class="teaser teaser--white mobileWrap t-left">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser5.jpg" alt="The power of words"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -233,6 +242,7 @@
                         <article class="teaser teaser--white mobileWrap t-right">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser7.jpg" alt="The power of words"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <a href="#" class="teaser--white__videoLittle"><span class="play"></span>Video</a>
@@ -252,6 +262,7 @@
                         <article class="teaser teaser--white mobileWrap d-middle t-left">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser6.jpg" alt="Gaming is everywhere"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -270,6 +281,7 @@
                         <article class="teaser teaser--white mobileWrap t-right">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser3.jpg" alt="Barack Obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -292,10 +304,7 @@
                     <article class="video video--article clearfix">
                         <div class="video__body video--article__body">
                            <div class="video__videoBox">
-                               <a href="#">
-                                   <img src="assets/images/article_video_img.png" alt="" class="video__image video--article__image">
-                                   <img src="assets/images/video_play.png" alt="" class="video__play video--article__play">
-                               </a>
+                                <video id="example_video_1" class="video-js vjs-default-skin video__image" controls poster="assets/images/article_video_img.png" preload="none" data-setup='{ "techOrder": ["vimeo"], "sources": [{ "type": "video/vimeo", "src": "https://vimeo.com/80596169"}] }'></video>
                            </div>
                            <img src="assets/images/teaser-graphical-fist.png" alt="" class="video--article__fist">
                            <h2 class="video--article__tagHeading"><a href="#" class="video__tag video--article__tag">Sports</a></h2>                           
@@ -405,10 +414,11 @@
                         </article>
                         <!-- END MOST SHARED TEASER -->
 
-                        <!--TEASER WHITE - num_5-->
+                        <!--TEASER WHITE - num_7-->
                         <article class="teaser teaser--white mobileWrap d-middle t-left">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser4.jpg" alt="Barack Obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -423,10 +433,11 @@
                         </article>
                         <!-- END WHITE TEASER -->
                     
-                        <!--TEASER WHITE - num_6-->
+                        <!--TEASER WHITE - num_8-->
                         <article class="teaser teaser--white mobileWrap t-right">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser8.jpg" alt="Barack obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -441,10 +452,11 @@
                         </article>
                         <!-- END WHITE TEASER -->
 
-                        <!--TEASER WHITE - num_7-->
+                        <!--TEASER WHITE - num_9-->
                         <article class="teaser teaser--white mobileWrap modified d-middle t-left">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser1.jpg" alt="Barack Obama is like you"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -459,10 +471,11 @@
                         </article> 
                         <!-- END WHITE TEASER -->
                     
-                        <!--TEASER WHITE - num_8-->
+                        <!--TEASER WHITE - num_10-->
                         <article class="teaser teaser--white mobileWrap modified t-right">
                             <div class="teaser--white__image">
                                 <a href="#"><img src="assets/images/teaser9.jpg" alt="Mark Zuckerberg continues to dream"></a>
+                                <span class="teaser__share teaser--white__shareHover"><b>250</b> share</span>
                             </div>
                             <div class="teaser--white__body">
                                 <div class="teaser--white__elements">
@@ -528,7 +541,6 @@
             <!-- END FOOTER -->
         </div>
         <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="assets/js/script.js"></script>
+        <script src="assets/js/script.min.js"></script>
     </body>
 </html>

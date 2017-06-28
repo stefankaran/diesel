@@ -4,11 +4,15 @@
         z-index: 99999;
         position: fixed;
         padding: 0;
+        top: 0;
         
         @media (min-width: 751px) and (max-width: 1365px) {
             width: 100%;              
         } 
-    } 
+    }
+    a {
+        @include transition-all(none)
+    }
     .header__body {
         display: table;
         vertical-align: middle;
@@ -52,7 +56,8 @@
     }
     .header__heading-line {
         background: $white-color;
-        width: 43px;
+        width: 33%;
+//        width: 43px;
         bottom: -2px;
         right: 9px;
         height: 2px;
@@ -100,6 +105,7 @@
         }
         @include bp (desktop) {
             padding: 28px 0 25px;
+            margin-bottom: 0;
             
             &:last-child {
                 margin-left: -19px;
@@ -110,10 +116,10 @@
             }
         }
         @include bp(tablet) {
-            padding: 17px 0 18px;
+            padding: 20px 0;
         }
         @include bp (toDesktop) {
-            &:not(:last-child):hover .header__menu-link.active {
+            &:not(:last-child) .header__menu-link.active {
                 color: $white-color;
                 border-color: $white-color;
             }
@@ -161,16 +167,16 @@
             width: 2px;
             vertical-align: 2px;
         }
-        @media (min-width: 751px) and (max-width: 887px) {
-            margin: 0 10px;
-        }
-        @media (min-width: 888px) and (max-width: 1023px) {
+        @media (min-width: 751px) and (max-width: 919px) {
             margin: 0 14px;
         }
-        @media (min-width: 1025px) and (max-width: 1195px) {
-            margin: 0 19px 0 22px;
+        @media (min-width: 920px) and (max-width: 1023px) {
+            margin: 0 14px;
         }
-        @media (min-width: 1196px) and (max-width: 1365px) {
+        @media (min-width: 1025px) and (max-width: 1234px) {
+            margin: 0 16px 0 19px;
+        }
+        @media (min-width: 1235px) and (max-width: 1365px) {
             margin: 0 29px 0 32px;
         }
     }
@@ -181,9 +187,10 @@
             top: -moz-calc(76px);
         right: 0;
         left: 0;
+        @include shadow;
 
         @include bp(tablet) {
-            top: 53px;
+            top: 57px;
         }
     }
     .header__social {

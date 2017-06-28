@@ -25,27 +25,33 @@
             border-bottom: 4px solid $white-color;
             position: relative;
             
-            &:after {
-                content: '';
-                width: 6px;
-                height: 4px;
-                background: white;
-                display: block;
-                position: absolute;
-                right: 0;
-                z-index: 555555;
-                bottom: -4px;
-            }
+//            &:after {
+//                content: '';
+//                width: 6px;
+//                height: 4px;
+//                background: white;
+//                display: block;
+//                position: absolute;
+//                right: 0;
+//                z-index: 555555;
+//                bottom: -4px;
+//            }
             
             @include bp(ofMobile) {
                 margin-right: -7px;
             }
             @include bp(tablet) {
-                border-bottom: 3px solid #fff;
+                border-bottom: 3px solid $white-color;
+            }
+            @include bp(mobile) {
+                border-bottom: 2px solid $white-color;
             }
         }
         
         @include bp(desktop) {
+            margin-bottom: -6px;
+            padding-bottom: 6px;
+            
             &:not(:last-child):hover .header__menu-link {
                 color: $primary-color;
                 border-color: $primary-color;
@@ -88,9 +94,7 @@
                     content: '';
                     display: inline-block;
                     background: url(../../assets/images/arrow_up.png) center center no-repeat;
-                    width: 24px;
-                    height: 24px;
-                    background-size: 24px;
+                    @include iconSize(calc-rem(24px));
                     position: absolute;
                     top: 9px;
                     margin-left: 15px;
@@ -116,13 +120,13 @@
         @include bp(mobile) {
             display: none;
         }
-        @media (min-width: 751px) and (max-width: 887px) {
+        @media (min-width: 751px) and (max-width: 929px) {
             margin: 0 17px 0 20px;
         }
-        @media (min-width: 888px) and (max-width: 1024px) {
+        @media (min-width: 930px) and (max-width: 1024px) {
             margin: 0 35px;
         }
-        @media (min-width: 1025px) and (max-width: 1140px) {
+        @media (min-width: 1025px) and (max-width: 1160px) {
             margin: 0 44px 0 47px;
         }
     }

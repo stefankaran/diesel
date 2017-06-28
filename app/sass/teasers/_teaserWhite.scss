@@ -16,6 +16,9 @@
         margin-right: 1px;
         display: block;
         overflow: hidden;
+        position: relative;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
         
         @include bp(tablet) {
             max-height: 312.5px;
@@ -23,16 +26,29 @@
         @include bp(mobile) {
             max-height: 366px;
         }
+        @media (min-width: 751px) and (max-width: 940px) {
+            max-height: 250px;
+        }
         @include bp(mobileSmall) {
             max-height: 183px;
         }
+        
+        img {
+            display: block;
+            max-width: 100%;
+            @include transition-all (all 0.3s);
+        }
     }
-    .teaser--white__image img {
-//        -moz-transition: all 0.3s;
-//        -webkit-transition: all 0.3s;
-//        transition: all 0.3s;
-        display: block;
-        max-width: 100%
+    .teaser--white__shareHover {
+        position: absolute;
+        bottom: 12px;
+        left: 10%;
+        color: $white-color;
+        @extend .teaserShare;
+        
+//        @include bp(toDesktop) {
+            display: none;
+//        }            
     }
     .teaser--white__body {
         position: absolute;
@@ -44,9 +60,16 @@
             padding: 19px 0.1% 37px 7.5%;
             bottom: 6px;
         }
+        @media (min-width: 1024px) and (max-width: 1180px) {
+            width: 70%;
+            bottom: 26px;
+        }
         @include bp(tablet) {
             width: 52%;
-            bottom: 3px;
+            bottom: 0px;
+        }
+        @media (min-width: 751px) and (max-width: 920px) {
+            width: 59%;
         }
         @include bp(mobile) {
             width: 53%;
@@ -66,7 +89,7 @@
         }
     }
     .teaser--white__elements {
-        @include dtmPadding (0 4px, 20px 6% 0 8%, 33px 0 0 37px) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
+        @include dtmPadding (0 4px, 20px 7.8% 0 8%, 33px 0 0 37px) // ----- dtmPadding - Defined in mixins for Desktop, Tablet and Mobile.
     
         @include bp(mobileSmall) {
             padding: 11% 0 11% 13%;
@@ -79,8 +102,11 @@
     .teaser--white__date {
         @extend .date;
         
-        @include bp(ofMobile) {
+        @include bp(desktop) {
             margin: 10px 0 11px;
+        }
+        @include bp(tablet) {
+            margin: 11px 0 5px;
         }
         @include bp(mobile) {
             margin: 17px 0;
@@ -92,6 +118,9 @@
     .teaser--white__heading {
         font-family: $fontDemiCond;
         @include fontSize(29px, 26.5px, 36px); // ----- fontSize - Defined in mixins for Desktop, Tablet and Mobile with calculate rem.
+        @include bp(tablet) {
+            padding-right: 6%;
+        }
     }
     .teaser--white__text {
         text-transform: none;
@@ -103,7 +132,7 @@
         }
         @include bp(tablet) {
             @include fontSizeLineHeight (calc-rem(17.5px), calc-rem(19px));
-            margin: 20px 0 0;
+            margin: 16px 0 0;
         }
         @include bp(mobile) {
             display: none;
@@ -111,7 +140,7 @@
     }
     .teaser--white__share {
         @include bp(tablet) {
-            margin: 17px 0;
+            margin: 9px 0 17px;
         }
         @include bp(mobile) {
             margin: 18px 0 27px;
@@ -120,7 +149,42 @@
             margin: 9px 0 13px;
         }
     }
-    //.teaser--white:hover .teaser--white__image img {
-    //    transform: scale(1.1);
-    //}
+    
+    //----- HOVER EFFECTS
+    &:hover {
+        @include bp(desktop) {
+            .teaser--white__image {
+                background: rgba(72,92,112,1);
+                /* Old Browsers */background: -moz-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
+                /* FF3.6+ */background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(72,92,112,1)), color-stop(13%, rgba(72,92,112,1)), color-stop(52%, rgba(64,79,94,1)), color-stop(70%, rgba(23,65,107,1)), color-stop(100%, rgba(67,145,224,1)));
+                /* Chrome, Safari4+ */background: -webkit-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
+                /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
+                /* Opera 11.10+ */background: -ms-linear-gradient(top, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
+                /* IE 10+ */background: linear-gradient(to bottom, rgba(72,92,112,1) 0%, rgba(72,92,112,1) 13%, rgba(64,79,94,1) 52%, rgba(23,65,107,1) 70%, rgba(67,145,224,1) 100%);
+                /* W3C */-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#485c70', endColorstr='#4391e0', GradientType=0 )";
+                /* IE6-9 */
+
+                img {
+                    @include transformScale(1.1);
+                    opacity: 0.3;
+                }
+            }
+            //----- HOVER EFFECTS - VIDEO BUTTON
+            .btn--teaser-white {
+    //            @include btnGradient;
+    //            color: $white-color;
+                color: $white-color;
+                &:before {
+                    -webkit-transform: scaleX(1);
+                    transform: scaleX(1);
+                }
+            }
+
+    //        @include bp(desktop) {
+                .teaser--white__shareHover {
+                    display: block;
+                }
+    //        }
+        }
+    }
 }
